@@ -4,18 +4,21 @@ from django.utils import timezone
 
 class Article(models.Model):
     STATUS_CHOICES = (
-        ('d','Draft'),
-        ('p', 'Published'),
+        ('d','پیش نویس'),
+        ('p', 'منتشر شده'),
     )
-    title = models.CharField(max_length=200)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
-    slug = models.CharField(max_length=100 ,unique=True)
-    description = models.TextField(default=None)
-    thumbnail = models.ImageField(upload_to="images")
-    publish = models.DateTimeField(default=timezone.now)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now = True)
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+    title = models.CharField(max_length=200 ,verbose_name="عنوان")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=1,verbose_name="نویسنده")
+    slug = models.CharField(max_length=100 ,unique=True,verbose_name="اسلاگ")
+    description = models.TextField(default=None,verbose_name="توضیحات")
+    thumbnail = models.ImageField(upload_to="images",verbose_name="تصویر")
+    publish = models.DateTimeField(default=timezone.now,verbose_name="تاریخ انتشار")
+    created = models.DateTimeField(auto_now_add=True,verbose_name="تاریخ ایجاد")
+    updated = models.DateTimeField(auto_now = True,verbose_name="تاریخ بروز رسانی")
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES,verbose_name="وضعیت")
+    class Meta :
+        verbose_name = "مقاله"
+        verbose_name_plural= "مقاله ها"
 
     def __str__(self):
         return self.slug
@@ -23,11 +26,14 @@ class Article(models.Model):
         return self.slug
 
 class UserProfile(models.Model):
-    avatar = models.ImageField(upload_to="user_avatar")
-    address = models.CharField(max_length=100)
-    postalcode = models.CharField(max_length=20)
-    startregister = models.DateTimeField(default=timezone.now)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, default=1)
+    avatar = models.ImageField(upload_to="user_avatar",verbose_name="تصویر پروفایل")
+    address = models.CharField(max_length=100,verbose_name="آدرس")
+    postalcode = models.CharField(max_length=20,verbose_name="کد پستی")
+    startregister = models.DateTimeField(default=timezone.now,verbose_name="شروع عضویت")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default=1,verbose_name="کاربر")
+    class Meta :
+        verbose_name = "پروفایل"
+        verbose_name_plural= "پروفایل ها"
 
     def __str__(self):
         return self.user.username
@@ -35,12 +41,14 @@ class UserProfile(models.Model):
         return self.user.username
 
 class test(models.Model):
-    avatar = models.ImageField(upload_to="user_avatar")
-    address = models.CharField(max_length=100)
-    postalcode = models.CharField(max_length=20)
-    startregister = models.DateTimeField(default=timezone.now)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, default=1)
-
+    avatar = models.ImageField(upload_to="user_avatar",verbose_name="عنوان")
+    address = models.CharField(max_length=100,verbose_name="عنوان")
+    postalcode = models.CharField(max_length=20,verbose_name="عنوان")
+    startregister = models.DateTimeField(default=timezone.now,verbose_name="عنوان")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default=1,verbose_name="عنوان")
+    class Meta :
+        verbose_name = "تست"
+        verbose_name_plural= "تست ها"
     def __str__(self):
         return self.user.username
     def __unicode__(self):
@@ -48,13 +56,16 @@ class test(models.Model):
 
 
 class Contacts(models.Model):
-    nameandfamily = models.CharField(max_length=50)
-    companyname = models.CharField(max_length=50, blank=True)
-    mobile = models.CharField(max_length=50,blank=True)
-    phone = models.CharField(max_length=50,blank=True)
-    address = models.CharField(max_length=50,blank=True)
-    email = models.CharField(max_length=100, default=None)
-    created = models.DateTimeField(auto_now=True)
+    nameandfamily = models.CharField(max_length=50,verbose_name="نام و نام خانوادگی")
+    companyname = models.CharField(max_length=50, blank=True,verbose_name="نام شرکت")
+    mobile = models.CharField(max_length=50,blank=True,verbose_name="تلفن همراه")
+    phone = models.CharField(max_length=50,blank=True,verbose_name="تلفن ثابت")
+    address = models.CharField(max_length=50,blank=True,verbose_name="آدرس")
+    email = models.CharField(max_length=100, default=None,verbose_name="ایمیل")
+    created = models.DateTimeField(auto_now=True,verbose_name="ساخته شده در تاریخ ")
+    class Meta :
+        verbose_name = "مخاطبین"
+        verbose_name_plural= "مخاطبین"
 
     def __str__(self):
         return self.nameandfamily
@@ -63,29 +74,34 @@ class Contacts(models.Model):
 
 
 class income(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.CharField(max_length=200, blank=True, null=True)
-    amount = models.BigIntegerField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
-    pub_date = models.DateTimeField('date published')
+    title = models.CharField(max_length=200,verbose_name="عنوان")
+    description = models.CharField(max_length=200, blank=True, null=True,verbose_name="توضیحات")
+    amount = models.BigIntegerField(verbose_name="مقدار هزینه")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1,verbose_name="ثبت توسط")
+    pub_date = models.DateTimeField(verbose_name="تاریخ انتشار")
 
     def __str__(self):
         return "{} - {}".format(self.title,self.amount)
     def __unicode__(self):
         return "{} - {}".format(self.title,self.amount)
+    class Meta :
+        verbose_name = "درآمد"
+        verbose_name_plural= "درآمد ها"
 
 class expence(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.CharField(max_length=200, blank=True, null=True)
-    amount = models.BigIntegerField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
-    pub_date = models.DateTimeField()
+    title = models.CharField(max_length=200,verbose_name="عنوان")
+    description = models.CharField(max_length=200, blank=True, null=True,verbose_name="توضیحات")
+    amount = models.BigIntegerField(verbose_name="مقدار هزینه")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1,verbose_name="ثبت شده توسط")
+    pub_date = models.DateTimeField(verbose_name="تاریخ انتشار")
 
     def __str__(self):
         return "{} - {}".format(self.title,self.amount)
     def __unicode__(self):
         return "{} - {}".format(self.title,self.amount)
-
+    class Meta :
+        verbose_name = "هزینه شده"
+        verbose_name_plural= "هزینه ها"
 
 
 
@@ -94,9 +110,9 @@ class expence(models.Model):
 class invoice(models.Model):
     BOOL_CHOICES = ((True, 'Yes'), (False, 'No'))
     system_type = (
-        ('D', 'Direct'),
-        ('I', 'Indirect'),
-        ('T', 'Telescopic'),
+        ('D', 'مستقیم'),
+        ('I', 'غیر مستقیم'),
+        ('T', 'تلسکوپی'),
     )
     slug = models.CharField(max_length=100 ,unique=True)
     invoicenumber= models.IntegerField()
@@ -143,7 +159,9 @@ class invoice(models.Model):
     #------final-----
     price = models.BigIntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE,default=1)
-
+    class Meta :
+        verbose_name = "فاکتور"
+        verbose_name_plural= "فاکتور ها"
     def __str__(self):
         return str(self.invoicenumber)
     def __unicode__(self):
@@ -162,6 +180,9 @@ class sell(models.Model):
         return "{} - {}".format(self.title,self.amount)
     def __str__(self):
         return "{} - {}".format(self.title,self.amount)
+    class Meta :
+        verbose_name = "فروش"
+        verbose_name_plural= "فروش ها"
 
 class buy(models.Model):
     title = models.CharField(max_length=200)
@@ -174,3 +195,6 @@ class buy(models.Model):
         return "{} - {}".format(self.title,self.amount)
     def __unicode__(self):
         return "{} - {}".format(self.title,self.amount)
+    class Meta :
+        verbose_name = "خرید"
+        verbose_name_plural= "خرید ها"
