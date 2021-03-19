@@ -118,9 +118,9 @@
                 <div class="container">
                     
                     <div class="row">
-                        {% for item in contex%}
+                        
                         <div class="col-lg-8">
-                            
+                            {% for item in articles%}
                             <div class="post">
                                 <h2>{{item.title}}</h2>
                                 <ul>
@@ -133,10 +133,10 @@
                                             <p>پست شده: <a href="#">توسط {{item.author}}</a></p>
                                         </li>
                                         <li>
-                                            <p>دسته: <a href="#">طراحی وب</a></p>
+                                            <p>دسته: <a href="#">{{item.category}}</a></p>
                                         </li>
                                         <li>
-                                            <p>{{item.published}}</p>
+                                            <p>{{item.jpublish}}</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -198,9 +198,9 @@
                                 </form>
                             </div>
 
-                            
+                            {% endfor %}
                         </div>
-                        {% endfor %}
+                        
                         <div class="col-lg-4">
                             <div class="widget-area">
                                 <div class="widget">
@@ -213,11 +213,9 @@
                                     <div class="widget-card">
                                         <h4>پست های اخیر</h4>
                                         <ul>
-                                            <li><a href="#">بهترین راه توسعه وب برای شما در سال 1400 </a></li>
-                                            <li><a href="#">بهترین راه توسعه وب برای شما در سال 1400 / سریع ترین روش می باشد.</a>
-                                            </li>
-                                            <li><a href="#">بهترین راه توسعه وب برای شما در سال 1400 </a></li>
-                                            <li><a href="#">بهترین راه توسعه وب برای شما در سال 1400 </a></li>
+                                            {% for item in articles %}
+                                            <li><a href="/blog/{{item.slug}}">{{item.title}}</a></li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                     <div class="widget-card">
@@ -239,14 +237,9 @@
                                     <div class="widget-card widget-tag">
                                         <h4>برچسب ها</h4>
                                         <div class="tagcloud">
-                                            <a href="#">طراحی وب</a>
-                                            <a href="#">وب</a>
-                                            <a href="#">1399</a>
-                                            <a href="#">گرافیک</a>
-                                            <a href="#">تی ان پلاگین</a>
-                                            <a href="#">راست چین</a>
-                                            <a href="#">آرفو</a>
-                                            <a href="#">بهترین</a>
+                                            {% for item in categories%}
+                                            <a href="/blog/{{item.slug}}">{{item.title}}</a>
+                                            {% endfor %}
                                         </div>
                                     </div>
                                 </div>
@@ -258,157 +251,7 @@
                 </div>
             </section>
             
-            <section class="blog-detels" id="blog-d">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="post">
-                                {% for item in contex%}
-                                
-                                <h2>{{item.img}}</h2>
-                                {% endfor %}
-                                <h2>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </h2>
-                                <ul>
-                                    <li><a href="#">جهانی</a></li>
-                                    <li><a href="#">طراحی</a></li>
-                                </ul>
-                                <div class="blog-video">
-                                    <img src="/static/arfo/demo/img/blog/blog-details.jpg" alt="image">
-                                    <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://youtu.be/ccxBu_zTUU4">
-                                        <i class="fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="blog-tags">
-                                    <ul>
-                                        <li>
-                                            <p>پست شده: <a href="#">توسط آرفـو</a></p>
-                                        </li>
-                                        <li>
-                                            <p>دسته: <a href="#">طراحی وب</a></p>
-                                        </li>
-                                        <li>
-                                            <p>شهریور 1399</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. .</p>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. .</p>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. .</p>
-                                <blockquote>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. .</blockquote>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. .</p>
-                            </div>
-                            <div class="inner-thumb">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="inner-thumb-img">
-                                            <img src="/static/arfo/demo/img/blog/inner1.jpg" alt="Image">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="inner-thumb-img">
-                                            <img src="/static/arfo/demo/img/blog/inner2.jpg" alt="Image">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. .</p>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. .</p>
-                            <div class="entry-footer">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="title">
-                                            <h4>شما می توانید این پست را به اشتراک بگذارید</h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="social">
-                                            <ul>
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment-form">
-                                <h4>نظری برام بنویسید</h4>
-                                <form action="#">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <input name="name" type="text" placeholder="نام*">
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <input name="email" type="email" placeholder="ایمیل*">
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <input name="name" type="text" placeholder="وب سایت (اختیاری)">
-                                        </div>
-                                        <div class="col-12">
-                                            <textarea name="message" placeholder="نوشتن نظر..."></textarea>
-                                        </div>
-                                        <div class="col-12">
-                                            <button class="submit-btn" type="submit">ارسال نظر</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="widget-area">
-                                <div class="widget">
-                                    <div class="widget_search">
-                                        <form role="search" id="search-form" method="get" action="#">
-                                            <input type="search" placeholder="جستجو ..." value="">
-                                            <button type="submit" id="search-submit" class="btn"><i class="fa fa-search"></i></button>
-                                        </form>
-                                    </div>
-                                    <div class="widget-card">
-                                        <h4>پست های اخیر</h4>
-                                        <ul>
-                                            <li><a href="#">بهترین راه توسعه وب برای شما در سال 1400 </a></li>
-                                            <li><a href="#">بهترین راه توسعه وب برای شما در سال 1400 / سریع ترین روش می باشد.</a>
-                                            </li>
-                                            <li><a href="#">بهترین راه توسعه وب برای شما در سال 1400 </a></li>
-                                            <li><a href="#">بهترین راه توسعه وب برای شما در سال 1400 </a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="widget-card">
-                                        <h4>نویسنده</h4>
-                                        <div class="thumb">
-                                            <img src="/static/arfo/demo/img/blog/author1.jpg" alt="Image" class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="widget-card widget-date">
-                                        <h4>آرشیو</h4>
-                                        <ul>
-                                            <li><a href="#">شهریور 1399 </a><span>(8)</span></li>
-                                            <li><a href="#">شهریور 1399 </a><span>(12)</span></li>
-                                            <li><a href="#">شهریور 1399 </a><span>(6)</span></li>
-                                            <li><a href="#">شهریور 1399 </a><span>(11)</span></li>
-                                            <li><a href="#">شهریور 1399 </a><span>(20)</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="widget-card widget-tag">
-                                        <h4>برچسب ها</h4>
-                                        <div class="tagcloud">
-                                            <a href="#">طراحی وب</a>
-                                            <a href="#">وب</a>
-                                            <a href="#">1399</a>
-                                            <a href="#">گرافیک</a>
-                                            <a href="#">تی ان پلاگین</a>
-                                            <a href="#">راست چین</a>
-                                            <a href="#">آرفو</a>
-                                            <a href="#">بهترین</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
             <!-- Blog Detils End -->
             <!-- Blog V2 Start -->
             <section class="blog v2">
@@ -417,42 +260,21 @@
                         <h2>پست های اخیر</h2>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="/static/arfo/demo/img/blog/1.jpg" alt="img">
-                                    <div class="text">
-                                        <h4>ویرایش تصویر- 1399</h4>
-                                        <p>ساخت برنامه 1399</p>
-                                        <a href="rtl-blog-details-particlesy.html">ادامه مطلب <i class="fas fa-long-arrow-alt-right"></i></a>
+                        {% for item in last3 %}
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="{{item.thumbnail.url}}" alt="img">
+                                        <div class="text">
+                                            <h4>{{item.title}} </h4>
+                                            <p>{{item.jpublish}}</p>
+                                            <a href="/blog/{{item.slug}}">ادامه مطلب <i class="fas fa-long-arrow-alt-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="/static/arfo/demo/img/blog/2.jpg" alt="img">
-                                    <div class="text">
-                                        <h4>طراحی عالی و جذاب</h4>
-                                        <p>ساخت برنامه 1399</p>
-                                        <a href="rtl-blog-details-particlesy.html">ادامه مطلب <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="/static/arfo/demo/img/blog/3.jpg" alt="img">
-                                    <div class="text">
-                                        <h4>سبک مدرن - 1399</h4>
-                                        <p>ساخت برنامه 1399</p>
-                                        <a href="rtl-blog-details-particlesy.html">ادامه مطلب <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+                       
                     </div>
                 </div>
             </section>

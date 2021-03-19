@@ -3,34 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from extensions.utils import jalali_converter
 
-class Article(models.Model):
-    STATUS_CHOICES = (
-        ('d','پیش نویس'),
-        ('p', 'منتشر شده'),
-    )
-    title = models.CharField(max_length=200 ,verbose_name="عنوان")
-    author = models.ForeignKey(User, on_delete=models.CASCADE, default=1,verbose_name="نویسنده")
-    slug = models.CharField(max_length=100 ,unique=True,verbose_name="اسلاگ")
-    description = models.TextField(default=None,verbose_name="توضیحات")
-    thumbnail = models.ImageField(upload_to="images",verbose_name="تصویر")
-    publish = models.DateTimeField(default=timezone.now,verbose_name="تاریخ انتشار")
-    created = models.DateTimeField(auto_now_add=True,verbose_name="تاریخ ایجاد")
-    updated = models.DateTimeField(auto_now = True,verbose_name="تاریخ بروز رسانی")
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES,verbose_name="وضعیت")
-    class Meta :
-        verbose_name = "مقاله"
-        verbose_name_plural= "مقاله ها"
 
-    def __str__(self):
-        return self.slug
-    def __unicode__(self):
-        return self.slug
-    def jpublish(self):
-        return jalali_converter(self.publish)
-    def jcreated(self):
-        return jalali_converter(self.created)
-    def jupdated(self):
-        return jalali_converter(self.updated)
 
 
 class UserProfile(models.Model):
@@ -49,19 +22,6 @@ class UserProfile(models.Model):
         return self.user.username
     
 
-class test(models.Model):
-    avatar = models.ImageField(upload_to="user_avatar",verbose_name="عنوان")
-    address = models.CharField(max_length=100,verbose_name="عنوان")
-    postalcode = models.CharField(max_length=20,verbose_name="عنوان")
-    startregister = models.DateTimeField(default=timezone.now,verbose_name="عنوان")
-    user = models.OneToOneField(User, on_delete=models.CASCADE, default=1,verbose_name="عنوان")
-    class Meta :
-        verbose_name = "تست"
-        verbose_name_plural= "تست ها"
-    def __str__(self):
-        return self.user.username
-    def __unicode__(self):
-        return self.user.username
 
 
 class Contacts(models.Model):
