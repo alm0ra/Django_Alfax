@@ -3,7 +3,7 @@ from .models import *
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title','author','jpublish','status')
-    list_filter = ('author','jpublish','status')
+    list_filter = ('author','publish','status')
     search_fields = ('title', 'description')
     prepopulated_fields = {'slug':('title',)}
     ordering = ['-status', 'publish']

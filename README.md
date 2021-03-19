@@ -39,7 +39,7 @@ I love contributions, so please feel free to fix bugs, improve things, provide d
 
 
 ## TODO List
-    [ ] set up Jalali Calender for Project
+    [✔] set up Jalali Calender for Project
     [ ] add a blog as a new application
     [ ] add karfarmaonline as a new application
     [ ] Add item 'Add Contact' to Contact 
