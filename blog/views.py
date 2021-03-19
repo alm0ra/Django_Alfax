@@ -9,5 +9,9 @@ from django.contrib.auth.models import User
 
 
 def blog_view(request):
-    context = {"articles": Article.objects.all(), "categories":Category.objects.all(),"last3":Article.objects.all()[:3]}
+    context = {"articles": Article.objects.filter(status= 'p').order_by('-publish'), "categories":Category.objects.all(),"last3":Article.objects.filter(status= 'p').order_by('-publish')[:3]}
     return render(request, "blog/blog.html", context) #TODO Looking for a Blog Template
+
+def article_detail(request,slug):
+    context = {"articles": Article.objects.filter(slug= slug).order_by('-publish'), "categories":Category.objects.all(),"last3":Article.objects.filter(status= 'p').order_by('-publish')[:3]}
+    return render(request, "blog/blog-detail.html", context) #TODO Looking for a Blog Template

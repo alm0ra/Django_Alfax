@@ -197,7 +197,7 @@
                                     </div>
                                 </form>
                             </div>
-
+                            <br><br>
                             {% endfor %}
                         </div>
                         
@@ -214,7 +214,7 @@
                                         <h4>پست های اخیر</h4>
                                         <ul>
                                             {% for item in articles %}
-                                            <li><a href="/blog/{{item.slug}}">{{item.title}}</a></li>
+                                            <li><a href="{% url 'bloga:detail' item.slug %}">{{item.title}}</a></li>
                                             {% endfor %}
                                         </ul>
                                     </div>
@@ -238,7 +238,7 @@
                                         <h4>برچسب ها</h4>
                                         <div class="tagcloud">
                                             {% for item in categories%}
-                                            <a href="/blog/{{item.slug}}">{{item.title}}</a>
+                                            <a href="{% url 'bloga:detail' item.slug %}">{{item.title}}</a>
                                             {% endfor %}
                                         </div>
                                     </div>
@@ -268,7 +268,7 @@
                                         <div class="text">
                                             <h4>{{item.title}} </h4>
                                             <p>{{item.jpublish}}</p>
-                                            <a href="/blog/{{item.slug}}">ادامه مطلب <i class="fas fa-long-arrow-alt-right"></i></a>
+                                            <a href="{% url 'bloga:detail' item.slug %}">ادامه مطلب <i class="fas fa-long-arrow-alt-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
