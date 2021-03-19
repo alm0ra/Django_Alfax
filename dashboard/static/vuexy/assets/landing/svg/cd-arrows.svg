@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<title>background</title>
+	<rect id="canvas_background" x="-1" y="-1" fill="none" width="582" height="402"/>
+</g>
+<g>
+	<title>Layer 1</title>
+	<path id="svg_1" fill="#FFFFFF" d="M26.881,15.506l-6.235-6.234c-0.274-0.273-0.718-0.273-0.991,0
+		c-0.274,0.273-0.274,0.716,0,0.989L25.395,16l-5.74,5.739c-0.273,0.273-0.273,0.716,0,0.989s0.719,0.273,0.991,0l6.236-6.233
+		C27.15,16.226,27.15,15.775,26.881,15.506z"/>
+	<path id="svg_2" fill="#FFFFFF" d="M12.346,9.272c-0.274-0.273-0.718-0.273-0.992,0l-6.235,6.234c-0.271,0.269-0.271,0.72,0,0.989
+		l6.235,6.233c0.274,0.273,0.717,0.273,0.992,0c0.273-0.272,0.273-0.716,0-0.988L6.605,16l5.74-5.739
+		C12.62,9.988,12.62,9.545,12.346,9.272z"/>
+</g>
+</svg>
