@@ -2,19 +2,19 @@ from django.contrib import admin
 from .models import *
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('title','author','publish','status')
-    list_filter = ('author','publish','status')
+    list_display = ('title','author','jpublish','status')
+    list_filter = ('author','jpublish','status')
     search_fields = ('title', 'description')
     prepopulated_fields = {'slug':('title',)}
     ordering = ['-status', 'publish']
 
 class IncomeAdmin(admin.ModelAdmin):
-    list_display = ('title','amount','user','pub_date')
+    list_display = ('title','amount','user','jpub_date')
     list_filter = ('user','pub_date')
     search_fields= ('title', 'description')
 
 class ExpenceAdmin(admin.ModelAdmin):
-    list_display = ('title','amount','user','pub_date')
+    list_display = ('title','amount','user','jpub_date')
     list_filter = ('user','pub_date')
     search_fields= ('title', 'description')
 
