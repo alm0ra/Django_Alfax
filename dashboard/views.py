@@ -13,8 +13,10 @@ from django.contrib.auth.models import User
 @login_required(login_url="/login/")
 def contact(request):
     ## TODO big Probelm with GET Method
-    if request.GET['remove'] == 'true' :
-        contact_id = request.GET['contact_id']
+    if request.GET.get('remove', False)  == 'true' :
+        if request.GET.get('all', False) == 'true':
+            Contacts.objects.all().delete()
+        contact_id = request.GET.get('contact_id', False)
         Contacts.objects.filter(id=contact_id).delete()
 
     profile  = UserProfile.objects.all().filter(user=request.user)

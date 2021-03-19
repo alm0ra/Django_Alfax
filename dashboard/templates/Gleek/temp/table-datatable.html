@@ -67,10 +67,13 @@
           <div class="col-12">
               <div class="card">
                   <div class="card-header">
-                      <h4 class="card-title">لیست مخاطبین</h4>
-                      <button type="submit" href="#add-contacts" class="btn btn-primary">اضافه کردن</button>
-                      <button type="submit" class="btn btn-primary">حذف کردن همه</button>
-                  </div>
+                        
+                        <div class="col-12">
+                            <h4 class="card-title">لیست مخاطبین</h4>
+                            <a href="#add-contacts" class="btn btn-outline-primary mr-1 mb-1 waves-effect waves-light float-right"><i class="feather icon-plus"></i></a>
+                            <a href="?remove=true&all=true" class="btn btn-outline-primary mr-1 mb-1 waves-effect waves-light float-right"><i class="feather icon-trash"></i> همه</a>
+                        </div>
+                    </div>
                   <div class="card-content">
                       <div class="card-body card-dashboard">
                          <div class="table-responsive">
@@ -180,7 +183,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-label-group position-relative has-icon-left">
-                                            <input type="number" id="contact-floating-icon" class="form-control" name="mobile" placeholder="تلفن ثابت">
+                                            <input type="number" id="contact-floating-icon" class="form-control" name="phone" placeholder="تلفن ثابت">
                                             <div class="form-control-position">
                           <i class="feather icon-smartphone"></i>
                       </div>
