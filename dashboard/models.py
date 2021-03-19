@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from extensions.utils import jalali_converter
 
 class Article(models.Model):
     STATUS_CHOICES = (
@@ -24,6 +25,13 @@ class Article(models.Model):
         return self.slug
     def __unicode__(self):
         return self.slug
+    def jpublish(self):
+        return jalali_converter(self.publish)
+    def jcreated(self):
+        return jalali_converter(self.created)
+    def jupdated(self):
+        return jalali_converter(self.updated)
+
 
 class UserProfile(models.Model):
     avatar = models.ImageField(upload_to="user_avatar",verbose_name="تصویر پروفایل")
@@ -39,6 +47,7 @@ class UserProfile(models.Model):
         return self.user.username
     def __unicode__(self):
         return self.user.username
+    
 
 class test(models.Model):
     avatar = models.ImageField(upload_to="user_avatar",verbose_name="عنوان")
@@ -71,7 +80,8 @@ class Contacts(models.Model):
         return self.nameandfamily
     def __unicode__(self):
         return self.nameandfamily
-
+    def jcreated(self):
+        return jalali_converter(self.created)
 
 class income(models.Model):
     title = models.CharField(max_length=200,verbose_name="عنوان")
@@ -80,13 +90,19 @@ class income(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1,verbose_name="ثبت توسط")
     pub_date = models.DateTimeField(verbose_name="تاریخ انتشار")
 
+
+    class Meta :
+        verbose_name = "درآمد"
+        verbose_name_plural= "درآمد ها"
+        
     def __str__(self):
         return "{} - {}".format(self.title,self.amount)
     def __unicode__(self):
         return "{} - {}".format(self.title,self.amount)
-    class Meta :
-        verbose_name = "درآمد"
-        verbose_name_plural= "درآمد ها"
+
+    def jpub_date(self):
+        return jalali_converter(self.pub_date)
+
 
 class expence(models.Model):
     title = models.CharField(max_length=200,verbose_name="عنوان")
@@ -95,16 +111,17 @@ class expence(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1,verbose_name="ثبت شده توسط")
     pub_date = models.DateTimeField(verbose_name="تاریخ انتشار")
 
-    def __str__(self):
-        return "{} - {}".format(self.title,self.amount)
-    def __unicode__(self):
-        return "{} - {}".format(self.title,self.amount)
+
     class Meta :
         verbose_name = "هزینه شده"
         verbose_name_plural= "هزینه ها"
 
-
-
+    def jpub_date(self):
+        return jalali_converter(self.pub_date)
+    def __str__(self):
+        return "{} - {}".format(self.title,self.amount)
+    def __unicode__(self):
+        return "{} - {}".format(self.title,self.amount)
 
 
 class invoice(models.Model):

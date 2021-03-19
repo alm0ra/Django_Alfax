@@ -27,7 +27,9 @@ $ python manage.py runserver <port>
 
 ## Features
 
-* Basic Django scaffolding (commands, templatetags, statics, media files, etc).
+* Manage and Modify your Company Contact.
+* Manage and Modify your Company Accounting.
+* Manage and Modify Construction Company Accounting.
 * Split settings in two files. `settings_custom.py` for specific environment settings (localhost, production, etc). `projectname/settings.py` for core settings.
 * Simple logging setup ready for production envs.
 
@@ -37,7 +39,9 @@ I love contributions, so please feel free to fix bugs, improve things, provide d
 
 
 ## TODO List
-
+    [ ] set up Jalali Calender for Project
     [ ] add a blog as a new application
     [ ] add karfarmaonline as a new application
     [ ] Add item 'Add Contact' to Contact 
+    [ ] Set up New Landing Page 
+    [ ] Look up for Blog and Landing Page Template and Add To Project
