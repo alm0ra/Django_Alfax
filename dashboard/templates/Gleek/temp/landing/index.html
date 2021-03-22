@@ -1,874 +1,1738 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="rtl">
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+		{% for item in landing %}
+		<title>{{item.fisrt_section.webtitle}}</title>	
+		{% endfor %}
+		<meta name="keywords" content="HTML5 Template">
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="/static/porto/img/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" href="/static/porto/img/apple-touch-icon.png">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 
 
-<head>
-    <meta charset="utf-8">
-    <meta name="author" content="Abdullah AL Numan" />
-    <meta name="keywords" content="Arfon Personal Portfolio & Resume HTML5 Template" />
-    <meta name="description" content="Arfon Personal Portfolio & Resume HTML5 Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="/static/porto/vendor/circle-flip-slideshow/css/component.css">		
+		<!-- Theme Custom CSS -->
 
-    <title>AlFaX - وبسایت ایده های نو</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/static/arfo/demo/css/bootstrap.min.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/static/arfo/demo/css/fontawesome.min.css">
-
-    <!-- Animate -->
-    <link rel="stylesheet" href="/static/arfo/demo/css/animate.min.css">
-
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="/static/arfo/demo/css/owl.carousel.min.css">
-
-    <!-- Slick -->
-    <link rel="stylesheet" href="/static/arfo/demo/css/slick.css">
-
-    <!-- Venobox -->
-    <link rel="stylesheet" href="/static/arfo/demo/css/venobox.min.css">
-
-    <!-- Normalize -->
-    <link rel="stylesheet" href="/static/arfo/demo/css/normalize.css">
-
-    <!-- Default -->
-    <link rel="stylesheet" href="/static/arfo/demo/css/default.css">
+		<link rel="stylesheet" href="/static/porto/css/demos/demo-business-consulting.css">	
+		<link rel="stylesheet" href="/static/porto/css/skins/skin-corporate-14.css"> 
+		<link rel="stylesheet" href="/static/porto/css/skins/skin-business-consulting.css"> 
 
 
-    <!-- Style -->
-    <link rel="stylesheet" href="/static/arfo/demo/css/style.css">
 
-    <!-- Responsive -->
-    <link rel="stylesheet" href="/static/arfo/demo/css/responsive.css">
-</head>
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="/static/porto/vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/fontawesome-free/css/all.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/animate/animate.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/simple-line-icons/css/simple-line-icons.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/magnific-popup/magnific-popup.min.css">
+		<!-- Revolution Slider Addon - Typewriter -->
+		
 
-<body>
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="/static/porto/css/theme.css">
+		<link rel="stylesheet" href="/static/porto/css/theme-elements.css">
+		<link rel="stylesheet" href="/static/porto/css/theme-blog.css">
+		<link rel="stylesheet" href="/static/porto/css/theme-shop.css">
 
-     
-        <header>
-            <nav class="side-bar">
-                <div class="side-bar-header">
-                    <div class="logo">
-                        <a href="rtl-index-particlesy.html"><img src="/static/arfo/demo/img/logo/logo.png" alt="logo"></a>
-                    </div>
-                    <button class="side-btn">
-                        <i class="fas fa-angle-left"></i>
-                    </button>
-                </div>
-                <div class="slider-manu">
-                    <ul>
-                        <li class="active"><a href="#!" data-scroll="#home"><i class="fas fa-home"></i>خانه<span class="sub-nifo"></span></a></li>
-                        <li><a href="/dashboard/" ><i class="fas fa-briefcase"></i>سیستم مدیریت آلفاکس</a></li>
-                        <li><a href="#!" data-scroll="#resume"><i class="fas fa-list-alt"></i>رزومه</a></li>
-                        <li><a href="#!" data-scroll="#projects"><i class="fas fa-clipboard-list"></i>پروژه ها</a></li>
-                        <li><a href="#!" data-scroll="#blog"><i class="fab fa-blogger"></i>وبلاگ</a></li>
-                        <li><a href="#!" data-scroll="#contact"><i class="fas fa-phone-alt"></i>تماس با من</a></li>
-                        <li><a href="/login/" ><i class="fa fa-sign-in-alt"></i>ورود    </a></li>
-                        <li><a href="/register/" ><i class="fa fa-user-plus"></i>ثبت نام</a></li>
-                    </ul>
-
-                </div>
-                <div class="side-footer">
-                    <span></span>
-                    <ul>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li>
-                            <a href="#"><i class="fab fa-telegram"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
-                    </ul>
-                    <button class="search-btn" data-toggle="modal" data-target="#popupSearch"><i class="fa fa-search"></i></button>
-                    <div class="modal fade" id="popupSearch" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <form>
-                                    <input type="search" placeholder="جستجو ...">
-                                    <button type="submit">جستجو </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <!-- Banner Start -->
-            <section class="banner v2" id="home">
-                <div class="banner-content content-center">
-                    <div class="banner-item">
-                        <div class="profile-img">
-                            <img src="/static/arfo/demo/img/banner/profile-2.png" alt="Profile Img">
-                            <span class="activety"></span>
-                        </div>
-                        <div class="profile-text">
-                            <h2>علی <span class="pink"> مرادی  </span></h2>
-                            <p><span class="animate-typing" data-animate-loop="true" data-type-speed="500" data-type-delay="500"  data-cursor-speed="100" data-animate-index="3">
-
-                                اینجا وبسایت ایده های نو من است</span></p>
-                            <p><span class="animate-typing" data-animate-loop="true" data-type-speed="50" data-type-delay="50" data-remove-speed="80" data-remove-delay="500" data-cursor-speed="100" data-animate-index="0">
-                                    توسعه دهنده وبسایت Website Developer|
-                                    طراح مدل های هوش مصنوعی AI Model Designer|
-                                    مهندس مکانیک Mechanichal Engineer |
-                                     برنامه نویس پایتون Python Developer</span></p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="parallaxie banner-bg" id="particles-js" style="background-image: url(/static/arfo/demo/img/banner/banner-v2-4.jpg);"></div>
-            </section>
-            <!-- Banner End -->
-            <!-- About Start -->
-            <section class="about v2">
-                <div class="container">
-                    <div class="title">
-                        <h2>درباره من</h2>
-                        <p>من یک مهندس مکانیک هستم که به صورت حرفه ای با زبان پایتون برنامه نویسی میکنه و هر چیزی رو میتونه خلق کنه از وبسایت گرفته تا مدل های پیچیده هوش مصنوعی ... عاشق یادگیری هستم و از تفریحات من یادگیری چیز های متفاوته همچنین مدل سازی سه بعدی هم یکی از توانایی های من محسوب میشه</p>
-                    </div>
-                    <div class="about-info">
-                        <ul>
-                            <li>
-                                <div class="content-top-center">
-                                    <i class="fas fa-user-alt"></i>
-                                    <div class="text">
-                                        <h6>نام:</h6>
-                                        <p>علی مرادی</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="content-top-center">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <div class="text">
-                                        <h6>موقعیت:</h6>
-                                        <p>ایران ، مرکزی  اراک</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content-top-center">
-                                    <i class="fas fa-phone-alt"></i>
-                                    <div class="text">
-                                        <h6>تلفن:</h6>
-                                        <p>۰۹۱۸۵۸۰۲۶۶۸</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content-top-center">
-                                    <i class="fas fa-envelope"></i>
-                                    <div class="text">
-                                        <h6>ایمیل:</h6>
-                                        <p> ali.mrd318@gmail.com</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content-top-center">
-                                    <i class="fas fa-graduation-cap"></i>
-                                    <div class="text">
-                                        <h6>درجه شخصی:</h6>
-                                        <p>مهندس مکانیک</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content-top-center">
-                                    <i class="fas fa-volleyball-ball"></i>
-                                    <div class="text">
-                                        <h6>مورد علاقه:</h6>
-                                        <p>کوهنوردی . گردشگری</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="about-link">
-                        <ul>
-                            <li>
-                                <a href="#resume" class="active"><span>دانلود رزومه</span><i class="fas fa-download"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>ارسال پیام</span><i class="fas fa-angle-double-right"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <!-- About End -->
-            <!-- Services Start -->
-            <section class="services v2" id="services">
-                <div class="container">
-                    <div class="title">
-                        <h2>خدمات محبوب</h2>
-                        <p>ما در تیم تینکر تمامی امور دیجیتال مارکتینگ از جمله طراحی وبسایت با هر زبان و فریمورک روز دنیا . سیو حرفه ای . دیجیتال مارکتینگ . برندیگ . و عکس برداری صنعتی را انجام میدهیم تیم ما تشکیل شده از متخصصان برنامه نویسی گرافیک و دیجیتال مارکتینگ هستند بدون دغدغه این امور را به ما بسپارید</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="icon">
-                                        <img src="/static/arfo/demo/img/services/icon-1-v2.png" alt="icon">
-                                    </div>
-                                    <h4>توسعه دهنده</h4>
-                                    <p> طراحی و توسعه انواع سیستم های تحت وب مطابق با نیاز شما همچنین طراحی مدل های شبکه عصبی وپیاده سازی آن
-                                    </p>
-                                    <a href="#"><i class="fas fa-chevron-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="icon">
-                                        <img src="/static/arfo/demo/img/services/icon-2-v2.png" alt="icon">
-                                    </div>
-                                    <h4>طراحی وب</h4>
-                                    <p>طراحی صفحات وبسایت مطابق با نیاز شما انواع صفحات شرکتی فروشگاهی مدیریتی شخصی بلاگ و ...
-                                    </p>
-                                    <a href="#"><i class="fas fa-chevron-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="icon">
-                                        <img src="/static/arfo/demo/img/services/icon-3-v2.png" alt="icon">
-                                    </div>
-                                    <h4>گرافیک</h4>
-                                    <p> طراحی بروشور . تراکت .منوال شرکتی . آگهی . لوگو .بنر توسط طراح گرافیک مجرب
-                                    </p>
-                                    <a href="#"><i class="fas fa-chevron-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Services End -->
-            <!-- Resume Start -->
-            <section class="resume v2" id="resume">
-                <div class="container">
-                    <div class="title">
-                        <h2>رزومه من</h2>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
-                        </p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <i class="fas fa-school"></i>
-                                    <h4>متوسطه</h4>
-                                    <h5>دبیرستان استعداد های درخشان علامه حلی</h5>
-                                    <p>رشته: ریاضی فیزیک </p>
-                                    <p>معدل : ۱۷٫۳۳</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <i class="fas fa-landmark"></i>
-                                    <h4>کارشناسی</h4>
-                                    <h5>دانشگاه اراک</h5>
-                                    <p>رشته : مهندسی مکانیک </p>
-                                    <p>معدل : ۱۶٫۰۵</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <i class="fas fa-graduation-cap"></i>
-                                    <h4>کارشناسی ارشد</h4>
-                                    <h5>دانشگاه اراک</h5>
-                                    <p>رشته : مهندسی مکاترونیک</p>
-                                    <p>وضعیت : ناتمام</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <i class="fas fa-building"></i>
-                                    <h4>تجربه کاری</h4>
-                                    <h5>ایده پرازان بهیاد</h5>
-                                    <p>سمت : کارشناس فروش</p>
-                                    <p>سمت :  توسعه دهنده وبسایت</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Resume End -->
-            <!-- Skill Start -->
-            <section class="skill v2">
-                <div class="container">
-                    <div class="title">
-                        <h2>ورق مهارت</h2>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
-                        </p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6>برنامه نویسی به زبان پایتون</h6>
-                                    <div class="progress-over">
-                                        <div class="progress">
-                                            <div class="progress-bar wow animate__slideInLeft" data-wow-duration="1.9s" data-wow-delay="0s" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="pur-count">
-                                                    <span class="counter">90</span>%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6>Django | Flask توسعه وبسایت با</h6>
-                                    <div class="progress-over">
-                                        <div class="progress">
-                                            <div class="progress-bar wow animate__slideInLeft" data-wow-duration="1.9s" data-wow-delay="0s" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="pur-count">
-                                                    <span class="counter">60</span>%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6> Matlab برنامه نویس </h6>
-                                    <div class="progress-over">
-                                        <div class="progress">
-                                            <div class="progress-bar wow animate__slideInLeft" data-wow-duration="1.9s" data-wow-delay="0s" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="pur-count">
-                                                    <span class="counter">60</span>%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6>DevOps</h6>
-                                    <div class="progress-over">
-                                        <div class="progress">
-                                            <div class="progress-bar wow animate__slideInLeft" data-wow-duration="1.9s" data-wow-delay="0s" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="pur-count">
-                                                    <span class="counter">50</span>%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6>Deep Learning in Python (Keras) یادگیری عمیق در پایتون</h6>
-                                    <div class="progress-over">
-                                        <div class="progress">
-                                            <div class="progress-bar wow animate__slideInLeft" data-wow-duration="1.9s" data-wow-delay="0s" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="pur-count">
-                                                    <span class="counter">60</span>%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6>GNU Linux</h6>
-                                    <div class="progress-over">
-                                        <div class="progress">
-                                            <div class="progress-bar wow animate__slideInLeft" data-wow-duration="1.9s" data-wow-delay="0s" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="pur-count">
-                                                    <span class="counter">75</span>%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6>Enlish Language | زبان انگلیسی</h6>
-                                    <div class="progress-over">
-                                        <div class="progress">
-                                            <div class="progress-bar wow animate__slideInLeft" data-wow-duration="1.9s" data-wow-delay="0s" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="pur-count">
-                                                    <span class="counter">75</span>%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6>Web Crawling</h6>
-                                    <div class="progress-over">
-                                        <div class="progress">
-                                            <div class="progress-bar wow animate__slideInLeft" data-wow-duration="1.9s" data-wow-delay="0s" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="pur-count">
-                                                    <span class="counter">85</span>%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6>نقشه کشی ۳ بعدی و مدل سازی با SolidWork</h6>
-                                    <div class="progress-over">
-                                        <div class="progress">
-                                            <div class="progress-bar wow animate__slideInLeft" data-wow-duration="1.9s" data-wow-delay="0s" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="pur-count">
-                                                    <span class="counter">90</span>%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Skill End -->
-            <!-- Portfolio Start -->
-            <section class="portfolio v2" id="projects">
-                <div class="container">
-                    <div class="title">
-                        <h6>نمونه کار عالی</h6>
-                        <h2>گالری کارهای انجام شده</h2>
-                    </div>
-                    <div class="portfolio-demo-btn">
-                        <button data-filter="*" class="active">همه</button>
-                        <button data-filter=".mobile-app">اپلیکیشن موبایل</button>
-                        <button data-filter=".web-design">طراحی وب</button>
-                        <button data-filter=".branding">طراحی برند</button>
-                    </div>
-                    <!-- Portfolio Demo Start -->
-                    <div class="row portfolio-demo">
-                        <!-- Portfolio Item Start -->
-                        <div class="col-sm-6 col-lg-4 portfolio-item mobile-app">
-                            <div class="portfolio-thumb">
-                                <img src="/static/arfo/demo/img/portfolio/1.jpg" alt="Image">
-                                <div class="portfolio-overlay d-flex align-items-center">
-                                    <div class="contant">
-                                        <div class="portfolio-shap">
-                                            <span class="shap shap-1"></span>
-                                            <span class="shap shap-2"></span>
-                                        </div>
-                                        <h4>UI/UX طراحی در- 1399</h4>
-                                        <h6>شهریور 1399, <br> ایران، ارومیه </h6>
-                                        <div class="button">
-                                            <a href="#">نمایش پروژه</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Portfolio Item End -->
-                        <!-- Portfolio Item Start -->
-                        <div class="col-sm-6 col-lg-4 portfolio-item web-design">
-                            <div class="portfolio-thumb">
-                                <img src="/static/arfo/demo/img/portfolio/2.jpg" alt="Image">
-                                <div class="portfolio-overlay d-flex align-items-center">
-                                    <div class="contant">
-                                        <div class="portfolio-shap">
-                                            <span class="shap shap-1"></span>
-                                            <span class="shap shap-2"></span>
-                                        </div>
-                                        <h4>UI/UX طراحی در- 1399</h4>
-                                        <h6>شهریور 1399, <br> ایران، ارومیه </h6>
-                                        <div class="button">
-                                            <a href="#">نمایش پروژه</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Portfolio Item End -->
-                        <!-- Portfolio Item Start -->
-                        <div class="col-sm-6 col-lg-4 portfolio-item mobile-app">
-                            <div class="portfolio-thumb">
-                                <img src="/static/arfo/demo/img/portfolio/3.jpg" alt="Image">
-                                <div class="portfolio-overlay d-flex align-items-center">
-                                    <div class="contant">
-                                        <div class="portfolio-shap">
-                                            <span class="shap shap-1"></span>
-                                            <span class="shap shap-2"></span>
-                                        </div>
-                                        <h4>UI/UX طراحی در- 1399</h4>
-                                        <h6>شهریور 1399, <br> ایران، ارومیه </h6>
-                                        <div class="button">
-                                            <a href="#">نمایش پروژه</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Portfolio Item End -->
-                        <!-- Portfolio Item Start -->
-                        <div class="col-sm-6 col-lg-4 portfolio-item branding">
-                            <div class="portfolio-thumb">
-                                <img src="/static/arfo/demo/img/portfolio/4.jpg" alt="Image">
-                                <div class="portfolio-overlay d-flex align-items-center">
-                                    <div class="contant">
-                                        <div class="portfolio-shap">
-                                            <span class="shap shap-1"></span>
-                                            <span class="shap shap-2"></span>
-                                        </div>
-                                        <h4>UI/UX طراحی در- 1399</h4>
-                                        <h6>شهریور 1399, <br> ایران، ارومیه </h6>
-                                        <div class="button">
-                                            <a href="#">نمایش پروژه</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Portfolio Item End -->
-                        <!-- Portfolio Item Start -->
-                        <div class="col-sm-6 col-lg-4 portfolio-item mobile-app web-design">
-                            <div class="portfolio-thumb">
-                                <img src="/static/arfo/demo/img/portfolio/5.jpg" alt="Image">
-                                <div class="portfolio-overlay d-flex align-items-center">
-                                    <div class="contant">
-                                        <div class="portfolio-shap">
-                                            <span class="shap shap-1"></span>
-                                            <span class="shap shap-2"></span>
-                                        </div>
-                                        <h4>UI/UX طراحی در- 1399</h4>
-                                        <h6>شهریور 1399, <br> ایران، ارومیه </h6>
-                                        <div class="button">
-                                            <a href="#">نمایش پروژه</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Portfolio Item End -->
-                        <!-- Portfolio Item Start -->
-                        <div class="col-sm-6 col-lg-4 portfolio-item branding">
-                            <div class="portfolio-thumb">
-                                <img src="/static/arfo/demo/img/portfolio/6.jpg" alt="Image">
-                                <div class="portfolio-overlay d-flex align-items-center">
-                                    <div class="contant">
-                                        <div class="portfolio-shap">
-                                            <span class="shap shap-1"></span>
-                                            <span class="shap shap-2"></span>
-                                        </div>
-                                        <h4>UI/UX طراحی در- 1399</h4>
-                                        <h6>شهریور 1399, <br> ایران، ارومیه </h6>
-                                        <div class="button">
-                                            <a href="#">نمایش پروژه</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Portfolio Item End -->
-                    </div>
-                    <!-- Portfolio Demo End -->
-                </div>
-            </section>
-            <!-- Portfolio End -->
-            <!-- Messenger Request Start -->
-            <section class="messenger-request">
-                <div class="container">
-                    <div class="main-bax">
-                        <div class="box-header">
-                            <div class="row align-items-center">
-                                <div class="col-md-8">
-                                    <div class="title">
-                                        <h4>من آماده همکاری با شما هستم.</h4>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="social">
-                                        <ul>
-                                            <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-3">
-                                    <input type="text" placeholder="نام*">
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <input type="text" placeholder="شماره همراه*">
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <select name="option">
-                                        <option value="">انتخاب یک سرویس</option>
-                                        <option value="">طراحی سایت با ورد پرس</option>
-                                        <option value="">طراحی سایت با لاراول</option>
-                                        <option value="">طراحی سایت با چنگو یا فلسک</option>
-                                        <option value="">ربات خزشگر وبسایت</option>
-                                        <option value="">طراحی API</option>
-                                        <option value="">ربات تلگرام</option>
-                                        <option value="">ربات های تبچی تبلیغاتی تلگرام</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <button class="send-btn" type="submit">ارسال درخواست شما <i
-                                            class="fas fa-angle-double-right"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                        <p><i class="fas fa-info"></i> 15 ساعت کار دارم شما هر زمان به من پیام می دهید من در اسرع وقت برمی گردم.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <!-- Messenger Request End -->
-
-            <!-- Blog V2 Start -->
-            <section class="blog v2" id="blog">
-                <div class="container">
-                    <div class="title">
-                        <h2> آخرین مطالب بلاگ من</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="/static/arfo/demo/img/blog/1.jpg" alt="img">
-                                    <div class="text">
-                                        <h4>ویرایش تصویر- 1399</h4>
-                                        <p>ساخت برنامه 1399</p>
-                                        <a href="rtl-blog-details-particlesy.html">ادامه مطلب <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="/static/arfo/demo/img/blog/2.jpg" alt="img">
-                                    <div class="text">
-                                        <h4>طراحی عالی و جذاب</h4>
-                                        <p>ساخت برنامه 1399</p>
-                                        <a href="rtl-blog-details-particlesy.html">ادامه مطلب <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="/static/arfo/demo/img/blog/3.jpg" alt="img">
-                                    <div class="text">
-                                        <h4>سبک مدرن - 1399</h4>
-                                        <p>ساخت برنامه 1399</p>
-                                        <a href="rtl-blog-details-particlesy.html">ادامه مطلب <i class="fas fa-long-arrow-alt-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Blog V2 End -->
-            
-            <!-- Contact V2 Start -->
-            <section class="contact v2" id="contact">
-                <div class="container">
-                    <div class="title">
-                        <h2>با من تماس بگیر</h2>
-                        <p>د
-                        </p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <i class="fas fa-envelope-open"></i>
-                                    <h4>ایمیل</h4>
-                                    <p>ali.mrd318@gmail.com</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <i class="fas fa-phone-alt"></i>
-                                    <h4>تلفن</h4>
-                                    <p>09185802668</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <h4>موقعیت</h4>
-                                    <p>مرکزی . اراک .</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-content">
-                        <h5>پیام را بنویسید</h5>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input name="name" type="text" placeholder="نام*" value="" size="30" aria-required="true" required="required">
-                                </div>
-                                <div class="col-md-6">
-                                    <input name="email" type="email" placeholder="آدرس ایمیل" value="" size="30" aria-required="true" required="required">
-                                </div>
-                                <div class="col-md-6">
-                                    <input name="phone" type="text" placeholder="شماره تلفن یا وب سایت(اختیاری)" value="" size="30" aria-required="true" required="required">
-                                </div>
-                                <div class="col-md-6"><select>
-                                        <option value="">انتخاب خدمات</option>
-                                        <option value="">توسعه دهنده</option>
-                                        <option value="">سئو مارکتینگ</option>
-                                        <option value="">طراحی گرافیک</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="message" placeholder="پیام ..."></textarea>
-                                </div>
-                                <div class="col-md-5">
-                                    <button class="submit-btn" type="submit">ارسال پیام شما</button>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="social">
-                                        <ul>
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-snapchat-ghost"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <!-- Contact V2 End -->
-        </main>
-        <footer>
-            <div class="main-footer v2">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-9">
-                            <p>کپی رایت © 1399 قدرت گرفته از <a href="https://www.rtl-theme.com/author/tn_plugin/" target="_blank">آلفاکس </a>
-                           </p>
-                        </div>
-                        <div class="col-3">
-                            <div class="btton-top-btn">
-                                <a href="#home"><i class="fas fa-angle-up"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <!-- jQuery -->
-    <script src="/static/arfo/demo/js/vendor/jquery-3.5.1.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="/static/arfo/demo/js/vendor/bootstrap.min.js"></script>
-
-    <!-- Bootstrap Bundle -->
-    <script src="/static/arfo/demo/js/vendor/bootstrap.bundle.min.js"></script>
-
-    <!-- Smart Scroll -->
-    <script src="/static/arfo/demo/js/vendor/smart-scroll.min.js"></script>
-
-    <!-- Owl Carousel -->
-    <script src="/static/arfo/demo/js/vendor/owl.carousel.min.js"></script>
-
-    <!-- Slick -->
-    <script src="/static/arfo/demo/js/vendor/slick.min.js"></script>
-
-    <!-- Images Loaded -->
-    <script src="/static/arfo/demo/js/vendor/imagesloaded.min.js"></script>
-
-    <!-- Isotope -->
-    <script src="/static/arfo/demo/js/vendor/isotope.min.js"></script>
-
-    <!-- Waypoints -->
-    <script src="/static/arfo/demo/js/vendor/waypoints.min.js"></script>
-
-    <!-- Counter Up -->
-    <script src="/static/arfo/demo/js/vendor/counterup.min.js"></script>
-
-    <!-- Animate Typing -->
-    <script src="/static/arfo/demo/js/vendor/animateTyping.js"></script>
-
-    <!-- Venobox -->
-    <script src="/static/arfo/demo/js/vendor/venobox.min.js"></script>
-
-    <!-- Wow -->
-    <script src="/static/arfo/demo/js/vendor/wow.min.js"></script>
-
-    <!-- Retina -->
-    <script src="/static/arfo/demo/js/vendor/retina.min.js"></script>
-
-    <!-- Parallaxie -->
-    <script src="/static/arfo/demo/js/vendor/parallaxie.js"></script>
-
-    <!-- Particles -->
-    <script src="/static/arfo/demo/js/vendor/particles.min.js"></script>
-    <script src="/static/arfo/demo/js/vendor/particles-animation.js"></script>
-
-    <!-- Ripples -->
-    <script src="/static/arfo/demo/js/vendor/ripples-min.js"></script>
-
-    <!-- QueryLoader2 -->
-    <script src="/static/arfo/demo/js/vendor/queryloader2.min.js"></script>
-
-    <!-- Index -->
-    <script src="/static/arfo/demo/js/index.js"></script>
-
-</body>
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="/static/porto/vendor/rs-plugin/css/settings.css">
+		<link rel="stylesheet" href="/static/porto/vendor/rs-plugin/css/layers.css">
+		<link rel="stylesheet" href="/static/porto/vendor/rs-plugin/css/navigation.css">
+		<link rel="stylesheet" type="text/css" href="/static/porto/vendor/rs-plugin/revolution-addons/typewriter/css/typewriter.css">
 
 
+
+
+
+
+
+
+		<link rel="stylesheet" href="/static/porto/css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="/static/porto/vendor/modernizr/modernizr.min.js"></script>
+
+	</head>
+	<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+		<div class="loading-overlay">
+			<div class="bounce-loader">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
+
+		<div class="body">
+			<header id="header" class="header-transparent header-semi-transparent header-semi-transparent-dark" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 53, 'stickySetTop': '-53px'}">
+				<div class="header-body border-top-0 bg-dark box-shadow-none">
+					<div class="header-top header-top-borders header-top-light-2-borders">
+						<div class="container container-lg h-100">
+							<div class="header-row h-100">
+								<div class="header-column justify-content-start">
+									<div class="header-row">
+										<nav class="header-nav-top">
+											<ul class="nav nav-pills">
+												<li class="nav-item nav-item-borders py-2 d-none d-sm-inline-flex">
+													<span class="pl-0"><i class="far fa-dot-circle text-4 text-color-primary"></i> فلکه دانشگاه، برج بلور، طبقه 456</span>
+												</li>
+												<li class="nav-item nav-item-borders py-2">
+													<a href="tel:123-456-7890"><i class="fab fa-whatsapp text-4 text-color-primary"></i> <span class="ltr-text">123 456 7890</span></a>
+												</li>
+												<li class="nav-item nav-item-borders py-2 d-none d-md-inline-flex">
+													<a href="mailto:mail@domain.com"><i class="far fa-envelope text-4 text-color-primary"></i> mail@domain.com</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+								<div class="header-column justify-content-end">
+									<div class="header-row">
+										<nav class="header-nav-top">
+											<ul class="nav nav-pills">
+												<li class="nav-item nav-item-borders py-2 d-none d-lg-inline-flex">
+													<a href="#">بلاگ</a>
+												</li>
+												<li class="nav-item nav-item-borders py-2 pr-0 dropdown">
+													<a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<img src="/static/porto/img/blank.gif" class="flag flag-ir" alt="Farsi"> فارسی
+														<i class="fas fa-angle-down p-relative top-1"></i>
+													</a>
+													<div class="dropdown-menu" aria-labelledby="dropdownLanguage">
+														<a class="dropdown-item" href="#"><img src="/static/porto/img/blank.gif" class="flag flag-us" alt="English"> انگلیسی</a>
+														<a class="dropdown-item" href="#"><img src="/static/porto/img/blank.gif" class="flag flag-es" alt="English"> اسپانیایی</a>
+														<a class="dropdown-item" href="#"><img src="/static/porto/img/blank.gif" class="flag flag-fr" alt="English"> فرانسوی</a>
+													</div>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="header-container header-container-height-sm container container-lg">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-logo">
+										<a href="index.html">
+											{% for item in landing %}
+											<img alt="Porto" width="82" height="40" src="{{item.fisrt_section.logoheader.url}}">
+											{% endfor %}
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="header-column justify-content-end">
+								<div class="header-row">
+									<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
+										<div class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
+											<nav class="collapse">
+												<ul class="nav nav-pills" id="mainNav">
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="index.html">
+															خانه
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a class="dropdown-item" href="index.html">
+																	صفحه اول
+																</a>
+															</li>
+															<li>
+																<a class="dropdown-item" href="index.html#demos">
+																	پیش‌نمایش ها
+																</a>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">کلاسیک</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="index-classic.html">کلاسیک - اصلی</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">شرکتی <span class="tip tip-dark">داغ</span></a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="index-corporate.html">شرکتی - نسخه 1</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">نمونه‌کارها</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="index-portfolio.html">نمونه‌کارها - نسخه 1</a></li>
+																	<li><a class="dropdown-item" href="index-portfolio-2.html">نمونه‌کارها - نسخه 2</a></li>
+																</ul>
+															</li>		
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">بلاگ</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="index-blog.html">بلاگ - نسخه 1</a></li>
+																	<li><a class="dropdown-item" href="index-blog-2.html">بلاگ - نسخه 2</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">تک صفحه</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="index-one-page.html">تک صفحه اصلی</a></li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown dropdown-mega">
+														<a class="dropdown-item dropdown-toggle" href="elements.html">
+															عناصر
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<div class="dropdown-mega-content">
+																	<div class="row">
+																		<div class="col-lg-3">
+																			<span class="dropdown-mega-sub-title">عناصر 1</span>
+																			<ul class="dropdown-mega-sub-nav">
+																				<li><a class="dropdown-item" href="elements-accordions.html">لیست های باز شونده</a></li>
+																				<li><a class="dropdown-item" href="elements-toggles.html">لیست باز شونده</a></li>
+																				<li><a class="dropdown-item" href="elements-tabs.html">تب ها</a></li>
+																				<li><a class="dropdown-item" href="elements-icons.html">آیکن‌ها</a></li>
+																				<li><a class="dropdown-item" href="elements-icon-boxes.html">جعبه های آیکن</a></li>
+																				<li><a class="dropdown-item" href="elements-carousels.html">گردونه ها</a></li>
+																				<li><a class="dropdown-item" href="elements-modals.html">مودال ها</a></li>
+																				<li><a class="dropdown-item" href="elements-lightboxes.html">لایت باکس ها</a></li>
+																				<li><a class="dropdown-item" href="elements-word-rotator.html">گردش کلمات</a></li>
+																				<li><a class="dropdown-item" href="elements-before-after.html">قبل / بعد</a></li>
+																				<li><a class="dropdown-item" href="elements-360-image-viewer.html">نمایشگر تصویر 360 درجه</a></li>
+																			</ul>
+																		</div>
+																		<div class="col-lg-3">
+																			<span class="dropdown-mega-sub-title">عناصر 2</span>
+																			<ul class="dropdown-mega-sub-nav">
+																				<li><a class="dropdown-item" href="elements-buttons.html">دکمه ها</a></li>
+																				<li><a class="dropdown-item" href="elements-badges.html">نشان ها</a></li>
+																				<li><a class="dropdown-item" href="elements-lists.html">لیست ها</a></li>
+																				<li><a class="dropdown-item" href="elements-cards.html">کارت ها</a></li>
+																				<li><a class="dropdown-item" href="elements-image-gallery.html">گالری تصویر</a></li>
+																				<li><a class="dropdown-item" href="elements-image-frames.html">کادرهای تصویر</a></li>
+																				<li><a class="dropdown-item" href="elements-image-hotspots.html">نقاط داغ تصویر</a></li>
+																				<li><a class="dropdown-item" href="elements-testimonials.html">دیدگاه مشتریان</a></li>
+																				<li><a class="dropdown-item" href="elements-blockquotes.html">نقل قول ها</a></li>							
+																				<li><a class="dropdown-item" href="elements-sticky-elements.html">عناصر چسبان</a></li>
+																			</ul>
+																		</div>
+																		<div class="col-lg-3">
+																			<span class="dropdown-mega-sub-title">عناصر 3</span>
+																			<ul class="dropdown-mega-sub-nav">
+																				<li><a class="dropdown-item" href="elements-typography.html">تایپوگرافی</a></li>
+																				<li><a class="dropdown-item" href="elements-call-to-action.html">نوار متنی</a></li>
+																				<li><a class="dropdown-item" href="elements-pricing-tables.html">جداول قیمت ها</a></li>
+																				<li><a class="dropdown-item" href="elements-tables.html">جدول‌ها</a></li>
+																				<li><a class="dropdown-item" href="elements-progressbars.html">نوارهای پیشرفت</a></li>
+																				<li><a class="dropdown-item" href="elements-process.html">پروسه</a></li>
+																				<li><a class="dropdown-item" href="elements-counters.html">شمارنده ها</a></li>
+																				<li><a class="dropdown-item" href="elements-countdowns.html">شمارش معکوس</a></li>
+																				<li><a class="dropdown-item" href="elements-sections-parallax.html">بخش ها و پارالاکس</a></li>
+																				<li><a class="dropdown-item" href="elements-tooltips-popovers.html">تولتیپ و پاپ اور</a></li>							
+																			</ul>
+																		</div>
+																		<div class="col-lg-3">
+																			<span class="dropdown-mega-sub-title">عناصر 4</span>
+																			<ul class="dropdown-mega-sub-nav">
+																				<li><a class="dropdown-item" href="elements-headings.html">تیتر ها</a></li>
+																				<li><a class="dropdown-item" href="elements-dividers.html">جداکننده ها</a></li>
+																				<li><a class="dropdown-item" href="elements-animations.html">انیمیشن ها</a></li>
+																				<li><a class="dropdown-item" href="elements-medias.html">رسانه ها</a></li>
+																				<li><a class="dropdown-item" href="elements-maps.html">نقشه ها</a></li>
+																				<li><a class="dropdown-item" href="elements-arrows.html">فلش ها</a></li>
+																				<li><a class="dropdown-item" href="elements-star-ratings.html">امتیازدهی ستاره‌ای</a></li>
+																				<li><a class="dropdown-item" href="elements-alerts.html">اعلان‌ها</a></li>
+																				<li><a class="dropdown-item" href="elements-posts.html">مطالب</a></li>
+																				<li><a class="dropdown-item" href="elements-forms-basic-contact.html">فرم ها</a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle active" href="#">
+															ویژگی ها
+														</a>
+														<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">سرصفحه ها</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="feature-headers-overview.html">نمای کلی</a></li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">کلاسیک</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-headers-classic.html">کلاسیک</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-classic-language-dropdown.html">کلاسیک + منوی انتخاب زبان</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-classic-big-logo.html">کلاسیک + لوگوی بزرگ</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">مسطح</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-headers-flat.html">مسطح</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-flat-top-bar.html">مسطح + نوار بالا</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-flat-top-bar-top-borders.html">مسطح + نوار بالا + خط بالا</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-flat-colored-top-bar.html">مسطح + نوار بالای رنگی</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-flat-borders.html">مسطح + خطوط</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">مرکز</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-headers-center.html">مرکز</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-center-double-navs.html">مرکز + ناوبری دوگانه</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-center-nav-buttons.html">مرکز + ناوبری + دکمه ها</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-center-below-slider.html">مرکز زیر اسلایدر</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">شناور</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-headers-floating-bar.html">نوار شناور</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-floating-icons.html">آیکن های شناور</a></li>
+																		</ul>
+																	</li>
+																	<li><a class="dropdown-item" href="feature-headers-below-slider.html">زیر اسلایدر</a></li>
+																	<li><a class="dropdown-item" href="feature-headers-full-video.html">تمام ویدئو</a></li>
+																	<li><a class="dropdown-item" href="feature-headers-narrow.html">باریک</a></li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">چسبان</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-headers-sticky-shrink.html">چسبان کوچک شونده</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-sticky-static.html">چسبان ایستا</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-sticky-change-logo.html">چسبان با لوگوی متغیر</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-sticky-reveal.html">چسبان ظاهر شونده</a></li>
+																		</ul>
+																	</li>				
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">شفاف</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-headers-transparent-light.html">شفاف روشن</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-transparent-dark.html">شفاف تیره</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-transparent-light-bottom-border.html">شفاف روشن + خط پایین</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-transparent-dark-bottom-border.html">شفاف تیره + خط پایین</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-transparent-bottom-slider.html">شفاف پایین اسلایدر</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-semi-transparent-light.html">نیمه شفاف روشن</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-semi-transparent-dark.html">نیمه شفاف تیره</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-semi-transparent-bottom-slider.html">نیمه شفاف زیر اسلایدر</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-semi-transparent-top-bar-borders.html">نیمه شفاف + نوار بالا + خطوط</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">تمام عرض</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-headers-full-width.html">تمام عرض</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-full-width-borders.html">تمام عرض + خطوط</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-full-width-transparent-light.html">تمام عرض شفاف روشن</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-full-width-transparent-dark.html">تمام عرض شفاف تیره</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-full-width-semi-transparent-light.html">تمام عرض نیمه شفاف روشن</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-full-width-semi-transparent-dark.html">تمام عرض نیمه شفاف تیره</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">نوار فهرست</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-headers-navbar.html">نوار فهرست</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-navbar-full.html">نوار فهرست تمام عرض</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-navbar-pills.html">نوار فهرست قرصی</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-navbar-divisors.html">نوار فهرست جدا شده</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-navbar-icons-search.html">نوار فهرست + آیکن ها + جستجو</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">نوار کناری</a>
+																		<ul class="dropdown-menu">
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">نوار کناری راست</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-headers-side-header-right-dropdown.html">منوی کشویی</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-right-expand.html">بسط داده شونده</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-right-columns.html">ستون ها</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-right-slide.html">اسلاید</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-right-semi-transparent.html">نیمه شفاف</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-right-dark.html">تیره</a></li>
+																				</ul>
+																			</li>
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">نوار کناری چپ</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-headers-side-header-left-dropdown.html">منوی کشویی</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-left-expand.html">بسط داده شونده</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-left-columns.html">ستون ها</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-left-slide.html">اسلاید</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-left-semi-transparent.html">نیمه شفاف</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-left-dark.html">تیره</a></li>
+																				</ul>
+																			</li>
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">نوار کناری خارج از چارچوب</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-headers-side-header-offcanvas-push.html">هل دادن</a></li>
+																					<li><a class="dropdown-item" href="feature-headers-side-header-offcanvas-slide.html">اسلاید</a></li>
+																				</ul>
+																			</li>
+																			<li><a class="dropdown-item" href="feature-headers-side-header-narrow-bar.html">سرصفحه کناری نوار باریک</a></li>
+																		</ul>
+																	</li>
+																	<li><a class="dropdown-item" href="feature-headers-sign-in-sign-up.html">ورود / ثبت نام</a></li>
+																	<li><a class="dropdown-item" href="feature-headers-logged.html">وارد شده</a></li>
+																	<li><a class="dropdown-item" href="feature-headers-mini-cart.html">سبد خرید کوچک</a></li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">طرح های جستجو</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-headers-search-simple-input.html">ورودی ساده</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-search-simple-input-reveal.html">ورودی ساده ظاهر شونده</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-search-dropdown.html">منوی کشویی</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-search-big-input-hidden.html">ورودی بزرگ پنهان</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-search-full-screen.html">تمام صفحه</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">اضافی</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-headers-extra-big-icon.html">آیکن بزرگ</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-extra-big-icons-top.html">آیکن های بزرگ بالا</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-extra-button.html">دکمه</a></li>
+																			<li><a class="dropdown-item" href="feature-headers-extra-background-color.html">پس زمینه رنگی</a></li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">فهرست ها</a>
+																<ul class="dropdown-menu">
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">قرص ها</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-navigations-pills.html">قرص ها</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-pills-arrows.html">قرص ها + فلش ها</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-pills-dark-text.html">قرص ها با متن تیره</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-pills-color-dropdown.html">قرص ها با منوی کشویی رنگی</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-pills-square.html">قرص های مستطیلی</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-pills-rounded.html">قرص های دور گرد</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">نوار ها</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-navigations-stripe.html">نوار</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-stripe-dark-text.html">نوار با متن تیره</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-stripe-color-dropdown.html">نوار با منوی کشویی رنگی</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">جلوه های هاور</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-navigations-hover-top-line.html">خط بالا</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-hover-top-line-animated.html">خط بالای متحرک</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-hover-top-line-color-dropdown.html">خط بالا با منوی کشویی رنگی</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-hover-bottom-line.html">خط پایین</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-hover-bottom-line-animated.html">خط پایین متحرک</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-hover-slide.html">اسلاید</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-hover-sub-title.html">زیر عنوان</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-hover-line-under-text.html">خط زیر متن</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">عمودی</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-navigations-vertical-dropdown.html">منوی کشویی</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-vertical-expand.html">بسط داده شونده</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-vertical-columns.html">ستون ها</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-vertical-slide.html">اسلاید</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">همبرگر</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-navigations-hamburguer-sidebar.html">نوار کناری</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-hamburguer-overlay.html">لایه‌ی رویی</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">طرح های منوی کشویی</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-dark.html">تیره</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-light.html">روشن</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-colors.html">رنگ ها</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-top-line.html">خط بالا</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-square.html">مربع</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-arrow.html">فلش دار</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-arrow-center.html">فلش دار در وسط</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-modern-light.html">مدرن روشن</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-modern-dark.html">مدرن تیره</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">جلوه های منوی کشویی</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-effect-no-effect.html">بدون جلوه</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-effect-opacity.html">محو شدن</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-effect-move-to-top.html">حرکت به بالا</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-effect-move-to-bottom.html">حرکت به پایین</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-effect-move-to-right.html">حرکت به راست</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-dropdowns-effect-move-to-left.html">حرکت به چپ</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">طرح های فونت</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-navigations-font-small.html">کوچک</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-font-medium.html">متوسط</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-font-large.html">بزرگ</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-font-alternative.html">دومین</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">آیکن‌ها</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-navigations-icons.html">آیکن‌ها</a></li>
+																			<li><a class="dropdown-item" href="feature-navigations-icons-float-icons.html">آیکن های شناور</a></li>
+																		</ul>
+																	</li>
+																	<li><a class="dropdown-item" href="feature-navigations-sub-title.html">زیر عنوان</a></li>
+																	<li><a class="dropdown-item" href="feature-navigations-divisors.html">جدا کننده ها</a></li>
+																	<li><a class="dropdown-item" href="feature-navigations-logo-between.html">لوگو در میان</a></li>
+																	<li><a class="dropdown-item" href="feature-navigations-one-page.html">ناوبری تک صفحه</a></li>
+																	<li><a class="dropdown-item" href="feature-navigations-click-to-open.html">کلیک برای باز شدن</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">تیتر های صفحه</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="feature-page-headers-overview.html">نمای کلی</a></li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">کلاسیک</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-page-headers-classic-small.html">کوچک</a></li>				
+																			<li><a class="dropdown-item" href="feature-page-headers-classic-medium.html">متوسط</a></li>				
+																			<li><a class="dropdown-item" href="feature-page-headers-classic-large.html">بزرگ</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">مدرن</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-page-headers-modern-small.html">کوچک</a></li>				
+																			<li><a class="dropdown-item" href="feature-page-headers-modern-medium.html">متوسط</a></li>				
+																			<li><a class="dropdown-item" href="feature-page-headers-modern-large.html">بزرگ</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">رنگ ها</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-page-headers-colors-primary.html">اولیه</a></li>				
+																			<li><a class="dropdown-item" href="feature-page-headers-colors-secondary.html">ثانویه</a></li>				
+																			<li><a class="dropdown-item" href="feature-page-headers-colors-tertiary.html">سومین</a></li>				
+																			<li><a class="dropdown-item" href="feature-page-headers-colors-quaternary.html">چهارمین</a></li>				
+																			<li><a class="dropdown-item" href="feature-page-headers-colors-light.html">روشن</a></li>				
+																			<li><a class="dropdown-item" href="feature-page-headers-colors-dark.html">تیره</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">مکان عنوان</a>
+																		<ul class="dropdown-menu">
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">راست</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-page-headers-title-position-right-small.html">کوچک</a></li>				
+																					<li><a class="dropdown-item" href="feature-page-headers-title-position-right-medium.html">متوسط</a></li>				
+																					<li><a class="dropdown-item" href="feature-page-headers-title-position-right-large.html">بزرگ</a></li>
+																				</ul>
+																			</li>
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">چپ</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-page-headers-title-position-left-small.html">کوچک</a></li>				
+																					<li><a class="dropdown-item" href="feature-page-headers-title-position-left-medium.html">متوسط</a></li>				
+																					<li><a class="dropdown-item" href="feature-page-headers-title-position-left-large.html">بزرگ</a></li>
+																				</ul>
+																			</li>
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">مرکز</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-page-headers-title-position-center-small.html">کوچک</a></li>				
+																					<li><a class="dropdown-item" href="feature-page-headers-title-position-center-medium.html">متوسط</a></li>				
+																					<li><a class="dropdown-item" href="feature-page-headers-title-position-center-large.html">بزرگ</a></li>
+																				</ul>
+																			</li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">پس زمینه</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-page-headers-background-fixed.html">ثابت</a></li>		
+																			<li><a class="dropdown-item" href="feature-page-headers-background-parallax.html">پارالاکس</a></li>
+																			<li><a class="dropdown-item" href="feature-page-headers-background-video.html">ویدئو</a></li>			
+																			<li><a class="dropdown-item" href="feature-page-headers-background-transparent-header.html">سرصفحه شفاف</a></li>			
+																			<li><a class="dropdown-item" href="feature-page-headers-background-pattern.html">الگو</a></li>			
+																			<li><a class="dropdown-item" href="feature-page-headers-background-overlay.html">لایه‌ی رویی</a></li>			
+																			<li><a class="dropdown-item" href="feature-page-headers-background-clean.html">تمیز (بدون پس زمینه)</a></li>	
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">اضافی</a>
+																		<ul class="dropdown-menu">
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">تکه مسیر</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-page-headers-extra-breadcrumb-outside.html">خارج</a></li>				
+																					<li><a class="dropdown-item" href="feature-page-headers-extra-breadcrumb-dark.html">تیره</a></li>			
+																				</ul>
+																			</li>
+																			<li><a class="dropdown-item" href="feature-page-headers-extra-scroll-to-content.html">اسکرول به محتوا</a></li>			
+																			<li><a class="dropdown-item" href="feature-page-headers-extra-full-width.html">تمام عرض</a></li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">پاصفحه ها</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="feature-footers-overview.html">نمای کلی</a></li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">کلاسیک</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-footers-classic.html#footer">کلاسیک</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-classic-advanced.html#footer">پیشرفته</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-classic-compact.html#footer">فشرده</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-classic-simple.html#footer">ساده</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-classic-locations.html#footer">مکان ها</a></li>
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">کپی رایت</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-footers-classic-copyright-light.html#footer">روشن</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-classic-copyright-dark.html#footer">تیره</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-classic-copyright-social-icons.html#footer">آیکن های اجتماعی</a></li>
+																				</ul>
+																			</li>
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">رنگ ها</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-footers-classic-colors-primary.html#footer">اولیه</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-classic-colors-secondary.html#footer">ثانویه</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-classic-colors-tertiary.html#footer">سومین</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-classic-colors-quaternary.html#footer%09%09%09">چهارمین</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-classic-colors-light.html#footer">روشن</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-classic-colors-light-simple.html#footer">روشن ساده</a></li>
+																				</ul>
+																			</li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">مدرن</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-footers-modern.html#footer">مدرن</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-modern-font-style-alternative.html#footer">طرح فونت دوم</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-modern-clean.html#footer">تمیز</a></li>	
+																			<li><a class="dropdown-item" href="feature-footers-modern-useful-links.html#footer">لینک های مفید</a></li>
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">پس زمینه</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-footers-modern-background-image-simple.html#footer">تصویر ساده</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-modern-background-image-advanced.html#footer">تصویر پیشرفته</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-modern-background-video-simple.html#footer">ویدئو ساده</a></li>
+																				</ul>
+																			</li>
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">نوار متنی</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-footers-modern-call-to-action-button.html#footer">دکمه</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-modern-call-to-action-simple.html#footer">ساده</a></li>
+																				</ul>
+																			</li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">بلاگ</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-footers-blog-classic.html#footer">بلاگ کلاسیک</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">تجارت الکترونیک</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-footers-ecommerce-classic.html#footer">تجارت الکترونیک کلاسیک</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">فرم تماس</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-footers-contact-form-classic.html#footer">کلاسیک</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-contact-form-above-the-map.html#footer">بالای نقشه</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-contact-form-center.html#footer">مرکز</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-contact-form-columns.html#footer">ستون ها</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">نقشه</a>
+																		<ul class="dropdown-menu">
+																			<li><a class="dropdown-item" href="feature-footers-map-hidden.html#footer">نقشه پنهان</a></li> 
+																			<li><a class="dropdown-item" href="feature-footers-map-full-width.html#footer">تمام عرض</a></li>
+																		</ul>
+																	</li>
+																	<li class="dropdown-submenu">
+																		<a class="dropdown-item" href="#">اضافی</a>
+																		<ul class="dropdown-menu">
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">ساده</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-footers-extra-top-social-icons.html#footer">آیکن های اجتماعی بالا</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-extra-big-icons.html#footer">آیکن های بزرگ</a></li>
+																				</ul>
+																			</li>
+																			<li><a class="dropdown-item" href="feature-footers-extra-recent-work.html#footer">آخرین کارها</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-extra-reveal.html#footer">ظاهر شدن</a></li>
+																			<li><a class="dropdown-item" href="feature-footers-extra-instagram.html#footer">اینستاگرام</a></li>
+																			<li class="dropdown-submenu">
+																				<a class="dropdown-item" href="#">تمام عرض</a>
+																				<ul class="dropdown-menu">
+																					<li><a class="dropdown-item" href="feature-footers-extra-full-width-light.html#footer">ساده روشن</a></li>
+																					<li><a class="dropdown-item" href="feature-footers-extra-full-width-dark.html#footer">ساده تیره</a></li>
+																				</ul>
+																			</li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">اسلایدر ها</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="index-classic.html">اسلایدر Revolution</a></li>
+																	<li><a class="dropdown-item" href="index-slider-nivo.html">اسلایدر Nivo</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">اختیارات طرح</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="feature-layout-boxed.html">چارچوب</a></li>
+																	<li><a class="dropdown-item" href="feature-layout-dark.html">تیره</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">اضافی</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="feature-grid-system.html">سیستم توری</a></li>
+																	<li><a class="dropdown-item" href="feature-page-loading.html">بارگذاری صفحه</a></li>
+																	<li><a class="dropdown-item" href="feature-page-transition.html">انتقال صفحه</a></li>
+																	<li><a class="dropdown-item" href="feature-lazy-load.html">بارگذاری تنبل</a></li>
+																	<li><a class="dropdown-item" href="feature-side-panel.html">پنل کناری</a></li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="#">
+															صفحات
+														</a>
+														<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">تماس با ما</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="contact-us-advanced.php">تماس با ما - پیشرفته</a></li>
+																	<li><a class="dropdown-item" href="contact-us.html">تماس با ما - پایه</a></li>
+																	<li><a class="dropdown-item" href="contact-us-recaptcha.html">تماس با ما - Recaptcha</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">درباره ما</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="about-us-advanced.html">درباره ما - پیشرفته</a></li>
+																	<li><a class="dropdown-item" href="about-us.html">درباره ما - پایه</a></li>
+																	<li><a class="dropdown-item" href="about-me.html">درباره من</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">طرح ها</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="page-full-width.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="page-right-sidebar.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="page-left-sidebar.html">نوار کناری چپ</a></li>
+																	<li><a class="dropdown-item" href="page-left-and-right-sidebars.html">نوار کناری چپ و راست</a></li>
+																	<li><a class="dropdown-item" href="page-sticky-sidebar.html">نوار کناری چسبان</a></li>
+																	<li><a class="dropdown-item" href="page-secondary-navbar.html">نوار کناری ثانویه</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">اضافی</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="page-404.html">خطای 404</a></li>
+																	<li><a class="dropdown-item" href="page-500.html">خطای 500</a></li>
+																	<li><a class="dropdown-item" href="page-coming-soon.html">به زودی</a></li>
+																	<li><a class="dropdown-item" href="page-maintenance-mode.html">حالت تعمیر</a></li>
+																	<li><a class="dropdown-item" href="page-search-results.html">نتایج جستجو</a></li>
+																	<li><a class="dropdown-item" href="sitemap.html">نقشه سایت</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">تیم</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="page-team-advanced.html">تیم - پیشرفته</a></li>
+																	<li><a class="dropdown-item" href="page-team.html">تیم - پایه</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">خدمات</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="page-services.html">خدمات - نسخه 1</a></li>
+																	<li><a class="dropdown-item" href="page-services-2.html">خدمات - نسخه 2</a></li>
+																	<li><a class="dropdown-item" href="page-services-3.html">خدمات - نسخه 3</a></li>
+																</ul>
+															</li>
+															<li><a class="dropdown-item" href="page-custom-header.html">سرصفحه سفارشی</a></li>
+															<li><a class="dropdown-item" href="page-careers.html">فرصت های شغلی</a></li>
+															<li><a class="dropdown-item" href="page-faq.html">سوالات متداول</a></li>
+															<li><a class="dropdown-item" href="page-login.html">ورود / ثبت نام</a></li>
+															<li><a class="dropdown-item" href="page-user-profile.html">پروفایل کاربر</a></li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="#">
+															نمونه‌کارها
+														</a>
+														<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">جزئیات پروژه</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="portfolio-single-wide-slider.html">اسلایدر عریض</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-small-slider.html">اسلایدر کوچک</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-full-width-slider.html">اسلایدر تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-gallery.html">گالری</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-carousel.html">گردونه</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-medias.html">رسانه ها</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-full-width-video.html">ویدئوی تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-masonry-images.html">لورم ایپسوم متن</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-right-sidebar.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-left-sidebar.html">نوار کناری چپ</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-left-and-right-sidebars.html">نوار کناری چپ و راست</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-sticky-sidebar.html">نوار کناری چسبان</a></li>
+																	<li><a class="dropdown-item" href="portfolio-single-extended.html">توسعه یافته</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">طرح های توری</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="portfolio-grid-1-column.html">1 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-grid-2-columns.html">2 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-grid-3-columns.html">3 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-grid-4-columns.html">4 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-grid-5-columns.html">5 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-grid-6-columns.html">6 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-grid-no-margins.html">بدون فاصله</a></li>
+																	<li><a class="dropdown-item" href="portfolio-grid-full-width.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="portfolio-grid-full-width-no-margins.html">تمام عرض بدون فاصله</a></li>
+																	<li><a class="dropdown-item" href="portfolio-grid-1-column-title-and-description.html">عنوان و توضیح</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">طرح های کاشی</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="portfolio-masonry-2-columns.html">2 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-masonry-3-columns.html">3 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-masonry-4-columns.html">4 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-masonry-5-columns.html">5 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-masonry-6-columns.html">6 ستون</a></li>
+																	<li><a class="dropdown-item" href="portfolio-masonry-no-margins.html">بدون فاصله</a></li>
+																	<li><a class="dropdown-item" href="portfolio-masonry-full-width.html">تمام عرض</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">طرح های نوار کناری</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="portfolio-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="portfolio-sidebar-left.html">نوار کناری چپ</a></li>
+																	<li><a class="dropdown-item" href="portfolio-sidebar-left-and-right.html">نوار کناری چپ و راست</a></li>
+																	<li><a class="dropdown-item" href="portfolio-sidebar-sticky.html">نوار کناری چسبان</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">Ajax</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="portfolio-ajax-page.html">Ajax در صفحه</a></li>
+																	<li><a class="dropdown-item" href="portfolio-ajax-modal.html">Ajax در مودال</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">اضافی</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="portfolio-extra-timeline.html">خط زمانی</a></li>
+																	<li><a class="dropdown-item" href="portfolio-extra-lightbox.html">لایت باکس</a></li>
+																	<li><a class="dropdown-item" href="portfolio-extra-load-more.html">بارگذاری بیشتر</a></li>
+																	<li><a class="dropdown-item" href="portfolio-extra-infinite-scroll.html">اسکرول بی نهایت</a></li>
+																	<li><a class="dropdown-item" href="portfolio-extra-pagination.html">صفحه‌بندی</a></li>
+																	<li><a class="dropdown-item" href="portfolio-extra-combination-filters.html">فیلترهای ترکیب</a></li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="#">
+															بلاگ
+														</a>
+														<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">تصویر بزرگ</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="blog-large-image-full-width.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="blog-large-image-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="blog-large-image-sidebar-left.html">نوار کناری چپ </a></li>
+																	<li><a class="dropdown-item" href="blog-large-image-sidebar-left-and-right.html">نوار کناری چپ و راست</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">تصویر متوسط</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="blog-medium-image-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="blog-medium-image-sidebar-left.html">نوار کناری چپ </a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">توری</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="blog-grid-4-columns.html">4 ستون</a></li>
+																	<li><a class="dropdown-item" href="blog-grid-3-columns.html">3 ستون</a></li>
+																	<li><a class="dropdown-item" href="blog-grid-full-width.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="blog-grid-no-margins.html">بدون فاصله</a></li>
+																	<li><a class="dropdown-item" href="blog-grid-no-margins-full-width.html">تمام عرض بدون فاصله</a></li>
+																	<li><a class="dropdown-item" href="blog-grid-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="blog-grid-sidebar-left.html">نوار کناری چپ </a></li>
+																	<li><a class="dropdown-item" href="blog-grid-sidebar-left-and-right.html">نوار کناری چپ و راست</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">کاشی</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="blog-masonry-4-columns.html">4 ستون</a></li>
+																	<li><a class="dropdown-item" href="blog-masonry-3-columns.html">3 ستون</a></li>
+																	<li><a class="dropdown-item" href="blog-masonry-full-width.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="blog-masonry-no-margins.html">بدون فاصله</a></li>
+																	<li><a class="dropdown-item" href="blog-masonry-no-margins-full-width.html">تمام عرض بدون فاصله</a></li>
+																	<li><a class="dropdown-item" href="blog-masonry-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="blog-masonry-sidebar-left.html">نوار کناری چپ </a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">خط زمانی</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="blog-timeline.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="blog-timeline-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="blog-timeline-sidebar-left.html">نوار کناری چپ </a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">جزئیات مطلب</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="blog-post.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="blog-post-slider-gallery.html">گالری اسلایدر</a></li>
+																	<li><a class="dropdown-item" href="blog-post-image-gallery.html">گالری تصویر</a></li>
+																	<li><a class="dropdown-item" href="blog-post-embedded-video.html">ویدئوی تعبیه شده</a></li>
+																	<li><a class="dropdown-item" href="blog-post-html5-video.html">ویدئوی HTML5</a></li>
+																	<li><a class="dropdown-item" href="blog-post-blockquote.html">نقل قول</a></li>
+																	<li><a class="dropdown-item" href="blog-post-link.html">لینک</a></li>
+																	<li><a class="dropdown-item" href="blog-post-embedded-audio.html">صوت تعبیه شده</a></li>
+																	<li><a class="dropdown-item" href="blog-post-small-image.html">تصویر کوچک</a></li>
+																	<li><a class="dropdown-item" href="blog-post-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="blog-post-sidebar-left.html">نوار کناری چپ </a></li>
+																	<li><a class="dropdown-item" href="blog-post-sidebar-left-and-right.html">نوار کناری چپ و راست</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">دیدگاه های مطلب</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="blog-post.html#comments">پیش فرض</a></li>
+																	<li><a class="dropdown-item" href="blog-post-comments-facebook.html#comments">دیدگاه های فیسبوک</a></li>
+																	<li><a class="dropdown-item" href="blog-post-comments-disqus.html#comments">دیدگاه های Disqus</a></li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="#">
+															فروشگاه
+														</a>
+														<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">جزئیات محصول</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="shop-product-full-width.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="shop-product-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="shop-product-sidebar-left.html">نوار کناری چپ</a></li>
+																	<li><a class="dropdown-item" href="shop-product-sidebar-left-and-right.html">نوار کناری چپ و راست</a></li>
+																</ul>
+															</li>
+															<li><a class="dropdown-item" href="shop-4-columns.html">4 ستون</a></li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">3 ستون</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="shop-3-columns-full-width.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="shop-3-columns-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">نوار کناری چپ </a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">2 ستون</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="shop-2-columns-full-width.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="shop-2-columns-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="shop-2-columns-sidebar-left.html">نوار کناری چپ </a></li>
+																	<li><a class="dropdown-item" href="shop-2-columns-sidebar-left-and-right.html">نوار کناری چپ و راست</a></li>
+																</ul>
+															</li>
+															<li class="dropdown-submenu">
+																<a class="dropdown-item" href="#">1 ستون</a>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" href="shop-1-column-full-width.html">تمام عرض</a></li>
+																	<li><a class="dropdown-item" href="shop-1-column-sidebar-right.html">نوار کناری راست</a></li>
+																	<li><a class="dropdown-item" href="shop-1-column-sidebar-left.html">نوار کناری چپ </a></li>
+																	<li><a class="dropdown-item" href="shop-1-column-sidebar-left-and-right.html">نوار کناری چپ و راست</a></li>
+																</ul>
+															</li>
+															<li><a class="dropdown-item" href="shop-cart.html">سبد خرید</a></li>
+															<li><a class="dropdown-item" href="shop-login.html">ورود</a></li>
+															<li><a class="dropdown-item" href="shop-checkout.html">پرداخت</a></li>
+														</ul>
+													</li>
+												</ul>
+											</nav>
+										</div>
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+											<i class="fas fa-bars"></i>
+										</button>
+									</div>
+									<div class="header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+										<div class="header-nav-feature header-nav-features-search d-inline-flex">
+											<a href="#" class="header-nav-features-toggle" data-focus="headerSearch"><i class="fas fa-search header-nav-top-icon"></i></a>
+											<div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed" id="headerTopSearchDropdown">
+												<form role="search" action="page-search-results.html" method="get">
+													<div class="simple-search input-group">
+														<input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="جستجو ...">
+														<span class="input-group-append">
+															<button class="btn" type="submit">
+																<i class="fa fa-search header-nav-top-icon"></i>
+															</button>
+														</span>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="header-nav-feature header-nav-features-cart d-inline-flex ml-2">
+											<a href="#" class="header-nav-features-toggle">
+												<img src="/static/porto/img/icons/icon-cart-light.svg" width="14" alt="" class="header-nav-top-icon-img">
+												<span class="cart-info">
+													<span class="cart-qty">1</span>
+												</span>
+											</a>
+											<div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed" id="headerTopCartDropdown">
+												<ol class="mini-products-list">
+													<li class="item">
+														<a href="#" title="Camera X1000" class="product-image"><img src="/static/porto/img/products/product-1.jpg" alt="Camera X1000"></a>
+														<div class="product-details">
+															<p class="product-name">
+																<a href="#">دوربین X1000 </a>
+															</p>
+															<p class="qty-price">
+																 1 × <span class="price">890,000 تومان</span>
+															</p>
+															<a href="#" title="Remove This Item" class="btn-remove"><i class="fas fa-times"></i></a>
+														</div>
+													</li>
+												</ol>
+												<div class="totals">
+													<span class="label">جمع کل:</span>
+													<span class="price-total"><span class="price">890,000 تومان</span></span>
+												</div>
+												<div class="actions">
+													<a class="btn btn-dark" href="#">مشاهده سبد</a>
+													<a class="btn btn-primary" href="#">پرداخت</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div role="main" class="main">
+				{% for item in landing %}
+				<!-- First Section -->
+				<div class="slider-container rev_slider_wrapper" style="height: 100vh;">
+					<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'addOnTypewriter': { 'enable': true }, 'sliderLayout': 'fullscreen', 'delay': 9000, 'gridwidth': [1410,1110,930,690], 'gridheight': 700, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1422,1182,974], 'navigation' : {'arrows': { 'enable': true, 'style': 'arrows-style-1 arrows-primary' }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
+						<ul>
+							<li class="slide-overlay slide-overlay-level-8" data-transition="fade">
+								<img 
+									src="/static/porto/img/slides/slide-corporate-14-1.jpg" 
+									alt="" 
+									data-bgposition="center center" 
+									data-bgfit="cover" 
+									data-bgrepeat="no-repeat" 
+									class="rev-slidebg">
+
+								<h1 
+									class="tp-caption font-weight-extra-bold text-color-light" 
+									data-frames='[{"delay":1000,"speed":500,"frame":"0","from":"opacity:0;x:50%;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' 
+									data-x="['right','right','right','center']" 
+									data-y="center" 
+									data-voffset="['-95','-95','-95','-95']" 
+									data-fontsize="['48','48','48','48']" 
+									data-lineheight="['55','55','55','55']">{{item.fisrt_section.text11}}</h1>
+
+								<div 
+									class="tp-caption font-weight-extra-bold text-color-light" 
+									data-frames='[{"delay":500,"speed":2500,"from":"y:50px;sX:1;sY:1;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' 
+									data-type="text" 
+									data-typewriter='{"lines":"{{item.fisrt_section.text12}}.,{{item.fisrt_section.text13}},{{item.fisrt_section.text12}}.","enabled":"on","speed":"60","delays":"1%7C100","looped":"on","cursorType":"one","blinking":"on","word_delay":"off","sequenced":"on","hide_cursor":"off","start_delay":"1500","newline_delay":"1000","deletion_speed":"20","deletion_delay":"1000","blinking_speed":"500","linebreak_delay":"60","cursor_type":"two","background":"off"}' 
+									data-x="['right','right','right','center']" 
+									data-y="center" 
+									data-voffset="['-13','-13','-13','-3']" 
+									data-responsive_offset="on" 
+									data-width="['750','750','750','750']" 
+									data-fontsize="['48','48','48','48']" 
+									data-lineheight="['92','92','92','92']" 
+									data-textalign="['right','right','right','center']">{{item.fisrt_section.text13}}.</div>
+
+								<div 
+									class="tp-caption font-weight-light text-color-light ws-normal" 
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2300,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' 
+									data-x="['right','right','right','center']" 
+									data-y="center" 
+									data-voffset="['65','65','65','85']" 
+									data-width="['900','900','900','900']" 
+									data-fontsize="['18','18','18','22']" 
+									data-lineheight="['26','26','26','26']" 
+									data-textalign="['right','right','right','center']">{{item.fisrt_section.text14}}.</div>
+
+								<a 
+									class="tp-caption btn btn-primary font-weight-bold rounded" 
+									href="{{item.fisrt_section.link15}}" 
+									data-frames='[{"delay":2300,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' 
+									data-x="['right','right','right','center']" 
+									data-y="center" 
+									data-voffset="['145','145','145','190']" 
+									data-paddingtop="['16','16','16','24']" 
+									data-paddingbottom="['16','16','16','24']" 
+									data-paddingleft="['40','40','40','45']" 
+									data-paddingright="['40','40','40','45']" 
+									data-fontsize="['14','14','14','18']" 
+									data-lineheight="['20','20','20','22']">{{item.fisrt_section.text15}} <i class="fas fa-arrow-left ml-1"></i></a>
+
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Second Section -->
+				<div class="home-intro bg-primary" id="home-intro">
+					<div class="container">
+				
+						<div class="row align-items-center">
+							<div class="col-lg-8">
+								<p>
+									{{item.section_section.text21}}
+									<span class="sub-text">{{item.section_section.text22}}</span>
+								</p>
+							</div>
+							<div class="col-lg-4">
+								<div class="get-started text-left text-lg-right">
+									<a href="{{item.section_section.link23}}" class="btn btn-dark btn-lg text-3 font-weight-semibold px-4 py-3">{{item.section_section.text23}}</a>
+									<div class="learn-more">یا <a href="index.html">آشنایی بیشتر.</a></div>
+								</div>
+							</div>
+						</div>
+				
+					</div>
+				</div>
+				<!-- third section -->
+				<div class="container container-lg py-5 my-5">
+					<div class="row justify-content-center">
+						<div class="col-xl-9 text-center">
+							<h2 class="font-weight-bold text-9 text-sm-10 text-md-11 appear-animation line-height-7" data-appear-animation="fadeInUpShorter">{{item.third_section.text31}}</h2>
+							<p class="line-height-9 text-4 opacity-9 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">{{item.third_section.titr31}}</p>
+						</div>
+					</div>
+					<div class="row featured-boxes featured-boxes-style-4">
+						<div class="col-sm-6 col-lg-3 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="400">
+							<div class="featured-box mb-lg-0">
+								<div class="box-content px-lg-1 px-xl-5">
+									<i class="icon-featured icons icon-bubbles text-color-primary text-11"></i>
+									<h4 class="font-weight-bold text-5 mb-3">{{item.third_section.text32}}</h4>
+									<p>{{item.third_section.titr32}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-3 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+							<div class="featured-box mb-lg-0">
+								<div class="box-content px-lg-1 px-xl-5">
+									<i class="icon-featured icons icon-organization text-color-primary text-11"></i>
+									<h4 class="font-weight-bold text-5 mb-3">{{item.third_section.text33}}</h4>
+									<p>{{item.third_section.titr33}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-3 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+							<div class="featured-box mb-sm-0">
+								<div class="box-content px-lg-1 px-xl-5">
+									<i class="icon-featured icons icon-cup text-color-primary text-11"></i>
+									<h4 class="font-weight-bold text-5 mb-3">{{item.third_section.text34}}</h4>
+									<p>{{item.third_section.titr34}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-3 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400">
+							<div class="featured-box mb-0">
+								<div class="box-content px-lg-1 px-xl-5">
+									<i class="icon-featured icons icon-heart text-color-primary text-11"></i>
+									<h4 class="font-weight-bold text-5 mb-3">{{item.third_section.text35}}</h4>
+									<p>{{item.third_section.titr35}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				<section class="section-secondary custom-section-padding-2">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<h2 class="font-weight-bold text-color-dark mb-4">- پروژه های ما</h2>
+							</div>
+						</div>
+					</div>
+					<div class="owl-carousel show-nav-title custom-both-sides-shadow custom-dots-position-2 custom-dots-style-1 custom-xs-arrows-style-2 mb-0" data-plugin-options="{'items': 6, 'loop': false, 'dots': true, 'nav': false}">
+						<div>
+							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
+								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
+									<span class="thumb-info-wrapper m-0">
+										<img src="/static/porto/img/demos/business-consulting/cases/case-1.jpg" class="img-fluid" alt="">
+									</span>
+									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
+										<span class="custom-thumb-info-title">
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">امور مالی شرکت</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">مایکروسافت</span>
+										</span>
+										<span class="custom-arrow"></span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div>
+							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
+								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
+									<span class="thumb-info-wrapper m-0">
+										<img src="/static/porto/img/demos/business-consulting/cases/case-2.jpg" class="img-fluid" alt="">
+									</span>
+									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
+										<span class="custom-thumb-info-title">
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">بازسازی شرکت</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">وب‌سایت</span>
+										</span>
+										<span class="custom-arrow"></span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div>
+							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
+								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
+									<span class="thumb-info-wrapper m-0">
+										<img src="/static/porto/img/demos/business-consulting/cases/case-3.jpg" class="img-fluid" alt="">
+									</span>
+									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
+										<span class="custom-thumb-info-title">
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">مشاوره اقتصادی</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">پورتو</span>
+										</span>
+										<span class="custom-arrow"></span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div>
+							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
+								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
+									<span class="thumb-info-wrapper m-0">
+										<img src="/static/porto/img/demos/business-consulting/cases/case-4.jpg" class="img-fluid" alt="">
+									</span>
+									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
+										<span class="custom-thumb-info-title">
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">مشاوره فنی</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">شرکت اپل</span>
+										</span>
+										<span class="custom-arrow"></span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div>
+							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
+								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
+									<span class="thumb-info-wrapper m-0">
+										<img src="/static/porto/img/demos/business-consulting/cases/case-5.jpg" class="img-fluid" alt="">
+									</span>
+									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
+										<span class="custom-thumb-info-title">
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">استراتژیک</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">شرکت فیسبوک</span>
+										</span>
+										<span class="custom-arrow"></span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div>
+							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
+								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
+									<span class="thumb-info-wrapper m-0">
+										<img src="/static/porto/img/demos/business-consulting/cases/case-1.jpg" class="img-fluid" alt="">
+									</span>
+									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
+										<span class="custom-thumb-info-title">
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">دادخواهی</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">شرکت گوگل</span>
+										</span>
+										<span class="custom-arrow"></span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div>
+							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
+								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
+									<span class="thumb-info-wrapper m-0">
+										<img src="/static/porto/img/demos/business-consulting/cases/case-2.jpg" class="img-fluid" alt="">
+									</span>
+									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
+										<span class="custom-thumb-info-title">
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">مشاوره</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">شرکت یاهو</span>
+										</span>
+										<span class="custom-arrow"></span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div>
+							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
+								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
+									<span class="thumb-info-wrapper m-0">
+										<img src="/static/porto/img/demos/business-consulting/cases/case-3.jpg" class="img-fluid" alt="">
+									</span>
+									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
+										<span class="custom-thumb-info-title">
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">مشاوره برند</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">تم فارست</span>
+										</span>
+										<span class="custom-arrow"></span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div>
+							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
+								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
+									<span class="thumb-info-wrapper m-0">
+										<img src="/static/porto/img/demos/business-consulting/cases/case-4.jpg" class="img-fluid" alt="">
+									</span>
+									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
+										<span class="custom-thumb-info-title">
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">مشاوره سازمانی</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">شرکت آمازون</span>
+										</span>
+										<span class="custom-arrow"></span>
+									</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="custom-section-padding">
+
+					<div class="container">
+					
+						<div class="row text-center pt-3">
+							<div class="col-md-10 mx-md-auto">
+								<h1 class="word-rotator slide font-weight-bold text-7 text-sm-8 mb-3 appear-animation primary-font" data-appear-animation="fadeInUpShorter">
+									<span>پورتو </span>
+									<span class="word-rotator-words bg-dark">
+										<b class="is-visible">بطور باور نکردنی</b>
+										<b>بسیار</b>
+										<b>به شدت</b>
+									</span>
+									<span> زیبا و کاملا واکنش گراست.</span>
+								</h1>
+								<p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">
+									لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط
+								</p>
+							</div>
+						</div>
+					
+					</div>
+					
+					<div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+						<div class="home-concept mt-5">
+							<div class="container">
+					
+								<div class="row text-center">
+									<span class="sun"></span>
+									<span class="cloud"></span>
+									<div class="col-lg-2 ml-lg-auto">
+										<div class="process-image">
+											<img src="/static/porto/img/home/home-concept-item-1.png" alt="">
+											<strong>استراتژی</strong>
+										</div>
+									</div>
+									<div class="col-lg-2 mt-4 mt-lg-0">
+										<div class="process-image process-image-on-middle">
+											<img src="/static/porto/img/home/home-concept-item-2.png" alt="">
+											<strong>برنامه‌ریزی</strong>
+										</div>
+									</div>
+									<div class="col-lg-2 mt-4 mt-lg-0">
+										<div class="process-image">
+											<img src="/static/porto/img/home/home-concept-item-3.png" alt="">
+											<strong>ساختن</strong>
+										</div>
+									</div>
+									<div class="col-lg-4 ml-lg-auto mt-1 mt-lg-0">
+										<div class="project-image">
+											<div id="fcSlideshow" class="fc-slideshow">
+												<ul class="fc-slides">
+													<li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="/static/porto/img/projects/project-home-1.jpg" alt=""></a></li>
+													<li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="/static/porto/img/projects/project-home-2.jpg" alt=""></a></li>
+													<li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="/static/porto/img/projects/project-home-3.jpg" alt=""></a></li>
+												</ul>
+											</div>
+											<strong class="our-work">کارهای ما</strong>
+										</div>
+									</div>
+								</div>
+					
+							</div>
+						</div>
+					</div>
+					
+					<div class="container mb-5 pb-4">
+					
+						<div class="row">
+							<div class="col mb-4">
+								<hr class="my-5">
+							</div>
+						</div>
+					
+						<div class="row pb-3">
+							<div class="col-lg-8">
+								<h2 class="font-weight-normal text-7"><strong class="font-weight-extra-bold">ویژگی های</strong> ما</h2>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-support text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">پشتیبانی مشتری</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-doc text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">HTML5 / CSS3 / JS</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-social-google text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">16 فونت فارسی</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-pencil text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">رنگ ها</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-layers text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">اسلایدر ها</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-user text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">آیکن‌ها</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-menu text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">دکمه ها</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-screen-desktop text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">لایت باکس</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<h2 class="font-weight-normal text-6">و بیشتر ...</h2>
+					
+								<div class="accordion accordion-modern" id="accordion">
+									<div class="card card-default">
+										<div class="card-header">
+											<h4 class="card-title m-0">
+												<a class="accordion-toggle text-color-dark font-weight-bold" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+													<i class="icons icon-diamond text-color-primary"></i>
+													وب‌سایت های خلاقانه
+												</a>
+											</h4>
+										</div>
+										<div id="collapseOne" class="collapse show">
+											<div class="card-body text-2">
+												<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون</p>
+												<p class="mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم <a href="#" class="d-block text-color-dark font-weight-semibold pt-4">بیشتر بخوانید <i class="fas fa-angle-left position-relative align-middle ml-1"></i></a></p>
+											</div>
+										</div>
+									</div>
+									<div class="card card-default">
+										<div class="card-header">
+											<h4 class="card-title m-0">
+												<a class="accordion-toggle text-color-dark font-weight-bold" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+													<i class="icons icon-bubble text-color-primary"></i>
+													فرم های تماس
+												</a>
+											</h4>
+										</div>
+										<div id="collapseTwo" class="collapse">
+											<div class="card-body text-2">
+												<p class="mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+									</div>
+									<div class="card card-default">
+										<div class="card-header">
+											<h4 class="card-title m-0">
+												<a class="accordion-toggle text-color-dark font-weight-bold" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+													<i class="icons icon-grid text-color-primary"></i>
+													صفحات نمونه کار ها
+												</a>
+											</h4>
+										</div>
+										<div id="collapseThree" class="collapse">
+											<div class="card-body text-2">
+												<p class="mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				</section>
+				
+				<section class="section-secondary custom-section-padding-2	">
+					
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<h2 class="font-weight-bold text-color-dark mb-4">- بلاگ ما</h2>
+							</div>
+						</div>
+						{% for item in articles %}
+						<div class="row mb-3">
+							
+							<article class="blog-post col">
+								<div class="row">
+									<div class="col-lg-5">
+										<div class="blog-post-image-wrapper">
+											<a href="{% url 'bloga:detail' item.slug %}" title="بیشتر بخوانید">
+												<img src="{{item.thumbnail.url}}" alt class="img-fluid mb-4 w-100">
+											</a>
+											<span class="blog-post-date bg-color-primary text-color-light font-weight-bold mt-n2 mt-sm-3 mt-md-5 mt-lg-n5 mt-xl-0">
+												{{item.jday}}
+												<span class="month-year font-weight-light">
+													{{item.jmonth}}
+												</span>
+											</span>
+										</div>
+									</div>
+									<div class="col-lg-7">
+										<h2 class="primary-font mt-n1 mt-lg-n2"> {{item.title}}</h2>
+										<p>{{item.short_des}}</p>
+										<hr class="solid">
+										<div class="post-infos d-flex">
+											<span class="info posted-by">
+												توسط:
+												<span class="post-author font-weight-semibold text-color-dark">
+													{{item.author.first_name}}
+												</span>
+											</span>
+											<span class="info comments ml-5">
+												دیدگاه ها:
+												<span class="comments-number text-color-primary font-weight-semibold">
+													15
+												</span>
+											</span>
+										</div>
+										<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase mt-5" href="{% url 'bloga:detail' item.slug %}" title="بیشتر بخوانید">بیشتر بخوانید</a>
+									</div>
+								</div>
+							</article>
+							{% endfor %}
+						</div>
+					</div>
+					
+				</section>
+				
+			</div>
+
+			<footer id="footer" class="mt-0">
+				<div class="container container-lg my-4">
+					<div class="row py-5">
+						<div class="col-lg-4 mb-5 mb-lg-0 text-center text-lg-left pt-3">
+							<h5 class="text-5 font-weight-semibold text-color-light mb-4">قالب پورتو</h5>
+							<p class="text-4 mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ<br>لورم ایپسوم متن ساختگی با تولید سادگی</p>
+							<a href="#" target="_blank" class="d-inline-flex align-items-center btn btn-primary font-weight-semibold px-5 btn-py-3 text-3 rounded mt-2">خرید پورتو</a>
+						</div>
+						<div class="col-lg-2 mb-4 mb-md-0 text-center text-lg-left pt-3">
+							<h5 class="text-5 font-weight-semibold text-color-light mb-4">صفحات</h5>
+							<ul class="list list-icons list-icons-sm d-inline-flex flex-column">
+								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="page-services.html" class="link-hover-style-1 ml-1"> خدمات ما</a></li>
+								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="about-us.html" class="link-hover-style-1 ml-1"> درباره ما</a></li>
+								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="contact-us.html" class="link-hover-style-1 ml-1"> تماس با ما</a></li>
+							</ul>
+						</div>
+						<div class="col-lg-3 mb-4 mb-lg-0 text-center text-lg-left pt-3">
+							<h5 class="text-5 font-weight-semibold text-color-light mb-4">تماس با ما</h5>
+							<p class="text-4 mb-2"><span class="text-color-light">آدرس:</span> تبریز، فلکه دانشگاه، برج بلور، طبقه 567</p>
+							<p class="text-4 mb-2"><span class="text-color-light">تلفن:</span> <span class="ltr-text">(+98) 456 7890</span></p>
+							<p class="text-4 mb-2"><span class="text-color-light">ایمیل:</span> <a href="mailto:mail@example.com">mail@example.com</a></p>
+						</div>
+						<div class="col-lg-3 text-center text-lg-left pt-3">
+							<h5 class="text-5 font-weight-semibold text-color-light mb-4">ما را دنبال کنید</h5>
+							<ul class="footer-social-icons social-icons social-icons-clean social-icons-big social-icons-opacity-light social-icons-icon-light mt-0 mt-lg-3">
+								<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+								<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="container container-lg">
+					<div class="footer-copyright footer-copyright-style-2">
+						<div class="py-2">
+							<div class="row py-4">
+								<div class="col d-flex align-items-center justify-content-center">
+									<p>ارائه شده در وب‌سایت راست‌چین</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+
+
+		<script type="text/javascript" src="/static/porto/vendor/rs-plugin/revolution-addons/typewriter/js/revolution.addon.typewriter.min.js"></script>
+		
+		<!-- Current Page Vendor and Views -->
+		<script src="/static/porto/js/views/view.contact.js"></script>
+		
+		<!-- Demo -->
+		<script src="/static/porto/js/demos/demo-business-consulting.js"></script>
+		<script src="/static/porto/vendor/circle-flip-slideshow/js/jquery.flipshow.min.js"></script>
+		<!-- Theme Custom -->
+		<script src="/static/porto/js/views/view.home.js"></script>
+		
+		<!-- Vendor -->
+		<script src="/static/porto/vendor/jquery/jquery.min.js"></script>
+		<script src="/static/porto/vendor/jquery.appear/jquery.appear.min.js"></script>
+		<script src="/static/porto/vendor/jquery.easing/jquery.easing.min.js"></script>
+		<script src="/static/porto/vendor/jquery.cookie/jquery.cookie.min.js"></script>
+		<script src="/static/porto/vendor/popper/umd/popper.min.js"></script>
+		<script src="/static/porto/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/static/porto/vendor/common/common.min.js"></script>
+		<script src="/static/porto/vendor/jquery.validation/jquery.validate.min.js"></script>
+		<script src="/static/porto/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+		<script src="/static/porto/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+		<script src="/static/porto/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+		<script src="/static/porto/vendor/isotope/jquery.isotope.min.js"></script>
+		<script src="/static/porto/vendor/owl.carousel/owl.carousel.min.js"></script>
+		<script src="/static/porto/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="/static/porto/vendor/vide/jquery.vide.min.js"></script>
+		<script src="/static/porto/vendor/vivus/vivus.min.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="/static/porto/js/theme.js"></script>
+		
+		<!-- Current Page Vendor and Views -->
+		<script src="/static/porto/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="/static/porto/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+		<!-- Revolution Slider Addon - Typewriter -->
+
+		<!-- Theme Initialization Files -->
+		
+
+		<script src="/static/porto/js/custom.js"></script>
+		<script src="/static/porto/js/theme.init.js"></script>
+
+
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		 -->
+
+	</body>
 </html>
