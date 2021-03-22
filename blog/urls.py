@@ -7,5 +7,5 @@ app_name = "bloga"
 
 urlpatterns = [
     path('', views.blog_view, name='blog'),
-    path('article/<slug:slug>', views.article_detail, name='detail'),
+    re_path(r'article/(?P<slug>[-\w]+)/', views.article_detail),
 ]

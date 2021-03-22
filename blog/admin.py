@@ -24,3 +24,17 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Category,CategoryAdmin)
+
+class CommentsAdmin(admin.ModelAdmin):
+    list_display = ('name','text','article','status')
+    list_filter = (['status'])
+    search_fields = ('name', 'text')
+
+admin.site.register(Comments,CommentsAdmin)
+
+class Comments_AnswerAdmin(admin.ModelAdmin):
+    list_display = ('name','text','article','comment','status')
+    list_filter = (['status'])
+    search_fields = ('name', 'text')
+
+admin.site.register(Comments_Answer,Comments_AnswerAdmin)
