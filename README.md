@@ -40,8 +40,20 @@ I love contributions, so please feel free to fix bugs, improve things, provide d
 
 ## TODO List
     [✔] set up Jalali Calender for Project
+    [✔] Look up for Blog and Landing Page Template and Add To Project
+    [ ] Add item 'Add Contact' to Contact 
+
+
+    [✔] Add Landing Page Models
+    [✔] Add Resume Page Models
+
+    [ ] Set Up Resume Page Html With View
+    [ ] Set up New Landing Page 
+
+    [✔] Add Model Managers to Blog
+    [ ] Add Model Managers to Land(prject)
+
+    [✔] add a Landing as a new application
+    [✔] add a Dashboard as a new application
     [✔] add a blog as a new application
     [ ] add karfarmaonline as a new application
-    [ ] Add item 'Add Contact' to Contact 
-    [ ] Set up New Landing Page 
-    [ ] Look up for Blog and Landing Page Template and Add To Project
