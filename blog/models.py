@@ -21,7 +21,15 @@ class ArticleManager(models.Manager):
     def comments(self, article): #### TODO Change this method on another Objects
         return Comments.objects.filter(article=article)
 
-
+    def replys(self, cm):
+        return Comments_Answer.objects.filter(comment=cm)
+        
+    def comment_count(self, article):
+        cms = Comments.objects.filter(article=article)
+        cm_count = int(Comments.objects.filter(article=article).count())
+        for cm in cms:
+            cm_count = cm_count + int(Comments_Answer.objects.filter(comment=cm).count())
+        return cm_count
 
 class CategoryManager(models.Manager):
     def published(self):
@@ -66,7 +74,7 @@ class Article(models.Model):
     )
     title = models.CharField(max_length=200 ,verbose_name="عنوان")
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=1,verbose_name="نویسنده")
-    slug = models.SlugField(max_length=100 ,unique=True,verbose_name="اسلاگ")
+    slug = models.SlugField(max_length=100 ,allow_unicode=True,unique=True,verbose_name="اسلاگ")
     description = models.TextField(default=None,verbose_name="توضیحات")
     thumbnail = models.ImageField(upload_to="images",verbose_name="تصویر")
     category = models.ManyToManyField(Category,verbose_name="دسته بندی ")
