@@ -7,9 +7,20 @@ from extensions.utils import jalali_converter, jalali_converter_2
 #-----------> Managers Start
 class ArticleManager(models.Manager):
     def published(self):
-        return self.filter(status = 'p')
+        dic = {}
+        articles = Article.objects.filter(status = 'p').order_by('-publish')
+        for article in articles:
+            list_category =[]
+            cats = Article.objects.get(slug = article.slug).category.all()
+            for cat in cats:
+                list_category.append(cat)
+            dic[article]= list_category
+
+        return dic
+
     def drafted(self):
         return self.filter(status = 'p')
+    
     def last_3_published(self):
         return self.filter(status = 'p')[:3]
 
@@ -19,6 +30,7 @@ class ArticleManager(models.Manager):
         for item in items:
             titles.append(item.title)
         return titles 
+
 
     def comments(self, article):
             dic = {}
