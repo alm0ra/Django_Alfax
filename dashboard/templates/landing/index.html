@@ -1610,16 +1610,19 @@
 												</span>
 											</span>
 											<span class="info comments ml-5">
-												دیدگاه ها:
+												 تاریخ انتشار:
 												<span class="comments-number text-color-primary font-weight-semibold">
-													15
+													{{item.jpublish}}
 												</span>
 											</span>
 										</div>
 										<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase mt-5" href="{% url 'bloga:detail' item.slug %}" title="بیشتر بخوانید">بیشتر بخوانید</a>
 									</div>
 								</div>
+								<br>
+								<br>		
 							</article>
+							
 							{% endfor %}
 						</div>
 					</div>

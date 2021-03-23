@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'projects.apps.ProjectsConfig',
     'authentication.apps.AuthenticationConfig',
     'land.apps.LandConfig',
     'blog.apps.BlogConfig',
@@ -57,7 +58,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'alfax.urls'
 
 
-TEMPLATE_DIR = os.path.join(CORE_DIR, "dashboard/templates/Gleek/temp")  # ROOT dir for templates
+TEMPLATE_DIR = os.path.join(CORE_DIR, "dashboard/templates")  # ROOT dir for templates
 
 
 TEMPLATES = [
