@@ -12,24 +12,32 @@ class ArticleManager(models.Manager):
         return self.filter(status = 'p')
     def last_3_published(self):
         return self.filter(status = 'p')[:3]
+
     def categories(self,slug):   #### TODO Change this method on another Objects
         titles = []
         items = self.get(slug = slug).category.all()
         for item in items:
             titles.append(item.title)
         return titles 
-    def comments(self, article): #### TODO Change this method on another Objects
-        return Comments.objects.filter(article=article)
+
+    def comments(self, article):
+            dic = {}
+            CMs =  Comments.objects.filter(article=article)
+            for CM in CMs :
+                dic[CM]= Comments_Answer.objects.filter(comment=CM)
+            return dic
 
     def replys(self, cm):
         return Comments_Answer.objects.filter(comment=cm)
-        
+
     def comment_count(self, article):
-        cms = Comments.objects.filter(article=article)
-        cm_count = int(Comments.objects.filter(article=article).count())
-        for cm in cms:
-            cm_count = cm_count + int(Comments_Answer.objects.filter(comment=cm).count())
-        return cm_count
+
+            cms = Comments.objects.filter(article=article)
+            cm_count = int(Comments.objects.filter(article=article).count())
+            for cm in cms:
+                cm_count = cm_count + int(Comments_Answer.objects.filter(comment=cm).count())
+            return cm_count
+
 
 class CategoryManager(models.Manager):
     def published(self):

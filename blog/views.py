@@ -13,10 +13,14 @@ def blog_view(request):
     return render(request, "blog/index-blog-2.html", context)
 
 def article_detail(request,slug):
+    article = Article.objects.filter(slug =slug)
+    article_comments = Article.objects.comments(article=article[0])
+    article_comments_count = Article.objects.comment_count(article=article[0])
+
     context = {
-        "articles": Article.objects.filter(slug= slug).order_by('-publish'),
-        "categories":Category.objects.all(),
-        "last3":Article.objects.filter(status= 'p').order_by('-publish')[:3],
-        "comments":Comments.objects.filter(article=Article.objects.filter(slug=slug)).order_by('-date') 
+        "article": article,
+        "Comments":article_comments,
+        "Comments_count":article_comments_count, 
+        "categories":Category.objects.all()
      }
     return render(request, "blog/blog-post.html", context) 
