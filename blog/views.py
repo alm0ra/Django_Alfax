@@ -27,6 +27,7 @@ def article_detail(request,slug):
         "Comments":article_comments,
         "Comments_count":article_comments_count, 
         "post_category":post_cat,
-        "categories":Category.objects.all()
+        "categories":Category.objects.all(),
+        "last3":Article.objects.filter(status= 'p').order_by('-publish')[:3]
      }
     return render(request, "blog/blog-post.html", context) 

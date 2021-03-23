@@ -21,7 +21,7 @@ def contact(request):
 
     profile  = UserProfile.objects.all().filter(user=request.user)
     context = {"contacts": Contacts.objects.all(),"user":request.user,"profiles":profile}
-    return render(request, "table-datatable.html", context)
+    return render(request, "dashboard/table-datatable.html", context)
 
 @login_required(login_url="/login/")
 def index(request):
@@ -29,7 +29,7 @@ def index(request):
     context = {"user":request.user,"profiles":profile}
     context['segment'] = 'index'
 
-    html_template = loader.get_template( 'main.html' )
+    html_template = loader.get_template( 'dashboard/main.html' )
     return HttpResponse(html_template.render(context, request))
 
 @login_required(login_url="/login/")
@@ -47,12 +47,12 @@ def pages(request):
         
     except template.TemplateDoesNotExist:
 
-        html_template = loader.get_template( 'error-404.html' )
+        html_template = loader.get_template( 'dashboard/error-404.html' )
         return HttpResponse(html_template.render(context, request))
 
     except:
     
-        html_template = loader.get_template( 'error-500.html' )
+        html_template = loader.get_template( 'dashboard/error-500.html' )
         return HttpResponse(html_template.render(context, request))
 
 @login_required(login_url="/login/")
