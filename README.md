@@ -48,11 +48,15 @@ I love contributions, so please feel free to fix bugs, improve things, provide d
     [✔] Add Resume Page Models
 
     [ ] Set Up Resume Page Html With View
-    [ ] Set up New Landing Page 
+    [✔] Set up New Landing Page 
+    [✔] Set up project detail Page 
+    [ ] set Up menu links in html pages
 
     [✔] Add Model Managers to Blog
-    [ ] Add Model Managers to Land(prject)
+    [✔] Add Model Managers to Land(prject)
+    [ ] Add Model Menu Links in header to Land
 
+    [✔] add a project as a new application
     [✔] add a Landing as a new application
     [✔] add a Dashboard as a new application
     [✔] add a blog as a new application
