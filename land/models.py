@@ -3,54 +3,6 @@ from django.utils import timezone
 from extensions.utils import jalali_converter, jalali_converter_2
 
 
-#### -------------> Project Page DB start
-class Skill_category(models.Model):
-    title = models.CharField(max_length=200 ,verbose_name="عنوان")
-    slug = models.SlugField(max_length=100 ,unique=True,allow_unicode=True,verbose_name="اسلاگ")
-    status = models.BooleanField(default=True ,verbose_name="آیا نمایش داده شود؟")
-    position = models.IntegerField(verbose_name="پوزیشن")
-
-    class Meta :
-        verbose_name = "دسته بندی پروژه"
-        verbose_name_plural= "دسته بند  پروژه"
-        ordering = ['position']
-
-    def __str__(self):
-        return self.title
-    def __unicode__(self):
-        return self.title
-
-
-class Projects(models.Model):
-
-    STATUS_CHOICES = (
-        ('d','پیش نویس'),
-        ('p', 'منتشر شده'),
-    )
-    project_title = models.CharField(max_length=200 ,verbose_name="عنوان پروژه")
-    project_subject = models.CharField(max_length=200 ,verbose_name="موضوع پروژه یا توضیح کوتاه")
-    project_slug = models.SlugField(max_length=100 ,unique=True,allow_unicode=True,verbose_name="اسلاگ پروژه")
-    project_description = models.TextField(default=None,verbose_name="توضیحات")
-    project_thumbnail = models.ImageField(upload_to="project_image",verbose_name="تصویر")
-    project_address =  models.CharField(max_length=200 ,verbose_name="آدرس پروژه")
-    skill_category = models.ManyToManyField(Skill_category,verbose_name="دسته بندی پروژه ")
-    publish_date = models.DateTimeField(default=timezone.now,verbose_name="تاریخ انتشار")
-    start_date = models.DateTimeField(auto_now_add=True,verbose_name="تاریخ شروع پروژه")
-    end_date = models.DateTimeField(auto_now = True,verbose_name="تاریخ  پایان پروژه")
-
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES,verbose_name="وضعیت")
-
-    class Meta :
-        verbose_name = "پروژه ها"
-        verbose_name_plural= "پروژه ها"
-
-    def __str__(self):
-        return self.project_title
-    def __unicode__(self):
-        return self.project_title
-
-#### -------------> Project Page DB End
-
 
 
 

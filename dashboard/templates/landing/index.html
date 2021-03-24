@@ -1214,150 +1214,24 @@
 						</div>
 					</div>
 					<div class="owl-carousel show-nav-title custom-both-sides-shadow custom-dots-position-2 custom-dots-style-1 custom-xs-arrows-style-2 mb-0" data-plugin-options="{'items': 6, 'loop': false, 'dots': true, 'nav': false}">
+						{% for item in projects%}
 						<div>
 							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
 								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
 									<span class="thumb-info-wrapper m-0">
-										<img src="/static/porto/img/demos/business-consulting/cases/case-1.jpg" class="img-fluid" alt="">
+										<img src="{{item.project_thumbnail.url}}" class="img-fluid" alt="">
 									</span>
 									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
 										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">امور مالی شرکت</span>
-											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">مایکروسافت</span>
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">{{item.project_title}}</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">{{item.project_customer}}</span>
 										</span>
 										<span class="custom-arrow"></span>
 									</span>
 								</span>
 							</a>
 						</div>
-						<div>
-							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="/static/porto/img/demos/business-consulting/cases/case-2.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">بازسازی شرکت</span>
-											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">وب‌سایت</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div>
-							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="/static/porto/img/demos/business-consulting/cases/case-3.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">مشاوره اقتصادی</span>
-											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">پورتو</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div>
-							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="/static/porto/img/demos/business-consulting/cases/case-4.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">مشاوره فنی</span>
-											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">شرکت اپل</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div>
-							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="/static/porto/img/demos/business-consulting/cases/case-5.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">استراتژیک</span>
-											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">شرکت فیسبوک</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div>
-							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="/static/porto/img/demos/business-consulting/cases/case-1.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">دادخواهی</span>
-											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">شرکت گوگل</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div>
-							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="/static/porto/img/demos/business-consulting/cases/case-2.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">مشاوره</span>
-											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">شرکت یاهو</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div>
-							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="/static/porto/img/demos/business-consulting/cases/case-3.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">مشاوره برند</span>
-											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">تم فارست</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div>
-							<a href="demo-business-consulting-cases-detail.html" class="text-decoration-none">
-								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
-									<span class="thumb-info-wrapper m-0">
-										<img src="/static/porto/img/demos/business-consulting/cases/case-4.jpg" class="img-fluid" alt="">
-									</span>
-									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
-										<span class="custom-thumb-info-title">
-											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">مشاوره سازمانی</span>
-											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">شرکت آمازون</span>
-										</span>
-										<span class="custom-arrow"></span>
-									</span>
-								</span>
-							</a>
-						</div>
+						{% endfor %}
 					</div>
 				</section>
 
