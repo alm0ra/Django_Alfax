@@ -42,6 +42,9 @@ I love contributions, so please feel free to fix bugs, improve things, provide d
     [✔] set up Jalali Calender for Project
     [✔] Look up for Blog and Landing Page Template and Add To Project
     [ ] Add item 'Add Contact' to Contact 
+    [ ] mail verifacation
+    [ ] sms verifecation
+    [ ] Project page show All project
 
 
     [✔] Add Landing Page Models
@@ -60,4 +63,6 @@ I love contributions, so please feel free to fix bugs, improve things, provide d
     [✔] add a Landing as a new application
     [✔] add a Dashboard as a new application
     [✔] add a blog as a new application
-    [ ] add karfarmaonline as a new application
+    [ ] add Contact as new application in dashboard
+    [ ] add karfarmaonline as a new application in dashboard
+    [ ] add Elevator app as new application in dashboard
