@@ -1,0 +1,321 @@
+{% extends 'dashboard/base.html' %}
+
+{% block css %}
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/vendors-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/tables/datatable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/tether-theme-arrows.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/tether.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/shepherd-theme-default.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/components.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/themes/dark-layout.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/themes/semi-dark-layout.min.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/core/menu/menu-types/vertical-menu.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/core/colors/palette-gradient.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/pages/dashboard-analytics.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/pages/card-analytics.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/plugins/tour/tour.min.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/custom-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/assets/css/style-rtl.css">
+    <!-- END: Custom CSS-->
+{% endblock %}
+
+{% block main%}
+
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body"><!-- Dashboard Analytics Start -->
+<section id="dashboard-analytics">
+
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-12 search-content">
+      <div class="card">
+        <div class="card-body text-center">
+          <a href="page-kb-category.html">
+            <img src="/static/vuexy/app-assets/images/pages/graphic-2.png" class="mx-auto mb-2" width="180"
+              alt="knowledge-base-image">
+            <h4>ایجاد یک پروژه</h4>
+            <small class="text-dark">با ایجاد یک پروژه پروژه های خود را به صورت جداگانه مدیریت کنید</small>
+          </a>
+        </div>
+        <button type="submit" class="btn btn-primary mr-1 mb-1" >  ایجاد پروژه جدید در سیستم</button>
+
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-12 search-content">
+      <div class="card">
+        <div class="card-body text-center">
+          <a href="page-kb-category.html">
+            <img src="/static/vuexy/app-assets/images/pages/graphic-3.png" class="mx-auto mb-2" width="180"
+              alt="knowledge-base-image">
+            <h4>ثبت هزینه کرد</h4>
+            <small class="text-dark">هزینه های روزانه پروژه های خود را در این  قسمت ثبت کنید</small>
+          </a>
+        </div>
+        <button type="submit" class="btn btn-primary mr-1 mb-1">ثبت  هزینه کرد در سیستم</button>
+
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-12 search-content">
+      <div class="card">
+        <div class="card-body text-center">
+          <a href="page-kb-category.html">
+            <img src="/static/vuexy/app-assets/images/pages/graphic-4.png" class="mx-auto mb-2" width="180"
+              alt="knowledge-base-image">
+            <h4>ثبت درآمد در سیستم</h4>
+            <small class="text-dark">در آمد های روزانه پروژه های خود را در این قسمت ثبت کنید</small>
+          </a>
+        </div>
+
+        <button type="submit" class="btn btn-primary mr-1 mb-1">ثبت  درآمد در سیستم</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header d-flex align-items-start pb-0">
+                <div>
+                    <h2 class="text-bold-700 mb-0">۰ تومان</h2>
+                    <p>هزینه شده ها توسط من</p>
+                </div>
+                <div class="avatar bg-rgba-primary p-50 m-0">
+                    <div class="avatar-content">
+                        <i class="feather icon-activity text-primary font-medium-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header d-flex align-items-start pb-0">
+                <div>
+                    <h2 class="text-bold-700 mb-0">0 تومان</h2>
+                    <p>درآمد های ایجاد شده توسط من</p>
+                </div>
+                <div class="avatar bg-rgba-success p-50 m-0">
+                    <div class="avatar-content">
+                        <i class="feather icon-activity text-success font-medium-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header d-flex align-items-start pb-0">
+                <div>
+                    <h2 class="text-bold-700 mb-0">0</h2>
+                    <p>تعداد شرکای من</p>
+                </div>
+                <div class="avatar bg-rgba-danger p-50 m-0">
+                    <div class="avatar-content">
+                        <i class="feather icon-activity text-danger font-medium-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header d-flex align-items-start pb-0">
+                <div>
+                    <h2 class="text-bold-700 mb-0">0</h2>
+                    <p>تعداد پروژه های من</p>
+                </div>
+                <div class="avatar bg-rgba-warning p-50 m-0">
+                    <div class="avatar-content">
+                        <i class="feather icon-activity text-warning font-medium-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-12">
+      <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-end">
+              <h4 class="card-title">مقایسه هزینه کرد های شرکا</h4>
+
+          </div>
+          <div class="card-content">
+              <div class="card-body py-0">
+                  <div id="customer-chart"></div>
+              </div>
+              <ul class="list-group list-group-flush customer-info">
+                  <li class="list-group-item d-flex justify-content-between">
+                      <div class="series-info">
+                          <i class="fa fa-circle font-small-3 text-primary"></i>
+                          <span class="text-bold-600">منصور مرادی</span>
+                      </div>
+                      <div class="product-result">
+                          <span>890</span>
+                      </div>
+                  </li><li class="list-group-item d-flex justify-content-between ">
+                      <div class="series-info">
+                          <i class="fa fa-circle font-small-3 text-warning"></i>
+                          <span class="text-bold-600">محمد رضا ظفر بخش</span>
+                      </div>
+                      <div class="product-result">
+                          <span>500</span>
+                      </div>
+                  </li>
+                </ul>
+          </div>
+      </div>
+  
+    </div>
+    <div class="col-lg-8 col-md-6 col-12">
+      <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-end">
+              <h4 class="card-title">نمودار هزینه های پروژه</h4>
+              <p class="font-medium-5 mb-0"><i class="feather icon-settings text-muted cursor-pointer"></i></p>
+          </div>
+          <div class="card-content">
+              <div class="card-body pb-0">
+                  <div class="d-flex justify-content-start">
+                      <div class="mr-2">
+                          <p class="mb-50 text-bold-600">این ماه</p>
+                          <h2 class="text-bold-400">
+                              <sup class="font-medium-1">$</sup>
+                              <span class="text-success">86,589</span>
+                          </h2>
+                      </div>
+                      <div>
+                          <p class="mb-50 text-bold-600">ماه اخیر</p>
+                          <h2 class="text-bold-400">
+                              <sup class="font-medium-1">$</sup>
+                              <span>73,683</span>
+                          </h2>
+                      </div>
+
+                  </div>
+                  <div id="revenue-chart"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+
+</section>
+<section id="column-selectors">
+  <div class="row">
+      <div class="col-12">
+          <div class="card">
+              <div class="card-header">
+                    
+                    <div class="col-12">
+                        <h4 class="card-title">جزییات هزینه کرد های من </h4>
+                        <a href="#add-contacts" class="btn btn-outline-primary mr-1 mb-1 waves-effect waves-light float-right"><i class="feather icon-plus"></i></a>
+                        <a href="?remove=true&all=true" class="btn btn-outline-primary mr-1 mb-1 waves-effect waves-light float-right"><i class="feather icon-trash"></i> همه</a>
+                    </div>
+                </div>
+              <div class="card-content">
+                  <div class="card-body card-dashboard">
+                     <div class="table-responsive">
+                          <table class="table table-striped dataex-html5-selectors">
+                              <thead>
+                                  <tr>
+                                      <th>عنوان</th>
+                                      <th>دسته بندی</th>
+                                      <th> پروژه</th>
+                                      <th>میزان هزینه کرد</th>
+                                      <th>توسط</th>
+                                      <th>نحوه پرداخت</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                {% for item in contacts %}
+                                <tr>
+                                    <td>{{item.nameandfamily}}</td>
+                                    <td>{{item.companyname}}</td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>{{item.phone}}</td>
+                                    <td>{{item.address}}</td>
+                                    <td>{{item.email}}
+                                        <a class="nav-link float-right" href="/contact/?remove=true&contact_id={{item.id}}" data-toggle="tooltip" data-placement="top" title="حذف مخاطب"><i class="ficon feather icon-trash "></i></i></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            
+                            
+                              </tbody>
+                              <tfoot>
+                                <tr>
+                                    <th>نام</th>
+                                    <th>نام شرکت</th>
+                                    <th>شماره همراه</th>
+                                    <th>تلفن ثایت</th>
+                                    <th>آدرس</th>
+                                    <th>ایمیل</th>
+                                </tr>   
+                              </tfoot>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Dashboard Analytics end -->
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+
+{% block js%}
+    <!-- BEGIN: Vendor JS-->
+    <script src="/static/vuexy/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="/static/vuexy/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/extensions/tether.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/extensions/shepherd.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="/static/vuexy/app-assets/js/core/app-menu.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/core/app.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/components.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/customizer.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/footer.min.js"></script>
+    <!-- END: Theme JS-->
+    <script src="/static/vuexy/app-assets/js/scripts/cards/card-analytics.min.js"></script>
+    <!-- BEGIN: Page JS-->
+    <script src="/static/vuexy/app-assets/js/scripts/pages/dashboard-analytics.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/datatables/datatable.min.js"></script>
+    <!-- END: Page JS-->
+{% endblock %}

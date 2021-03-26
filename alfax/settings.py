@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'karfarmaonline.apps.KarfarmaonlineConfig',
     'projects.apps.ProjectsConfig',
     'authentication.apps.AuthenticationConfig',
     'land.apps.LandConfig',

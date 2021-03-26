@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    path('dashboard/karfarmaonline/', include('karfarmaonline.urls')),
     path('', include('land.urls')),
     path('', include("authentication.urls")), 
     path('dashboard/', include('dashboard.urls')),
