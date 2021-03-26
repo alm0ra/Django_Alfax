@@ -34,18 +34,18 @@ class ArticleManager(models.Manager):
 
     def comments(self, article):
             dic = {}
-            CMs =  Comments.objects.filter(article=article)
+            CMs =  Comments.objects.filter(article=article,status = True)
             for CM in CMs :
                 dic[CM]= Comments_Answer.objects.filter(comment=CM)
             return dic
 
     def replys(self, cm):
-        return Comments_Answer.objects.filter(comment=cm)
+        return Comments_Answer.objects.filter(comment=cm,status = True)
 
     def comment_count(self, article):
 
-            cms = Comments.objects.filter(article=article)
-            cm_count = int(Comments.objects.filter(article=article).count())
+            cms = Comments.objects.filter(article=article,status = True)
+            cm_count = int(Comments.objects.filter(article=article,status = True).count())
             for cm in cms:
                 cm_count = cm_count + int(Comments_Answer.objects.filter(comment=cm).count())
             return cm_count
@@ -142,10 +142,10 @@ class Article(models.Model):
 
 class Comments(models.Model):
     name = models.CharField(max_length=200 ,verbose_name="نام")
-    email = models.CharField(max_length=100, default=None,verbose_name="ایمیل")
-    text = models.TextField(default=None,verbose_name="نظر")
-    date = models.DateTimeField(default=timezone.now,verbose_name="تاریخ انتشار")
-    status = models.BooleanField(default=True ,verbose_name="آیا نمایش داده شود؟")
+    email = models.CharField(max_length=100 ,verbose_name="ایمیل")
+    text = models.TextField(max_length =5000,verbose_name="نظر")
+    date = models.DateTimeField(auto_now_add=True,verbose_name="تاریخ انتشار")
+    status = models.BooleanField(default=False ,verbose_name="آیا نمایش داده شود؟")
     article = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='مقاله مرتبط')
     class Meta :
         verbose_name = "نظر اصلی"

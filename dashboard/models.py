@@ -43,45 +43,6 @@ class Contacts(models.Model):
     def jcreated(self):
         return jalali_converter(self.created)
 
-class income(models.Model):
-    title = models.CharField(max_length=200,verbose_name="عنوان")
-    description = models.CharField(max_length=200, blank=True, null=True,verbose_name="توضیحات")
-    amount = models.BigIntegerField(verbose_name="مقدار هزینه")
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1,verbose_name="ثبت توسط")
-    pub_date = models.DateTimeField(verbose_name="تاریخ انتشار")
-
-
-    class Meta :
-        verbose_name = "درآمد"
-        verbose_name_plural= "درآمد ها"
-        
-    def __str__(self):
-        return "{} - {}".format(self.title,self.amount)
-    def __unicode__(self):
-        return "{} - {}".format(self.title,self.amount)
-
-    def jpub_date(self):
-        return jalali_converter(self.pub_date)
-
-
-class expence(models.Model):
-    title = models.CharField(max_length=200,verbose_name="عنوان")
-    description = models.CharField(max_length=200, blank=True, null=True,verbose_name="توضیحات")
-    amount = models.BigIntegerField(verbose_name="مقدار هزینه")
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1,verbose_name="ثبت شده توسط")
-    pub_date = models.DateTimeField(verbose_name="تاریخ انتشار")
-
-
-    class Meta :
-        verbose_name = "هزینه شده"
-        verbose_name_plural= "هزینه ها"
-
-    def jpub_date(self):
-        return jalali_converter(self.pub_date)
-    def __str__(self):
-        return "{} - {}".format(self.title,self.amount)
-    def __unicode__(self):
-        return "{} - {}".format(self.title,self.amount)
 
 
 class invoice(models.Model):

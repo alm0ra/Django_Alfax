@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'dashboard/base.html' %}
 
 {% block css %}
     <!-- BEGIN: Vendor CSS-->
@@ -133,6 +133,7 @@
                 <div class="card-content">
                     <div class="card-body">
                         <form class="form" method="POST">
+                            {% csrf_token %} 
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-12">

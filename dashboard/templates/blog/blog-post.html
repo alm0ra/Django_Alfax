@@ -166,22 +166,23 @@
 							<div class="post-block mt-5 post-leave-comment">
 								<h4 class="mb-3 secondary-font pb-1">دیدگاه خود را بیان کنید</h4>
 				
-								<form class="contact-form p-4 rounded bg-color-grey" action="php/contact-form.php" method="POST">			
+								<form class="contact-form p-4 rounded bg-color-grey"  method="POST">			
+									{% csrf_token %}
 									<div class="p-2">
 										<div class="form-row">
 											<div class="form-group col-lg-6">
 												<label class="required font-weight-bold text-dark text-1-05em">نام کامل</label>
-												<input type="text" value="" data-msg-required="لطفا نام خود را وارد کنید." maxlength="100" class="form-control" name="name" required>
+												{{form.name}}
 											</div>
 											<div class="form-group col-lg-6">
 												<label class="required font-weight-bold text-dark text-1-05em">آدرس ایمیل</label>
-												<input type="email" value="" data-msg-required="لطفا آدرس ایمیل خود را وارد کنید." data-msg-email="لطفا یک آدرس ایمیل معتبر وارد کنید." maxlength="100" class="form-control text-left" name="email" dir="ltr" required>
+												{{form.email}}
 											</div>
 										</div>
 										<div class="form-row">
 											<div class="form-group col">
 												<label class="required font-weight-bold text-dark text-1-05em">دیدگاه</label>
-												<textarea maxlength="5000" data-msg-required="لطفا پیام خود را وارد کنید." rows="8" class="form-control" name="message" required></textarea>
+												{{form.text}}
 											</div>
 										</div>
 										<div class="form-row">
