@@ -47,45 +47,56 @@
     <div class="col-md-4 col-sm-6 col-12 search-content">
       <div class="card">
         <div class="card-body text-center">
-          <a href="page-kb-category.html">
+          <a href="{% url 'karfarmaonline:project' %}">
             <img src="/static/vuexy/app-assets/images/pages/graphic-2.png" class="mx-auto mb-2" width="180"
               alt="knowledge-base-image">
             <h4>ایجاد یک پروژه</h4>
             <small class="text-dark">با ایجاد یک پروژه پروژه های خود را به صورت جداگانه مدیریت کنید</small>
           </a>
         </div>
-        <button type="submit" class="btn btn-primary mr-1 mb-1" >  ایجاد پروژه جدید در سیستم</button>
-
+        <div class="card-body text-center">
+        <a href="{% url 'karfarmaonline:project' %}">
+        <button  class="btn btn-primary mr-1 mb-1" >  ایجاد پروژه جدید در سیستم</button>
+        </a>
+        </div>  
       </div>
     </div>
     <div class="col-md-4 col-sm-6 col-12 search-content">
       <div class="card">
         <div class="card-body text-center">
-          <a href="page-kb-category.html">
+        <a href="{% url 'karfarmaonline:expence' %}">
             <img src="/static/vuexy/app-assets/images/pages/graphic-3.png" class="mx-auto mb-2" width="180"
               alt="knowledge-base-image">
             <h4>ثبت هزینه کرد</h4>
             <small class="text-dark">هزینه های روزانه پروژه های خود را در این  قسمت ثبت کنید</small>
           </a>
         </div>
-        <button type="submit" class="btn btn-primary mr-1 mb-1">ثبت  هزینه کرد در سیستم</button>
-
+        <div class="card-body text-center">
+            <a href="{% url 'karfarmaonline:expence' %}">
+                <button type="submit" class="btn btn-primary mr-1 mb-1">ثبت  هزینه کرد در سیستم</button>
+            </a>
+        </div>  
       </div>
     </div>
     <div class="col-md-4 col-sm-6 col-12 search-content">
       <div class="card">
         <div class="card-body text-center">
-          <a href="page-kb-category.html">
+            <a href="{% url 'karfarmaonline:income' %}">
             <img src="/static/vuexy/app-assets/images/pages/graphic-4.png" class="mx-auto mb-2" width="180"
               alt="knowledge-base-image">
             <h4>ثبت درآمد در سیستم</h4>
             <small class="text-dark">در آمد های روزانه پروژه های خود را در این قسمت ثبت کنید</small>
           </a>
-        </div>
 
-        <button type="submit" class="btn btn-primary mr-1 mb-1">ثبت  درآمد در سیستم</button>
+        </div>
+        <div class="card-body text-center">
+            <a href="{% url 'karfarmaonline:income' %}">
+        <button type="submit" class="btn btn-primary mr-1 mb-1 float-center ">ثبت  درآمد در سیستم</button>
+            </a>
+        </div>  
 
       </div>
+
     </div>
   </div>
   <div class="row">
@@ -226,8 +237,6 @@
                     
                     <div class="col-12">
                         <h4 class="card-title">جزییات هزینه کرد های من </h4>
-                        <a href="#add-contacts" class="btn btn-outline-primary mr-1 mb-1 waves-effect waves-light float-right"><i class="feather icon-plus"></i></a>
-                        <a href="?remove=true&all=true" class="btn btn-outline-primary mr-1 mb-1 waves-effect waves-light float-right"><i class="feather icon-trash"></i> همه</a>
                     </div>
                 </div>
               <div class="card-content">
@@ -253,7 +262,6 @@
                                     <td>{{item.phone}}</td>
                                     <td>{{item.address}}</td>
                                     <td>{{item.email}}
-                                        <a class="nav-link float-right" href="/contact/?remove=true&contact_id={{item.id}}" data-toggle="tooltip" data-placement="top" title="حذف مخاطب"><i class="ficon feather icon-trash "></i></i></a>
                                     </td>
                                 </tr>
                                 {% endfor %}
