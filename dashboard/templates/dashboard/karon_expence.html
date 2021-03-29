@@ -1,0 +1,181 @@
+{% extends 'dashboard/base.html' %}
+
+{% block css %}
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/vendors-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/tables/datatable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/tether-theme-arrows.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/tether.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/shepherd-theme-default.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/components.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/themes/dark-layout.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/themes/semi-dark-layout.min.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/core/menu/menu-types/vertical-menu.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/core/colors/palette-gradient.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/pages/dashboard-analytics.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/pages/card-analytics.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/plugins/tour/tour.min.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/custom-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/assets/css/style-rtl.css">
+    <!-- END: Custom CSS-->
+{% endblock %}
+
+{% block main%}
+
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body"><!-- Dashboard Analytics Start -->
+            <section id="floating-label-layouts">
+                <div class="row match-height">
+                    <div class="col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"> ثبت یک هزینه کرد در سیستم</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form class="form" action="POST">
+                                        <div class="form-body">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-label-group">
+                                                        {{form.title}}
+                                                        <!-- <input type="text" id="last-name-column" class="form-control" placeholder="زیر بنای پروژه" name="zirbana"> -->
+                                                        <label for="last-name-column">عنوان هزینه کرد</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-label-group">
+                                                             
+                                                        {{form.amount}}
+                                                        <!-- <input type="text" id="city-column" class="form-control" placeholder="تعداد طبقات" name="city-column"> -->
+                                                        <label for="city-column"> مقدار هزینه کرد به تومان</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-label-group">
+                                                        انتخاب پروژه
+                                                        {{form.project}}
+                                                        <!-- <input type="text" id="first-name-column" class="form-control" placeholder="نام پروژه" name="project_name"> -->
+                                                        <label for="id_project">انتخاب پروژه </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-label-group">
+                                                        انتخاب روش واریز
+                                                        {{form.pay_mehod}}
+                                                        <!-- <input type="text" id="country-floating" class="form-control" name="country-floating" placeholder="آدرس پروژه"> -->
+                                                        <label for="id_pay_mehod">روش واریز </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-label-group">
+                                                        انتخاب دسته بندی
+                                                        {{form.category_pay}}
+                                                        <!-- <input type="email" id="email-id-column" class="form-control" name="email-id-column" placeholder="وضعیت پروژه"> -->
+                                                        <label for="id_category_pay">دسته بندی </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-label-group">
+                                                        {{form.description}}
+                                                        <!-- <input type="email" id="email-id-column" class="form-control" name="email-id-column" placeholder="وضعیت پروژه"> -->
+                                                        <label for="email-id-column">توضیحات </label>
+                                                    </div>
+                                                </div>
+
+                              <div class="col-12">
+                                                    <button type="submit" class="btn btn-primary mr-1 mb-1">ثبت کن</button>
+                                                    <button type="reset" class="btn btn-outline-warning mr-1 mb-1">تنظیم مجدد</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-content">
+                              <div class="card-body">
+                                <img class="card-img img-fluid mb-1" src="/static/vuexy/app-assets/images/pages/content-img-2.jpg"
+                                  alt="Card image cap">
+                                <h5 class="mt-1">{{user.first_name}}</h5>
+                                <p class="card-text"> هزینه کرد از همه پروژه ها</p>
+                                <hr class="my-1">
+                                <div class="d-flex justify-content-between mt-2">
+                                  <div class="float-left">
+                                    <p class="font-medium-2 mb-0">۰ ريال</p>
+                                    <p class="">هزینه کرد</p>
+                                  </div>
+                                  <div class="float-right">
+                                    <p class="font-medium-2 mb-0">تاریخ</p>
+                                    <p class="">تاریخ </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>  
+                </div>
+            </section>
+<!-- Dashboard Analytics end -->
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+
+{% block js%}
+    <!-- BEGIN: Vendor JS-->
+    <script src="/static/vuexy/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="/static/vuexy/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/extensions/tether.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/extensions/shepherd.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="/static/vuexy/app-assets/js/core/app-menu.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/core/app.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/components.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/customizer.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/footer.min.js"></script>
+    <!-- END: Theme JS-->
+    <script src="/static/vuexy/app-assets/js/scripts/cards/card-analytics.min.js"></script>
+    <!-- BEGIN: Page JS-->
+    <script src="/static/vuexy/app-assets/js/scripts/pages/dashboard-analytics.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/datatables/datatable.min.js"></script>
+    <!-- END: Page JS-->
+{% endblock %}
