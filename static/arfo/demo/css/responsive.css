@@ -1,0 +1,358 @@
+@charset "utf-8";
+
+/*
+Theme Name: Arfon Personal Portfolio & Resume HTML5 Template
+Theme URI: 
+Desing by: R T Suvro
+Developed by: Abdullah Al Numan
+Version: 1.0
+License: 
+Tags: 
+*/
+
+
+/*================================================
+[  Table of contents  ]
+================================================
+
+     1 Theme Default
+
+     2 Sidebar
+
+     3 Card Margin
+
+     4 Banner V2
+
+     5 Services
+
+     6 Work
+
+     7 Experience
+
+     12 Clients
+
+     13 Blog Details
+
+     14 About
+
+======================================
+[ End table content ]
+======================================*/
+
+@media(max-width: 991px) {
+    /*=====================
+        1 Theme Default
+    =======================*/
+    main,
+    footer,
+    .rtl main,
+    .rtl footer {
+        margin: 0;
+    }
+    section {
+        padding: 70px 0px;
+    }
+    /*=====================
+        2 Sidebar
+    =======================*/
+    .side-bar,
+    .side-bar.close {
+        right: -320px;
+    }
+    .side-bar .side-btn {
+        -webkit-transform: translateX(-45px) rotateY(-190deg);
+        -moz-transform: translateX(-45px) rotateY(-190deg);
+        transform: translateX(-45px) rotateY(-190deg);
+    }
+    .side-bar.active .side-btn {
+        -webkit-transform: translateX(0px) rotateY(0deg);
+        -moz-transform: translateX(0px) rotateY(0deg);
+        transform: translateX(0px) rotateY(0deg);
+    }
+    .side-bar.active {
+        right: 0px;
+    }
+    .rtl .side-bar,
+    .rtl .side-bar.close {
+        left: -320px;
+        right: initial;
+    }
+    .rtl .side-bar.active {
+        left: 0px;
+        right: initial;
+    }
+    .rtl .side-bar .side-btn {
+        -webkit-transform: translateX(45px) rotateY(0deg);
+        -moz-transform: translateX(45px) rotateY(0deg);
+        transform: translateX(45px) rotateY(0deg);
+    }
+    .rtl .side-bar.active .side-btn {
+        -webkit-transform: translateX(0px) rotateY(-190deg);
+        -moz-transform: translateX(0px) rotateY(-190deg);
+        transform: translateX(0px) rotateY(-190deg);
+    }
+    .rtl .side-bar .logo img {
+        margin-right: 30px;
+    }
+    .rtl .side-bar.active .logo img {
+        margin-right: 65px;
+    }
+    /*=====================
+        3 Card Margin
+    =======================*/
+    section .title h2,
+    section .title-center h2,
+    section.v2 .title p,
+    section.v2 .title-center p,
+    .services .tab-content .row>div:nth-last-child(3) .card,
+    .services.v2 .row>div:nth-last-child(3) .card,
+    .resume.v2 .row>div:nth-last-child(3) .card,
+    .skill.v2 .row>div:nth-last-child(3) .card,
+    .portfolio .portfolio-demo>div:nth-last-child(3),
+    .best-pricing .row>div:nth-last-child(2) .card,
+    .best-pricing .row>div:nth-last-child(3) .card,
+    .fun-fact .row>div:nth-last-child(3) .card,
+    .fun-fact .row>div:nth-last-child(4) .card,
+    .blog .row>div:nth-last-child(2) .card,
+    .blog .row>div:nth-last-child(3) .card,
+    .contact .contact-info ul li:last-child,
+    .contact.v2 .row>div:nth-last-child(2) .card,
+    .contact.v2 .row>div:nth-last-child(3) .card,
+    .blog-detels .comment-form {
+        margin-bottom: 30px;
+    }
+    /*=====================
+        14 About
+    =======================*/
+    .about .about-text {
+        margin-top: 30px;
+    }
+    /*=====================
+        11 Best Pricing
+    =======================*/
+    .best-pricing .nav-costs li a:hover::before,
+    .best-pricing .nav-costs li a.active::before {
+        content: none;
+    }
+    /*=====================
+        5 Services
+    =======================*/
+    .services .service-content .nav-tabs li {
+        margin-left: 10px;
+    }
+    .services .service-content .nav-tabs a {
+        padding: 10px;
+    }
+    .services .service-content .nav-tabs a span {
+        font-size: 14px;
+    }
+    /*=====================
+        6 Work
+    =======================*/
+    .work .shap-wrapper {
+        display: none;
+    }
+    /*=====================
+        7 Experience
+    =======================*/
+    .experience .tab-menu .nav-tabs li:last-child {
+        margin-bottom: 20px;
+    }
+    .experience .tab-menu .nav-tabs a::before {
+        content: none;
+    }
+    .experience .tab-content .aw-item .row>div {
+        -webkit-box-align: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .experience .tab-content .aw-item .row>div:last-child {
+        margin-bottom: 0px;
+    }
+    .experience .tab-content .aw-item .aw-d-btn {
+        margin: 0 auto;
+    }
+}
+
+@media(max-width: 767px) {
+    /*=====================
+        1 Theme Default
+    =======================*/
+    section {
+        padding: 50px 0px;
+    }
+    /*=====================
+        3 Card Margin
+    =======================*/
+    .services .tab-content .row>div:nth-last-child(2) .card,
+    .services.v2 .row>div:nth-last-child(2) .card,
+    .resume.v2 .row>div:nth-last-child(2) .card,
+    .skill.v2 .row>div:nth-last-child(2) .card,
+    .fun-fact .row>div:nth-last-child(2) .card {
+        margin-bottom: 30px;
+    }
+    /*=====================
+        4 Banner V2
+    =======================*/
+    .banner.v2::before,
+    .banner.v2::after {
+        content: none;
+    }
+    /*=====================
+        12 Clients
+    =======================*/
+    .clients .clind-ariya .clind .client-img {
+        float: none;
+        margin-bottom: 20px;
+    }
+    .clients .clind-ariya .clind .client-text {
+        margin-right: 0px;
+        padding-bottom: 65px;
+    }
+    .clients .slick-arrow,
+    .clients .slick-arrow.btn-next {
+        margin-right: -30px;
+        right: 50% !important;
+        ;
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+    .clients .slick-arrow.btn-next {
+        margin-right: 30px;
+    }
+    /*=====================
+        12 Clients
+    =======================*/
+    .clients .clind-ariya .clind .client-img {
+        float: none;
+        margin-bottom: 20px;
+    }
+    .clients .clind-ariya .clind .client-text {
+        margin-right: 0px;
+        padding-bottom: 65px;
+    }
+    .clients.v2 .clind {
+        margin-left: 0px;
+    }
+    .clients.v2 .slick-arrow,
+    .clients.v2 .slick-arrow.btn-next {
+        margin-right: -30px;
+        right: 50% !important;
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+    .clients.v2 .slick-arrow.btn-next {
+        margin-right: 40px;
+    }
+    /*==========================
+        8 Messenger Request v2
+    ============================*/
+    .messenger-request .title h4,
+    .messenger-request ul,
+    .contact .social ul,
+    .contact.v2 .form-content .social {
+        text-align: center;
+    }
+    .messenger-request ul {
+        margin-top: 20px;
+    }
+    .contact .social h5 {
+        margin-bottom: 0px
+    }
+    .contact .social li a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 20px
+    }
+    /*=====================
+        13 Blog Details
+    =======================*/
+    .blog-detels .entry-footer .title h4,
+    .blog-detels .entry-footer ul {
+        text-align: center;
+    }
+    .blog-detels .entry-footer ul li {
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 576px) {
+    /*=====================
+        2 Sidebar
+    =======================*/
+    .side-bar .modal-content input,
+    .side-bar .modal-content button {
+        width: 100%;
+    }
+    .side-bar .modal-content input {
+        margin-bottom: 20px;
+    }
+    /*=====================
+        3 Card Margin
+    =======================*/
+    .portfolio .portfolio-demo>div:nth-last-child(2) {
+        margin-bottom: 30px;
+    }
+    /*=====================
+        5 Services
+    =======================*/
+    .services .service-content .nav-tabs li {
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+    }
+    .services .service-content .nav-tabs li:last-child {
+        margin-bottom: 0px;
+    }
+    .services .service-content .nav-tabs li a::before {
+        content: none;
+    }
+    /*=====================
+        13 Blog Details
+    =======================*/
+    .blog-detels .inner-thumb-img {
+        margin-bottom: 30px;
+    }
+    .blog-detels .inner-thumb-img img {
+        width: 100%;
+    }
+    .about .about-link li {
+        display: block;
+        margin: 0px 0px 30px 0px;
+    }
+    .about .about-link li a {
+        text-align: center;
+    }
+}
+
+@media(max-width:479px) {
+    /*=====================
+        2 Sidebar
+    =======================*/
+    .side-bar {
+        width: 100%;
+    }
+    .side-bar,
+    .side-bar.close {
+        right: -100%;
+    }
+    .rtl .side-bar,
+    .rtl .side-bar.close {
+        left: -100%;
+        right: initial;
+    }
+}
+
+@media(max-width:320px) {
+    /*=====================
+        2 Sidebar
+    =======================*/
+    .side-bar .slider-manu {
+        height: calc(100% - 85px);
+    }
+    .side-bar .side-footer {
+        display: none;
+    }
+}

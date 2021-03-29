@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+/*
+Theme Name: Arfon Personal Portfolio & Resume HTML5 Template
+Theme URI: 
+Desing by: R T Suvro
+Developed by: Abdullah Al Numan
+Version: 1.0
+License: 
+Tags: 
+*/
+
+
+/*================================================
+[  Table of contents  ]
+================================================
+
+     1 Theme Default
+
+     2 Header 
+
+     6 Bye Content
+
+     7 Footer 
+
+======================================
+[ End table content ]
+======================================*/
+
+@media(max-width: 991px) {
+    /*=====================
+        1 Theme Default
+    =======================*/
+    section {
+        padding: 70px 0px;
+    }
+    .demos .row>div:nth-last-child(3) .intro-demo,
+    .features .row>div:nth-last-child(3) .card,
+    .features .row>div:nth-last-child(4) .card {
+        margin-bottom: 30px;
+    }
+    /*=====================
+        2 Header 
+    =======================*/
+    .manu .bye a {
+        padding: 15px 20px;
+    }
+    /*=====================
+        6 Bye Content
+    =======================*/
+    .bye-content .title-center {
+        padding: 0px 75px;
+    }
+}
+
+@media(max-width: 767px) {
+    /*=====================
+        1 Theme Default
+    =======================*/
+    section {
+        padding: 50px 0px;
+    }
+	/*=====================
+        2 Header 
+    =======================*/
+	.manu nav ul {
+		text-align: left;
+	}
+    /*=====================
+        7 Footer
+    =======================*/
+    footer .main-footer .logo {
+        margin: 0px auto 20px auto;
+    }
+    footer .main-footer .btton-top-btn a {
+        margin: 20px auto 0px auto;
+    }
+}
+
+@media(max-width:575px) {
+	/*=====================
+        2 Header 
+    =======================*/
+	.manu .logo {
+		margin: 0px auto 20px auto;
+	}
+	.manu nav ul {
+		text-align: center;
+	}
+    .features .row>div:nth-last-child(2) .card {
+        margin-bottom: 30px;
+    }
+}
