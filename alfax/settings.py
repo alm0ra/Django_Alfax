@@ -78,6 +78,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'alfax.wsgi.application'
 
 
