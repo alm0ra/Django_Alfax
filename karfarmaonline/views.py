@@ -8,12 +8,33 @@ from .models import income , expence , ProjectModel
 from django.contrib.auth.models import User
 from .forms import incomeForm, expenceForm, projectForm
 from dashboard.models import UserProfile
-
+from extensions.utils import place_value
 
 @login_required(login_url="/login/")
 def index(request):
-    is_p_member = ProjectModel.objects.is_member_of_project(user =request.user) 
+    is_p_member = ProjectModel.objects.is_member_of(user =request.user) 
     is_manager = ProjectModel.objects.is_manager(user= request.user)
+
+    if request.GET.get('remove', False)  == 'true' :
+        project_id = request.GET.get('project_id', False)
+        if ProjectModel.objects.is_manager_project(user=request.user, id =project_id):
+            ProjectModel.objects.filter(id=project_id).delete()
+            messages.info(request, "با موفقیت حذف شد * ")
+    if request.GET.get('detail', False)  == 'true' :
+        project_id = request.GET.get('project_id', False)
+        if ProjectModel.objects.is_manager_project(user=request.user, id =project_id) or ProjectModel.objects.is_member_of_project(user=request.user, id =project_id):
+            proj = ProjectModel.objects.get(id= project_id)
+            profile  = UserProfile.objects.all().filter(user=request.user)
+
+            context = {
+                "user":request.user,
+                "profiles":profile,
+                "p": True, 
+
+                }
+
+            return render(request, "dashboard/detail_project.html", context)
+
 
     if is_p_member or is_manager:
         my_expence = expence.objects.total_per_user(user= request.user)
@@ -22,9 +43,22 @@ def index(request):
         proj_count = ProjectModel.objects.project_count(user=request.user)
         expence_7day = expence.objects.total_last_7_days(user=request.user)
         profile  = UserProfile.objects.all().filter(user=request.user)
-        if my_expence['amount__sum'] is None :my_expence['amount__sum'] = 0
-        if my_income['amount__sum'] is None :my_income['amount__sum'] = 0
-        if expence_7day['amount__sum'] is None :expence_7day['amount__sum'] = 0
+        proj_m= ProjectModel.objects.filter(Manager= request.user)
+        proj= ProjectModel.objects.filter(Members= request.user)
+        if my_expence['amount__sum'] is None :
+            my_expence['amount__sum'] = 0 
+        else : 
+            my_expence['amount__sum'] = place_value( my_expence['amount__sum'])
+
+        if my_income['amount__sum'] is None :
+            my_income['amount__sum'] = 0
+        else : 
+            my_income['amount__sum'] = place_value( my_income['amount__sum'])
+
+        if expence_7day['amount__sum'] is None :
+            expence_7day['amount__sum'] = 0
+        else : 
+            expence_7day['amount__sum'] = place_value( expence_7day['amount__sum'])
 
         context = {"user":request.user,
                         "profiles":profile,
@@ -32,13 +66,14 @@ def index(request):
                         "my_income":my_income['amount__sum'] ,
                         "proj_count":proj_count ,
                         "expence_7day": expence_7day['amount__sum'],
-                        "all_expence":all_expence, "p3": True
+                        "all_expence":all_expence, "p": True, 
+                        "proj":proj, "proj_m":proj_m
                         }
         return render(request, "dashboard/main_karonline.html",context) 
 
     else:
         profile  = UserProfile.objects.all().filter(user=request.user)
-        context = {"user":request.user,"profiles":profile, "enable":True, "p3": True}
+        context = {"user":request.user,"profiles":profile, "enable":True, "p": True}
         return render(request, "dashboard/main_karonline.html",context)
 
 @login_required(login_url="/login/")
@@ -46,7 +81,7 @@ def make_project(request):
     
     form = projectForm()
     profile  = UserProfile.objects.all().filter(user=request.user)
-    context = {"user":request.user,"profiles":profile, "form":form, "p3": True}
+    context = {"user":request.user,"profiles":profile, "form":form, "p": True}
 
     
     
@@ -80,9 +115,10 @@ def make_project(request):
                 oj = ProjectModel(Manager=Manager,name=name,zirbana=zirbana,tedad_tabaqat= tedad_tabaqat,address= address,description= description,project_status=project_status)
                 oj.save()
             messages.info(request, "با موفقیت ثبت شد")
+            return redirect('/dashboard/karfarmaonline/')
         else:
             form = projectForm(request.POST or None)
-            context = {"user":request.user,"profiles":profile, "form":form, "p3": True}
+            context = {"user":request.user,"profiles":profile, "form":form, "p": True}
             render(request, "dashboard/karon_project.html",context) 
 
     return render(request, "dashboard/karon_project.html",context) 
@@ -92,13 +128,13 @@ def project_income(request):
     is_p_member = ProjectModel.objects.is_member_of_project(user =request.user) 
     is_manager = ProjectModel.objects.is_manager(user= request.user)
     profile  = UserProfile.objects.all().filter(user=request.user)
-    context = {"user":request.user,"profiles":profile, "p3": True}
+    context = {"user":request.user,"profiles":profile, "p": True}
 
     if is_p_member or is_manager:
         form = incomeForm()
         form.fields['project'].queryset = ProjectModel.objects.filter(Manager = request.user ) or ProjectModel.objects.filter(Members = request.user )
         profile  = UserProfile.objects.all().filter(user=request.user)
-        context = {"user":request.user,"profiles":profile, "form":form, "p3": True}
+        context = {"user":request.user,"profiles":profile, "form":form, "p": True}
 
         if request.method == "POST":
             form = incomeForm(request.POST or None)
@@ -117,7 +153,7 @@ def project_income(request):
 
         return render(request, "dashboard/karon_income.html",context)
     else:
-        context = {"user":request.user,"profiles":profile, "enable":True, "p3": True}
+        context = {"user":request.user,"profiles":profile, "enable":True, "p": True}
         return render(request, "dashboard/main_karonline.html",context)
 
 @login_required(login_url="/login/")
@@ -132,7 +168,7 @@ def project_expence(request):
         form.fields['project'].queryset = ProjectModel.objects.filter(Manager = request.user ) or ProjectModel.objects.filter(Members = request.user )
 
         profile  = UserProfile.objects.all().filter(user=request.user)
-        context = {"user":request.user,"profiles":profile, "form":form, "p3": True}
+        context = {"user":request.user,"profiles":profile, "form":form, "p": True}
 
         if request.method == "POST":
             form = expenceForm(request.POST or None)
@@ -151,5 +187,5 @@ def project_expence(request):
 
         return render(request, "dashboard/karon_expence.html",context) 
     else:
-        context = {"user":request.user,"profiles":profile, "enable":True, "p3": True}
+        context = {"user":request.user,"profiles":profile, "enable":True, "p": True}
         return render(request, "dashboard/main_karonline.html",context)

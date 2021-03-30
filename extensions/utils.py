@@ -2,7 +2,9 @@ from . import jalali
 from django.utils import timezone
 
 
-
+def place_value(num):
+    return("{:,}".format(num))
+    
 def persian_number_converter(mystr):
     numbers={
         "0":"۰",

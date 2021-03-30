@@ -31,8 +31,15 @@ class incomeManager(models.Manager):
         return total
 
 class Managera(models.Manager):
-    def is_member_of_project(self, user):
+
+    def is_member_of(self, user):
         is_member = ProjectModel.objects.filter(Members=user)
+        if is_member.count() != 0:
+            return True
+        else:
+            return False
+    def is_member_of_project(self, user , id):
+        is_member = ProjectModel.objects.filter(Members=user ,id = id)
         if is_member.count() != 0:
             return True
         else:
@@ -41,6 +48,13 @@ class Managera(models.Manager):
     def is_manager(self, user):
         is_manager =ProjectModel.objects.filter(Manager=user)
         if is_manager.count() != 0:
+            return True
+        else:
+            return False
+            
+    def is_manager_project(self, user, id):
+        is_managera =ProjectModel.objects.filter(Manager=user, id = id)
+        if is_managera.count() != 0:
             return True
         else:
             return False
