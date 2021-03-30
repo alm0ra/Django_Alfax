@@ -50,7 +50,13 @@
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
-                                    <form class="form" action="POST">
+                                    {% for message in messages %}
+                                    <div class="alert alert-success" role="alert">
+                                      <p>{{message}}</p>
+                                    </div>
+                                    {% endfor %}
+                                    <form class="form" method="POST">
+                                        {% csrf_token %}
                                         <div class="form-body">
                                             <div class="row">
                                                 <div class="col-12">

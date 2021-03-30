@@ -2,14 +2,64 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from extensions.utils import jalali_converter
+from datetime import datetime, timedelta
+
+class expenceManager(models.Manager):
+    def total(self, project):
+        total = expence.objects.all().aggregate(sum)
+        return total
+    def total_per_user(self, user):
+        total = expence.objects.filter(user=user).aggregate(sum)
+        return total
+    def total_per_user_project(self, user, project):
+        total = expence.objects.filter(user=user, project=project).aggregate(sum)
+    def total_last_7_days(self, user):
+        total = expence.objects.filter(user=user, pub_date= datetime.now()-timedelta(days=7)).aggregate(sum)
+
+
+class incomeManager(models.Manager):
+    def total(self, project):
+        total = income.objects.all().aggregate(sum)
+        return total
+    def total_per_user(self, user):
+        total = income.objects.filter(user=user).aggregate(sum)
+        return total
+    def total_per_user_project(self, user, project):
+        total = income.objects.filter(user=user, project=project).aggregate(sum)
+        return total
+
+class Managera(models.Manager):
+    def is_member_of_project(self, user):
+        is_member = ProjectModel.objects.filter(Members=user)
+        if is_member.count() != 0:
+            return True
+        else:
+            return False
+
+    def is_manager(self, user):
+        is_manager =ProjectModel.objects.filter(Manager=user)
+        if is_manager.count() != 0:
+            return True
+        else:
+            return False
+
+    def is_user(self, number):
+        is_user = User.objects.filter(username=number)
+        print(is_user)
+
+        if is_user.count() != 0 :
+            return True
+        else :
+            return False
+    def project_count(self, user):
+        proj_count = ProjectModel.objects.filter(Manager=user) and ProjectModel.objects.filter(Members=user)
+        return proj_count.count()
+    
 
 
 
 
-
-
-
-class project(models.Model):
+class ProjectModel(models.Model):
     METHOD_CHOICE = (
         ('a','در حال انجام'),
         ('b','پایان یافته'),
@@ -19,12 +69,14 @@ class project(models.Model):
     zirbana = models.IntegerField(verbose_name="مساحت زیر بنا متر مربع")
     tedad_tabaqat = models.IntegerField(verbose_name="تعداد طبقات پروژه")
     address = models.CharField(max_length=150 ,blank=True, null=True , verbose_name="آددرس پروژه")
-    Members = models.ManyToManyField(User, related_name='member',verbose_name="انتخاب شرکا")
+    Members = models.ManyToManyField(User, related_name='member',verbose_name="انتخاب شرکا", blank=True)
     Manager = models.ForeignKey(User,related_name='manager' ,on_delete=models.CASCADE, verbose_name="مدیر پروژه")
     description = models.TextField(max_length=400 , verbose_name="توضیحات پروژه",blank=True)
     project_status = models.CharField(max_length=1,choices=METHOD_CHOICE, verbose_name="وضعیت پروژه" )
     created_date = models.DateField(auto_now_add=True, verbose_name= "تاریخ ایجاد پروژه")
     
+    objects = Managera()
+
     class Meta :
         verbose_name = "پروژه عمرانی"
         verbose_name_plural= "پروژه های عمرانی"
@@ -47,7 +99,7 @@ class income(models.Model):
         ('d','سایر'),
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1, verbose_name="هزینه شده توسط ")
-    project = models.ForeignKey(project, on_delete=models.CASCADE, verbose_name="پروژه مربوطه")
+    project = models.ForeignKey(ProjectModel, on_delete=models.CASCADE, verbose_name="پروژه مربوطه")
     title = models.CharField(max_length=200,verbose_name="عنوان هزینه کرد")
     amount = models.BigIntegerField(verbose_name="مقدار هزینه")
     description = models.TextField(max_length=200, blank=True, null=True,verbose_name="توضیحات")
@@ -55,6 +107,7 @@ class income(models.Model):
     category_pay = models.CharField(max_length=1, choices=CATEGORY_CHOICES, verbose_name="از کدام منبع درآمد داشتید")
     pub_date = models.DateTimeField(auto_now_add=True, verbose_name="تاریخ انتشار")
 
+    objects = incomeManager()
 
     class Meta :
         verbose_name = "درآمد"
@@ -90,7 +143,7 @@ class expence(models.Model):
 
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1, verbose_name="هزینه شده توسط ")
-    project = models.ForeignKey(project, on_delete=models.CASCADE, verbose_name="پروژه مربوطه")
+    project = models.ForeignKey(ProjectModel, on_delete=models.CASCADE, verbose_name="پروژه مربوطه")
     title = models.CharField(max_length=200,verbose_name="عنوان")
     amount = models.BigIntegerField(verbose_name="مقدار هزینه کرد به تومان")
     description = models.TextField(max_length=200, blank=True, null=True,verbose_name="توضیحات")
@@ -98,6 +151,7 @@ class expence(models.Model):
     category_pay = models.CharField(max_length=1, choices=CATEGORY_CHOICE, verbose_name="در کدام شاخه هزینه کردید")
     pub_date = models.DateTimeField(auto_now_add=True, verbose_name="تاریخ انتشار")
 
+    objects = expenceManager()
 
     class Meta :
         verbose_name = "هزینه کرد"

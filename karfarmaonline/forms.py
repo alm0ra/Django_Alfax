@@ -1,4 +1,4 @@
-from .models import income , expence, project
+from .models import income , expence, ProjectModel
 from django.forms import TextInput, EmailInput,Textarea, Select,NumberInput
 from django import forms
 
@@ -29,15 +29,22 @@ class expenceForm(forms.ModelForm):
         }
 
 class projectForm(forms.ModelForm):
+    Members = forms.CharField(min_length=3,max_length=200,label="asdasd",required = False,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder" : "واردکردن شرکای پروژه",                
+                "class": "form-control "
+                
+            }
+        ))
     class Meta:
-        model = project
+        model = ProjectModel
         fields = ('name','zirbana','tedad_tabaqat','address','Members','description','project_status')
         widgets = {
             'name':TextInput(attrs={'class':'form-control','placeholder':'نام پروژه را وارد کنید'}),
             'zirbana':NumberInput(attrs={'class':'form-control','placeholder':'مساحت زیر بنای پروژه را وارد کنید'}),
             'tedad_tabaqat':NumberInput(attrs={'class':'form-control','placeholder':'تعداد طبقات پروژه را وارد کنید'}),
             'address':TextInput(attrs={'class':'form-control','placeholder':'آدرس پروژه را وارد کنید'}),
-            'Members':TextInput(attrs={'class':'form-control','placeholder':'شماره همراه شرکای پروژه را وارد کنید با یک","از هم جدا کنید'}),
             'description':Textarea(attrs={'class':'form-control','placeholder':'توضیحات پروژه را وارد کنید'}),
             'project_status':Select(attrs={'class':'form-control','placeholder':'انتخاب کنید'}),
         }

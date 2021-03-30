@@ -50,7 +50,19 @@
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
-                                    <form class="form" action="POST">
+                                    {% for key, value in form.errors.items %}
+                                    <div class="alert alert-warning" role="alert">
+                                        {{key}}
+                                    {{ value }}
+                                    </div>
+                                    {% endfor %}
+                                    {% for message in messages %}
+                                    <div class="alert alert-success" role="alert">
+                                      <p>{{message}}</p>
+                                    </div>
+                                    {% endfor %}
+                                    <form class="form" method="post">
+                                        {% csrf_token %}
                                         <div class="form-body">
                                             <div class="row">
                                                 <div class="col-md-6 col-12">

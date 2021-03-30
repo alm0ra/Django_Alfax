@@ -17,5 +17,5 @@ class ProjectAdmin(admin.ModelAdmin):
 
 admin.site.register(income,IncomeAdmin)
 admin.site.register(expence,ExpenceAdmin)
-admin.site.register(project,ProjectAdmin)
+admin.site.register(ProjectModel,ProjectAdmin)
 
