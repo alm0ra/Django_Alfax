@@ -25,10 +25,11 @@ class UserProfile(models.Model):
 
 
 class Contacts(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE,default=1, verbose_name="ثبت توسط")
     nameandfamily = models.CharField(max_length=50,verbose_name="نام و نام خانوادگی")
     companyname = models.CharField(max_length=50, blank=True,verbose_name="نام شرکت")
-    mobile = models.CharField(max_length=50,blank=True,verbose_name="تلفن همراه")
-    phone = models.CharField(max_length=50,blank=True,verbose_name="تلفن ثابت")
+    mobile = models.CharField(max_length=50,unique=True,verbose_name="تلفن همراه")
+    phone = models.CharField(max_length=50,unique=True,verbose_name="تلفن ثابت")
     address = models.CharField(max_length=50,blank=True,verbose_name="آدرس")
     email = models.CharField(max_length=100, default=None,verbose_name="ایمیل")
     created = models.DateTimeField(auto_now=True,verbose_name="ساخته شده در تاریخ ")

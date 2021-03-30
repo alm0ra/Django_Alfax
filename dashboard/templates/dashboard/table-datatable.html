@@ -36,7 +36,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
               <div class="row breadcrumbs-top">
                 <div class="col-12">
-                  <h2 class="content-header-title float-left mb-0">مخاطبین آنلاین</h2>
+                  <h2 class="content-header-title float-left mb-0">مخاطبین من</h2>
                   <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="/dashboard">خانه</a>
@@ -65,7 +65,18 @@
   <section id="column-selectors">
       <div class="row">
           <div class="col-12">
+            {% for key, value in form.errors.items %}
+            <div class="alert alert-warning" role="alert">
+            {{ value }}
+            </div>
+            {% endfor %}
+            {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+              <p>{{message}}</p>
+            </div>
+            {% endfor %}
               <div class="card">
+
                   <div class="card-header">
                         
                         <div class="col-12">
@@ -97,7 +108,7 @@
                                         <td>{{item.phone}}</td>
                                         <td>{{item.address}}</td>
                                         <td>{{item.email}}
-                                            <a class="nav-link float-right" href="/contact/?remove=true&contact_id={{item.id}}" data-toggle="tooltip" data-placement="top" title="حذف مخاطب"><i class="ficon feather icon-trash "></i></i></a>
+                                            <a class="nav-link float-right" href="/dashboard/contact/?remove=true&contact_id={{item.id}}" data-toggle="tooltip" data-placement="top" title="حذف مخاطب"><i class="ficon feather icon-trash "></i></i></a>
                                         </td>
                                     </tr>
                                     {% endfor %}
@@ -138,7 +149,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-label-group position-relative has-icon-left">
-                                            <input type="text" id="first-name-floating-icon" class="form-control" name="nameandfamily" placeholder="نام و نام خانوادگی">
+                                            {{form.nameandfamily}}
                                             <div class="form-control-position">
                           <i class="feather icon-user"></i>
                       </div>
@@ -147,7 +158,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-label-group position-relative has-icon-left">
-                                            <input type="number" id="contact-floating-icon" class="form-control" name="mobile" placeholder="تلفن همراه">
+                                            {{form.mobile}}
                                             <div class="form-control-position">
                           <i class="feather icon-smartphone"></i>
                       </div>
@@ -156,7 +167,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-label-group position-relative has-icon-left">
-                                            <input type="text" id="first-name-floating-icon" class="form-control" name="companyname" placeholder="نام شرکت">
+                                            {{form.companyname}}
                                             <div class="form-control-position">
                           <i class="feather icon-user"></i>
                       </div>
@@ -165,7 +176,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-label-group position-relative has-icon-left">
-                                            <input type="text" id="first-name-floating-icon" class="form-control" name="address" placeholder="آدرس">
+                                            {{form.address}}
                                             <div class="form-control-position">
                           <i class="feather icon-user"></i>
                       </div>
@@ -174,7 +185,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-label-group position-relative has-icon-left">
-                                            <input type="email" id="email-id-floating-icon" class="form-control" name="email" placeholder="ایمیل">
+                                            {{form.email}}
                                             <div class="form-control-position">
                           <i class="feather icon-mail"></i>
                       </div>
@@ -184,7 +195,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-label-group position-relative has-icon-left">
-                                            <input type="number" id="contact-floating-icon" class="form-control" name="phone" placeholder="تلفن ثابت">
+                                            {{form.phone}}
                                             <div class="form-control-position">
                           <i class="feather icon-smartphone"></i>
                       </div>

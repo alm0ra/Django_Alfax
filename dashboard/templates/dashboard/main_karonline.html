@@ -103,7 +103,7 @@
         <div class="card">
             <div class="card-header d-flex align-items-start pb-0">
                 <div>
-                    <h2 class="text-bold-700 mb-0">۰ تومان</h2>
+                    <h2 class="text-bold-700 mb-0">{% if enable %} ۰ {% endif %}{{my_expence}} تومان</h2>
                     <p>هزینه شده ها توسط من</p>
                 </div>
                 <div class="avatar bg-rgba-primary p-50 m-0">
@@ -118,7 +118,7 @@
         <div class="card">
             <div class="card-header d-flex align-items-start pb-0">
                 <div>
-                    <h2 class="text-bold-700 mb-0">0 تومان</h2>
+                    <h2 class="text-bold-700 mb-0">{% if enable %} ۰ {% endif %}{{my_income}} تومان</h2>
                     <p>درآمد های ایجاد شده توسط من</p>
                 </div>
                 <div class="avatar bg-rgba-success p-50 m-0">
@@ -133,8 +133,8 @@
         <div class="card">
             <div class="card-header d-flex align-items-start pb-0">
                 <div>
-                    <h2 class="text-bold-700 mb-0">0</h2>
-                    <p>تعداد شرکای من</p>
+                    <h2 class="text-bold-700 mb-0">{% if enable %} ۰ {% endif %}{{expence_7day}} تومان</h2>
+                    <p>هزینه کردهای ۷روز گذشته  </p>
                 </div>
                 <div class="avatar bg-rgba-danger p-50 m-0">
                     <div class="avatar-content">
@@ -148,7 +148,7 @@
         <div class="card">
             <div class="card-header d-flex align-items-start pb-0">
                 <div>
-                    <h2 class="text-bold-700 mb-0">0</h2>
+                    <h2 class="text-bold-700 mb-0">{% if enable %} ۰ {% endif %}{{proj_count}}</h2>
                     <p>تعداد پروژه های من</p>
                 </div>
                 <div class="avatar bg-rgba-warning p-50 m-0">
@@ -250,18 +250,18 @@
                                       <th> پروژه</th>
                                       <th>میزان هزینه کرد</th>
                                       <th>توسط</th>
-                                      <th>نحوه پرداخت</th>
+                                      <th> تاریخ</th>
                                   </tr>
                               </thead>
                               <tbody>
-                                {% for item in contacts %}
+                                {% for item in all_expence %}
                                 <tr>
-                                    <td>{{item.nameandfamily}}</td>
-                                    <td>{{item.companyname}}</td>
-                                    <td>{{item.mobile}}</td>
-                                    <td>{{item.phone}}</td>
-                                    <td>{{item.address}}</td>
-                                    <td>{{item.email}}
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.category_pay}}</td>
+                                    <td>{{item.project.name}}</td>
+                                    <td>{{item.amount}}</td>
+                                    <td>{{item.user.first_name}}</td>
+                                    <td>{{item.jpub_date}}
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -270,12 +270,12 @@
                               </tbody>
                               <tfoot>
                                 <tr>
-                                    <th>نام</th>
-                                    <th>نام شرکت</th>
-                                    <th>شماره همراه</th>
-                                    <th>تلفن ثایت</th>
-                                    <th>آدرس</th>
-                                    <th>ایمیل</th>
+                                    <th>عنوان</th>
+                                    <th>دسته بندی</th>
+                                    <th> پروژه</th>
+                                    <th>میزان هزینه کرد</th>
+                                    <th>توسط</th>
+                                    <th> تاریخ</th>
                                 </tr>   
                               </tfoot>
                           </table>

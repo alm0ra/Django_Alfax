@@ -1,31 +1,33 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import Sum
 from django.utils import timezone
 from extensions.utils import jalali_converter
 from datetime import datetime, timedelta
 
 class expenceManager(models.Manager):
     def total(self, project):
-        total = expence.objects.all().aggregate(sum)
+        total = expence.objects.all().aggregate(Sum('amount'))
         return total
     def total_per_user(self, user):
-        total = expence.objects.filter(user=user).aggregate(sum)
+        total = expence.objects.filter(user=user).aggregate(Sum('amount'))
         return total
     def total_per_user_project(self, user, project):
-        total = expence.objects.filter(user=user, project=project).aggregate(sum)
+        total = expence.objects.filter(user=user, project=project).aggregate(Sum('amount'))
+        return total
     def total_last_7_days(self, user):
-        total = expence.objects.filter(user=user, pub_date= datetime.now()-timedelta(days=7)).aggregate(sum)
-
+        total = expence.objects.filter(user=user, pub_date= datetime.now()-timedelta(days=7)).aggregate(Sum('amount'))
+        return total
 
 class incomeManager(models.Manager):
     def total(self, project):
-        total = income.objects.all().aggregate(sum)
+        total = income.objects.all().aggregate(Sum('amount'))
         return total
     def total_per_user(self, user):
-        total = income.objects.filter(user=user).aggregate(sum)
+        total = income.objects.filter(user=user).aggregate(Sum('amount'))
         return total
     def total_per_user_project(self, user, project):
-        total = income.objects.filter(user=user, project=project).aggregate(sum)
+        total = income.objects.filter(user=user, project=project).aggregate(Sum('amount'))
         return total
 
 class Managera(models.Manager):
@@ -52,8 +54,8 @@ class Managera(models.Manager):
         else :
             return False
     def project_count(self, user):
-        proj_count = ProjectModel.objects.filter(Manager=user) and ProjectModel.objects.filter(Members=user)
-        return proj_count.count()
+        proj_count = ProjectModel.objects.filter(Manager=user).count()+ProjectModel.objects.filter(Members=user).count()
+        return proj_count
     
 
 
@@ -156,9 +158,12 @@ class expence(models.Model):
     class Meta :
         verbose_name = "هزینه کرد"
         verbose_name_plural= " هزینه کرد ها"
-        
+    
+
     def __str__(self):
         return "{} - {}".format(self.title,self.amount)
+
+
     def __unicode__(self):
         return "{} - {}".format(self.title,self.amount)
 

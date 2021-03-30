@@ -32,7 +32,7 @@ class projectForm(forms.ModelForm):
     Members = forms.CharField(min_length=3,max_length=200,label="asdasd",required = False,
         widget=forms.TextInput(
             attrs={
-                "placeholder" : "واردکردن شرکای پروژه",                
+                "placeholder" : "برای اضافه کردن شرا به پروژه شماره تلفن آنهارا وارد و با ','از هم جدا کنید",                
                 "class": "form-control "
                 
             }

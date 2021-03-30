@@ -5,21 +5,36 @@ from django.http import HttpResponse
 from django import template
 from .models import *
 from django.contrib.auth.models import User
-
-
+from .forms import ContactForm
+from django.contrib import messages
 
 
 @login_required(login_url="/login/")
 def contact(request):
     ## TODO big Probelm with GET Method
+    form = ContactForm()
     if request.GET.get('remove', False)  == 'true' :
         if request.GET.get('all', False) == 'true':
             Contacts.objects.all().delete()
         contact_id = request.GET.get('contact_id', False)
         Contacts.objects.filter(id=contact_id).delete()
+    
+    if request.method == "POST" :
+        form = ContactForm(request.POST or None)
+        if form.is_valid():
+            nameandfamily= form.cleaned_data.get("nameandfamily")
+            companyname= form.cleaned_data.get("companyname")
+            mobile= form.cleaned_data.get("mobile")
+            phone= form.cleaned_data.get("phone")
+            address= form.cleaned_data.get("address")
+            email= form.cleaned_data.get("email")
+            user = request.user
+            oj = Contacts(nameandfamily=nameandfamily,companyname=companyname,mobile=mobile,phone=phone,address=address,email=email,user=user)
+            oj.save()
+            messages.info(request, 'مخاطب با موفقیت ذخیره شد')
 
-    profile  = UserProfile.objects.all().filter(user=request.user)
-    context = {"contacts": Contacts.objects.all(),"user":request.user,"profiles":profile}
+    profile  = UserProfile.objects.filter(user=request.user)
+    context = {"contacts": Contacts.objects.filter(user=request.user),"user":request.user,"profiles":profile, 'form':form}
     return render(request, "dashboard/table-datatable.html", context)
 
 @login_required(login_url="/login/")
