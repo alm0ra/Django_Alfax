@@ -42,10 +42,15 @@
         </div>
         <div class="content-body"><!-- Dashboard Analytics Start -->
 <section id="dashboard-analytics">
-
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+      <p>{{message}}</p>
+    </div>
+    {% endfor %}
   <div class="row">
     <div class="col-md-4 col-sm-6 col-12 search-content">
       <div class="card">
+
         <div class="card-body text-center">
           <a href="{% url 'karfarmaonline:project' %}">
             <img src="/static/vuexy/app-assets/images/pages/graphic-2.png" class="mx-auto mb-2" width="180"
@@ -72,10 +77,39 @@
 
         </div>
         <div class="card-body text-center">
-            <a href="{% url 'karfarmaonline:expence' %}">
-                <button type="submit" class="btn btn-primary mr-1 mb-1  {%if enable %} disabled {% endif %} ">ثبت  هزینه کرد در سیستم</button>
-            </a>
-        </div>  
+            {%if enable %}
+            <div class="modal-danger mr-1 mb-1 d-inline-block">
+                {% endif %}
+                <!-- Button trigger modal -->
+                
+                {%if not enable %}<a href="{% url 'karfarmaonline:income' %}" > {% endif %} 
+                    <button type="button" class="btn btn-primary mr-1 mb-1 float-center {%if enable %} disabled {% endif %} " data-toggle="modal" data-target="#danger" >ثبت  هزینه کرد در سیستم</button>
+                    {%if not enable %} </a>{% endif %} 
+                <!-- Modal -->
+                {%if enable %}
+                <div class="modal fade text-left" id="danger" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel120" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header bg-danger white">
+                        <h5 class="modal-title" id="myModalLabel120">خطا در سیستم</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body"> برای ادامه باید پروژه ای ایجاد کنید</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> باشه</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            {%if enable %}
+            </div>
+            {% endif %}
+        
+          {% endif %}
+        </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6 col-12 search-content">
@@ -89,10 +123,39 @@
 
         </div>
         <div class="card-body text-center">
-            <a href="{% url 'karfarmaonline:income' %}" >
-        <button type="submit" class="btn btn-primary mr-1 mb-1 float-center {%if enable %} disabled {% endif %} ">ثبت  درآمد در سیستم</button>
-            </a>
-        </div>  
+            {%if enable %}
+            <div class="modal-danger mr-1 mb-1 d-inline-block">
+                {% endif %} 
+                <!-- Button trigger modal -->
+                
+                {%if not enable %}<a href="{% url 'karfarmaonline:income' %}" > {% endif %} 
+                    <button type="button" class="btn btn-primary mr-1 mb-1 float-center {%if enable %} disabled {% endif %} " data-toggle="modal" data-target="#danger" >ثبت  درآمد در سیستم</button>
+                    {%if not enable %} </a>{% endif %} 
+                <!-- Modal -->
+                {%if enable %}
+                <div class="modal fade text-left" id="danger" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel120" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header bg-danger white">
+                        <h5 class="modal-title" id="myModalLabel120">خطا در سیستم</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">برای ادامه باید پروژه ای ایجاد کنید</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> باشه</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            {%if enable %}
+            </div>
+            {% endif %}
+        
+          {% endif %}
+        </div>
 
       </div>
 
@@ -162,69 +225,48 @@
   </div>
   {% if not enable%}
   <div class="row">
-    <div class="col-lg-4 col-12">
-      <div class="card">
-          <div class="card-header d-flex justify-content-between align-items-end">
-              <h4 class="card-title">مقایسه هزینه کرد های شرکا</h4>
-
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">جزییات پروژه های من</h4>
           </div>
           <div class="card-content">
-              <div class="card-body py-0">
-                  <div id="customer-chart"></div>
-              </div>
-              <ul class="list-group list-group-flush customer-info">
-                  <li class="list-group-item d-flex justify-content-between">
-                      <div class="series-info">
-                          <i class="fa fa-circle font-small-3 text-primary"></i>
-                          <span class="text-bold-600">منصور مرادی</span>
-                      </div>
-                      <div class="product-result">
-                          <span>890</span>
-                      </div>
-                  </li><li class="list-group-item d-flex justify-content-between ">
-                      <div class="series-info">
-                          <i class="fa fa-circle font-small-3 text-warning"></i>
-                          <span class="text-bold-600">محمد رضا ظفر بخش</span>
-                      </div>
-                      <div class="product-result">
-                          <span>500</span>
-                      </div>
-                  </li>
-                </ul>
-          </div>
-      </div>
-  
-    </div>
-    <div class="col-lg-8 col-md-6 col-12">
-      <div class="card">
-          <div class="card-header d-flex justify-content-between align-items-end">
-              <h4 class="card-title">نمودار هزینه های پروژه</h4>
-              <p class="font-medium-5 mb-0"><i class="feather icon-settings text-muted cursor-pointer"></i></p>
-          </div>
-          <div class="card-content">
-              <div class="card-body pb-0">
-                  <div class="d-flex justify-content-start">
-                      <div class="mr-2">
-                          <p class="mb-50 text-bold-600">این ماه</p>
-                          <h2 class="text-bold-400">
-                              <sup class="font-medium-1">$</sup>
-                              <span class="text-success">86,589</span>
-                          </h2>
-                      </div>
-                      <div>
-                          <p class="mb-50 text-bold-600">ماه اخیر</p>
-                          <h2 class="text-bold-400">
-                              <sup class="font-medium-1">$</sup>
-                              <span>73,683</span>
-                          </h2>
+            <div class="card-body">
+              <p>برای دیدن جزییات هر پروژه و هزینه کرد ها میتوانید روی هر پروژه کلیک کنید</p>
+              <ul class="list-group">
+                {% for project in proj_m%}
+                <a href="/dashboard/karfarmaonline/?detail=true&project_id={{project.id}}">
+                <li class="list-group-item" >{{project.name}}
+                    
+                    <div class="chip chip-warning float-right">
+                        <div class="chip-body">
+                          <div class="chip-text">مدیر پروژه هستید</div>
+                        </div>
                       </div>
 
-                  </div>
-                  <div id="revenue-chart"></div>
-              </div>
+                      <a class="nav-link float-right" href="/dashboard/karfarmaonline/?remove=true&project_id={{project.id}}" data-toggle="tooltip" data-placement="top" title="حذف پروژه"><i class="ficon feather icon-trash "></i></i></a>
+                </li>
+                </a>
+                {% endfor %}
+                
+                {%for project in proj%}
+                <a href="/dashboard/karfarmaonline/?detail=true&project_id={{project.id}}">
+                <li class="list-group-item" >{{project.name}}&nbsp;&nbsp;&nbsp;&nbsp;  {{project.zirbana}}
+                    <div class="chip chip-success float-right">
+                        <div class="chip-body">
+                          <div class="chip-text">عضو پروژه هستید</div>
+                        </div>
+                      </div>    
+                </li>
+                </a>
+                {% endfor %}
+
+
+              </ul>
+            </div>
           </div>
+        </div>
       </div>
-    </div>
   </div>
   {% endif %}
 </section>
