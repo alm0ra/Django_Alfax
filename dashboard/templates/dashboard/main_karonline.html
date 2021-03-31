@@ -82,7 +82,7 @@
                 {% endif %}
                 <!-- Button trigger modal -->
                 
-                {%if not enable %}<a href="{% url 'karfarmaonline:income' %}" > {% endif %} 
+                {%if not enable %}<a href="{% url 'karfarmaonline:expence' %}" > {% endif %} 
                     <button type="button" class="btn btn-primary mr-1 mb-1 float-center {%if enable %} disabled {% endif %} " data-toggle="modal" data-target="#danger" >ثبت  هزینه کرد در سیستم</button>
                     {%if not enable %} </a>{% endif %} 
                 <!-- Modal -->
@@ -251,7 +251,7 @@
                 
                 {%for project in proj%}
                 <a href="/dashboard/karfarmaonline/?detail=true&project_id={{project.id}}">
-                <li class="list-group-item" >{{project.name}}&nbsp;&nbsp;&nbsp;&nbsp;  {{project.zirbana}}
+                <li class="list-group-item" >{{project.name}}
                     <div class="chip chip-success float-right">
                         <div class="chip-body">
                           <div class="chip-text">عضو پروژه هستید</div>
@@ -299,7 +299,7 @@
                                 {% for item in all_expence %}
                                 <tr>
                                     <td>{{item.title}}</td>
-                                    <td>{{item.category_pay}}</td>
+                                    <td>{{item.get_category_pay_display}}</td>
                                     <td>{{item.project.name}}</td>
                                     <td>{{item.amount}}</td>
                                     <td>{{item.user.first_name}}</td>
