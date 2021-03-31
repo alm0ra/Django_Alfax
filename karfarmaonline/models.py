@@ -7,27 +7,71 @@ from datetime import datetime, timedelta
 
 class expenceManager(models.Manager):
     def total(self, project):
-        total = expence.objects.all().aggregate(Sum('amount'))
-        return total
-    def total_per_user(self, user):
-        total = expence.objects.filter(user=user).aggregate(Sum('amount'))
-        return total
-    def total_per_user_project(self, user, project):
-        total = expence.objects.filter(user=user, project=project).aggregate(Sum('amount'))
-        return total
-    def total_last_7_days(self, user):
-        total = expence.objects.filter(user=user, pub_date= datetime.now()-timedelta(days=7)).aggregate(Sum('amount'))
+        total = expence.objects.filter(project=project).aggregate(Sum('amount'))['amount__sum']
+        if total is None : total = 0
         return total
 
-class incomeManager(models.Manager):
-    def total(self, project):
-        total = income.objects.all().aggregate(Sum('amount'))
+    def total_project(self, project):
+        total = expence.objects.filter(project=project)
         return total
+    def total_project_user(self, user,project):
+        total = expence.objects.filter(user=user,project=project)
+        return total
+        
     def total_per_user(self, user):
-        total = income.objects.filter(user=user).aggregate(Sum('amount'))
+        total = expence.objects.filter(user=user).aggregate(Sum('amount'))['amount__sum']
+        if total is None : total = 0
         return total
     def total_per_user_project(self, user, project):
-        total = income.objects.filter(user=user, project=project).aggregate(Sum('amount'))
+        total = expence.objects.filter(user=user, project=project).aggregate(Sum('amount'))['amount__sum']
+        if total is None : total = 0
+        return total
+    def total_last_7_days(self, user):
+        total = expence.objects.filter(user=user, pub_date= datetime.now()-timedelta(days=7)).aggregate(Sum('amount'))['amount__sum']
+        if total is None : total = 0
+        return total
+    def Category_expence(self, project):
+        a = expence.objects.filter(project=project, category_pay='a').aggregate(Sum('amount'))['amount__sum']
+        b = expence.objects.filter(project=project, category_pay='b').aggregate(Sum('amount'))['amount__sum']
+        c = expence.objects.filter(project=project, category_pay='c').aggregate(Sum('amount'))['amount__sum']
+        d = expence.objects.filter(project=project, category_pay='d').aggregate(Sum('amount'))['amount__sum']
+        e = expence.objects.filter(project=project, category_pay='e').aggregate(Sum('amount'))['amount__sum']
+        f = expence.objects.filter(project=project, category_pay='f').aggregate(Sum('amount'))['amount__sum']
+        g = expence.objects.filter(project=project, category_pay='g').aggregate(Sum('amount'))['amount__sum']
+        i = expence.objects.filter(project=project, category_pay='i').aggregate(Sum('amount'))['amount__sum']
+        j = expence.objects.filter(project=project, category_pay='j').aggregate(Sum('amount'))['amount__sum']
+        k = expence.objects.filter(project=project, category_pay='k').aggregate(Sum('amount'))['amount__sum']
+        l = expence.objects.filter(project=project, category_pay='l').aggregate(Sum('amount'))['amount__sum']
+        m = expence.objects.filter(project=project, category_pay='m').aggregate(Sum('amount'))['amount__sum']
+        if a is None : a= 0
+        if b is None : b= 0
+        if c is None : c= 0
+        if d is None : d= 0
+        if e is None : e= 0
+        if f is None : f= 0
+        if g is None : g= 0
+        if k is None : k= 0
+        if i is None : i= 0
+        if j is None : j= 0
+        if l is None : l= 0
+        if m is None : m= 0
+
+
+        return j , a+b ,g+i,f, c+d, e, k, m+l
+
+        
+class incomeManager(models.Manager):
+    def total(self, project):
+        total = income.objects.filter(project=project).aggregate(Sum('amount'))['amount__sum']
+        if total is None : total = 0
+        return total
+    def total_per_user(self, user):
+        total = income.objects.filter(user=user).aggregate(Sum('amount'))['amount__sum']
+        if total is None : total = 0
+        return total
+    def total_per_user_project(self, user, project):
+        total = income.objects.filter(user=user, project=project).aggregate(Sum('amount'))['amount__sum']
+        if total is None : total = 0
         return total
 
 class Managera(models.Manager):
@@ -38,6 +82,7 @@ class Managera(models.Manager):
             return True
         else:
             return False
+
     def is_member_of_project(self, user , id):
         is_member = ProjectModel.objects.filter(Members=user ,id = id)
         if is_member.count() != 0:
@@ -101,7 +146,8 @@ class ProjectModel(models.Model):
         return self.name
     def __unicode__(self):
         return self.name
-
+    def jpub_date(self):
+        return jalali_converter(self.created_date)
 
 class income(models.Model):
     METHOD_CHOICES = (

@@ -12,6 +12,8 @@ from extensions.utils import place_value
 
 @login_required(login_url="/login/")
 def index(request):
+
+    
     is_p_member = ProjectModel.objects.is_member_of(user =request.user) 
     is_manager = ProjectModel.objects.is_manager(user= request.user)
 
@@ -25,12 +27,33 @@ def index(request):
         if ProjectModel.objects.is_manager_project(user=request.user, id =project_id) or ProjectModel.objects.is_member_of_project(user=request.user, id =project_id):
             proj = ProjectModel.objects.get(id= project_id)
             profile  = UserProfile.objects.all().filter(user=request.user)
+            total_expences = expence.objects.total(project=proj)
+            total_incomes = income.objects.total(project=proj)
+            total = expence.objects.total_project(project=proj)
+            total_me_expence = expence.objects.total_project_user(user=request.user, project=proj)
+            total_income_user = income.objects.total_per_user_project(user=request.user, project=proj)
+            total_expences_user = expence.objects.total_per_user_project(user=request.user, project=proj)
+
+            k1, k2, k3, k4, k5, k6 ,k7,k8 = expence.objects.Category_expence(project=proj)
 
             context = {
                 "user":request.user,
                 "profiles":profile,
-                "p": True, 
-
+                "detail":proj,
+                "total_expences": place_value(total_expences) ,
+                "total_incomes":  place_value(total_incomes),
+                "total":  total,
+                "total_me_expence": total_me_expence ,
+                "total_income_user": place_value(total_income_user) ,
+                "total_expences_user": place_value(total_expences_user) ,
+                "k1": place_value(k1),
+                "k2": place_value(k2),
+                "k3": place_value(k3),
+                "k4": place_value(k4),
+                "k5": place_value(k5),
+                "k6": place_value(k6) ,
+                "k7": place_value(k7) ,
+                "k8": place_value(k8)
                 }
 
             return render(request, "dashboard/detail_project.html", context)
@@ -45,27 +68,27 @@ def index(request):
         profile  = UserProfile.objects.all().filter(user=request.user)
         proj_m= ProjectModel.objects.filter(Manager= request.user)
         proj= ProjectModel.objects.filter(Members= request.user)
-        if my_expence['amount__sum'] is None :
-            my_expence['amount__sum'] = 0 
+        if my_expence is None :
+            my_expence= 0 
         else : 
-            my_expence['amount__sum'] = place_value( my_expence['amount__sum'])
+            my_expence = place_value( my_expence)
 
-        if my_income['amount__sum'] is None :
-            my_income['amount__sum'] = 0
+        if my_income is None :
+            my_income = 0
         else : 
-            my_income['amount__sum'] = place_value( my_income['amount__sum'])
+            my_income = place_value( my_income)
 
-        if expence_7day['amount__sum'] is None :
-            expence_7day['amount__sum'] = 0
+        if expence_7day is None :
+            expence_7day = 0
         else : 
-            expence_7day['amount__sum'] = place_value( expence_7day['amount__sum'])
+            expence_7day = place_value( expence_7day)
 
         context = {"user":request.user,
                         "profiles":profile,
-                        "my_expence": my_expence['amount__sum'],
-                        "my_income":my_income['amount__sum'] ,
+                        "my_expence": my_expence,
+                        "my_income":my_income ,
                         "proj_count":proj_count ,
-                        "expence_7day": expence_7day['amount__sum'],
+                        "expence_7day": expence_7day,
                         "all_expence":all_expence, "p": True, 
                         "proj":proj, "proj_m":proj_m
                         }
@@ -125,7 +148,7 @@ def make_project(request):
 
 @login_required(login_url="/login/")
 def project_income(request):
-    is_p_member = ProjectModel.objects.is_member_of_project(user =request.user) 
+    is_p_member = ProjectModel.objects.is_member_of(user =request.user) 
     is_manager = ProjectModel.objects.is_manager(user= request.user)
     profile  = UserProfile.objects.all().filter(user=request.user)
     context = {"user":request.user,"profiles":profile, "p": True}
@@ -158,7 +181,7 @@ def project_income(request):
 
 @login_required(login_url="/login/")
 def project_expence(request):
-    is_p_member = ProjectModel.objects.is_member_of_project(user =request.user) 
+    is_p_member = ProjectModel.objects.is_member_of(user =request.user) 
     is_manager = ProjectModel.objects.is_manager(user= request.user)
     profile  = UserProfile.objects.all().filter(user=request.user)
     context = {"user":request.user,"profiles":profile}
