@@ -70,5 +70,8 @@ def pages(request):
         return HttpResponse(html_template.render(context, request))
 
 @login_required(login_url="/login/")
-def contacts(request):
-    pass
+def sakht(request):
+    context = {"user":request.user}
+    context['segment'] = 'index'
+    html_template = loader.get_template( 'dashboard/page-maintenance.html' )
+    return HttpResponse(html_template.render(context, request))

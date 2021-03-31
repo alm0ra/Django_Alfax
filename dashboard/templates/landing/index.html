@@ -129,7 +129,7 @@
 														</a>
 													</li>
 													<li class="dropdown dropdown-mega">
-														<a class="dropdown-item dropdown-toggle" href="/dashboard">
+														<a class="dropdown-item dropdown-toggle" href="/dashboard/karfarmaonline/">
 															سیستم مدیریت
 														</a>
 													</li>
@@ -168,47 +168,7 @@
 														<a class="dropdown-item dropdown-toggle" href="#">
 															فروشگاه
 														</a>
-														<ul class="dropdown-menu">
-															<li class="dropdown-submenu">
-																<a class="dropdown-item" href="#">جزئیات محصول</a>
-																<ul class="dropdown-menu">
-																	<li><a class="dropdown-item" href="shop-product-full-width.html">تمام عرض</a></li>
-																	<li><a class="dropdown-item" href="shop-product-sidebar-right.html">نوار کناری راست</a></li>
-																	<li><a class="dropdown-item" href="shop-product-sidebar-left.html">نوار کناری چپ</a></li>
-																	<li><a class="dropdown-item" href="shop-product-sidebar-left-and-right.html">نوار کناری چپ و راست</a></li>
-																</ul>
-															</li>
-															<li><a class="dropdown-item" href="shop-4-columns.html">4 ستون</a></li>
-															<li class="dropdown-submenu">
-																<a class="dropdown-item" href="#">3 ستون</a>
-																<ul class="dropdown-menu">
-																	<li><a class="dropdown-item" href="shop-3-columns-full-width.html">تمام عرض</a></li>
-																	<li><a class="dropdown-item" href="shop-3-columns-sidebar-right.html">نوار کناری راست</a></li>
-																	<li><a class="dropdown-item" href="shop-3-columns-sidebar-left.html">نوار کناری چپ </a></li>
-																</ul>
-															</li>
-															<li class="dropdown-submenu">
-																<a class="dropdown-item" href="#">2 ستون</a>
-																<ul class="dropdown-menu">
-																	<li><a class="dropdown-item" href="shop-2-columns-full-width.html">تمام عرض</a></li>
-																	<li><a class="dropdown-item" href="shop-2-columns-sidebar-right.html">نوار کناری راست</a></li>
-																	<li><a class="dropdown-item" href="shop-2-columns-sidebar-left.html">نوار کناری چپ </a></li>
-																	<li><a class="dropdown-item" href="shop-2-columns-sidebar-left-and-right.html">نوار کناری چپ و راست</a></li>
-																</ul>
-															</li>
-															<li class="dropdown-submenu">
-																<a class="dropdown-item" href="#">1 ستون</a>
-																<ul class="dropdown-menu">
-																	<li><a class="dropdown-item" href="shop-1-column-full-width.html">تمام عرض</a></li>
-																	<li><a class="dropdown-item" href="shop-1-column-sidebar-right.html">نوار کناری راست</a></li>
-																	<li><a class="dropdown-item" href="shop-1-column-sidebar-left.html">نوار کناری چپ </a></li>
-																	<li><a class="dropdown-item" href="shop-1-column-sidebar-left-and-right.html">نوار کناری چپ و راست</a></li>
-																</ul>
-															</li>
-															<li><a class="dropdown-item" href="shop-cart.html">سبد خرید</a></li>
-															<li><a class="dropdown-item" href="shop-login.html">ورود</a></li>
-															<li><a class="dropdown-item" href="shop-checkout.html">پرداخت</a></li>
-														</ul>
+														
 													</li>
 												</ul>
 											</nav>
@@ -240,30 +200,7 @@
 													<span class="cart-qty">1</span>
 												</span>
 											</a>
-											<div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed" id="headerTopCartDropdown">
-												<ol class="mini-products-list">
-													<li class="item">
-														<a href="#" title="Camera X1000" class="product-image"><img src="/static/porto/img/products/product-1.jpg" alt="Camera X1000"></a>
-														<div class="product-details">
-															<p class="product-name">
-																<a href="#">دوربین X1000 </a>
-															</p>
-															<p class="qty-price">
-																 1 × <span class="price">890,000 تومان</span>
-															</p>
-															<a href="#" title="Remove This Item" class="btn-remove"><i class="fas fa-times"></i></a>
-														</div>
-													</li>
-												</ol>
-												<div class="totals">
-													<span class="label">جمع کل:</span>
-													<span class="price-total"><span class="price">890,000 تومان</span></span>
-												</div>
-												<div class="actions">
-													<a class="btn btn-dark" href="#">مشاهده سبد</a>
-													<a class="btn btn-primary" href="#">پرداخت</a>
-												</div>
-											</div>
+
 										</div>
 									</div>
 								</div>
@@ -446,7 +383,7 @@
 						<div class="row text-center pt-3">
 							<div class="col-md-10 mx-md-auto">
 								<h1 class="word-rotator slide font-weight-bold text-7 text-sm-8 mb-3 appear-animation primary-font" data-appear-animation="fadeInUpShorter">
-									<span>پورتو </span>
+									<span>آلفکس </span>
 									<span class="word-rotator-words bg-dark">
 										<b class="is-visible">بطور باور نکردنی</b>
 										<b>بسیار</b>
@@ -708,29 +645,31 @@
 				</section>
 				
 			</div>
-
+			{% for item in landing %}
 			<footer id="footer" class="mt-0">
 				<div class="container container-lg my-4">
 					<div class="row py-5">
 						<div class="col-lg-4 mb-5 mb-lg-0 text-center text-lg-left pt-3">
-							<h5 class="text-5 font-weight-semibold text-color-light mb-4">قالب پورتو</h5>
-							<p class="text-4 mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ<br>لورم ایپسوم متن ساختگی با تولید سادگی</p>
-							<a href="#" target="_blank" class="d-inline-flex align-items-center btn btn-primary font-weight-semibold px-5 btn-py-3 text-3 rounded mt-2">خرید پورتو</a>
+							<h5 class="text-5 font-weight-semibold text-color-light mb-4">{{item.footer_section.titr1}}</h5>
+							<p class="text-4 mb-3">{{item.footer_section.text1}}</p>
+							<a href="{{item.footer_section.link00}}" target="_blank" class="d-inline-flex align-items-center btn btn-primary font-weight-semibold px-5 btn-py-3 text-3 rounded mt-2">{{item.footer_section.text00}}</a>
 						</div>
 						<div class="col-lg-2 mb-4 mb-md-0 text-center text-lg-left pt-3">
 							<h5 class="text-5 font-weight-semibold text-color-light mb-4">صفحات</h5>
 							<ul class="list list-icons list-icons-sm d-inline-flex flex-column">
-								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="page-services.html" class="link-hover-style-1 ml-1"> خدمات ما</a></li>
-								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="about-us.html" class="link-hover-style-1 ml-1"> درباره ما</a></li>
-								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="contact-us.html" class="link-hover-style-1 ml-1"> تماس با ما</a></li>
+								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="{{item.footer_section.link11}}"  class="link-hover-style-1 ml-1"> {{item.footer_section.text11}}</a></li>
+								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="{{item.footer_section.link22}}" class="link-hover-style-1 ml-1">{{item.footer_section.text22}}</a></li>
+								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="{{item.footer_section.link33}}"  class="link-hover-style-1 ml-1"> {{item.footer_section.text33}}</a></li>
 							</ul>
 						</div>
+						
 						<div class="col-lg-3 mb-4 mb-lg-0 text-center text-lg-left pt-3">
 							<h5 class="text-5 font-weight-semibold text-color-light mb-4">تماس با ما</h5>
-							<p class="text-4 mb-2"><span class="text-color-light">آدرس:</span> تبریز، فلکه دانشگاه، برج بلور، طبقه 567</p>
-							<p class="text-4 mb-2"><span class="text-color-light">تلفن:</span> <span class="ltr-text">(+98) 456 7890</span></p>
-							<p class="text-4 mb-2"><span class="text-color-light">ایمیل:</span> <a href="mailto:mail@example.com">mail@example.com</a></p>
+							<p class="text-4 mb-2"><span class="text-color-light">آدرس:</span> {{item.footer_section.address}}</p>
+							<p class="text-4 mb-2"><span class="text-color-light">تلفن:</span> <span class="ltr-text"> {{item.footer_section.phone}}</span></p>
+							<p class="text-4 mb-2"><span class="text-color-light">ایمیل:</span> <a href="mailto:mail@example.com"> {{item.footer_section.mail}}</a></p>
 						</div>
+						
 						<div class="col-lg-3 text-center text-lg-left pt-3">
 							<h5 class="text-5 font-weight-semibold text-color-light mb-4">ما را دنبال کنید</h5>
 							<ul class="footer-social-icons social-icons social-icons-clean social-icons-big social-icons-opacity-light social-icons-icon-light mt-0 mt-lg-3">
@@ -746,13 +685,14 @@
 						<div class="py-2">
 							<div class="row py-4">
 								<div class="col d-flex align-items-center justify-content-center">
-									<p>ارائه شده در وب‌سایت راست‌چین</p>
+									<p>طراحی شده در آلفکس AlFax</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</footer>
+			{% endfor %}
 		</div>
 
 

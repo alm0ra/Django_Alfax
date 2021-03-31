@@ -22,5 +22,5 @@ def resume(request):
     context = {}
     context['segment'] = 'index'
 
-    html_template = loader.get_template( 'landing/resume.html' )
+    html_template = loader.get_template( 'landing/index.html' )
     return HttpResponse(html_template.render(context, request))
