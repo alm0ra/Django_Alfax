@@ -1,0 +1,455 @@
+{% extends 'dashboard/base.html' %}
+
+{% block css %}
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/vendors-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/tables/datatable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/tether-theme-arrows.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/tether.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/shepherd-theme-default.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/components.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/themes/dark-layout.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/themes/semi-dark-layout.min.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/core/menu/menu-types/vertical-menu.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/core/colors/palette-gradient.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/pages/dashboard-analytics.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/pages/card-analytics.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/plugins/tour/tour.min.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/custom-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/assets/css/style-rtl.css">
+    <!-- END: Custom CSS-->
+{% endblock %}
+
+{% block main%}
+
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body"><!-- Dashboard Analytics Start -->
+<section id="dashboard-analytics">
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+      <p>{{message}}</p>
+    </div>
+    {% endfor %}
+  <div class="row">
+    <div class="col-md-6 col-12 ">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title mb-2">اطلاعات پروژه</div>
+        </div>
+        <div class="card-body">
+          <table>
+            <tr>
+              <td class="font-weight-bold"> نام پروژه</td>
+              <td> {{detail.name}}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold"> مدیر پروژه</td>
+              <td>{{detail.Manager.first_name}}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">زیر بنا پروژه </td>
+              <td> {{detail.zirbana}}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">تعداد طبقات</td>
+              <td> {{detail.tedad_tabaqat}}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">آدرس پروژه</td>
+              <td>{{detail.address}}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">شرکا پروژه</td>
+              <td> {%for item in detail.Members.all %}{{item.first_name}} , {% endfor%}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">وضعیت پروژه</td>
+              <td> {{detail.get_project_status_display}}</td>
+            </tr>
+            <tr>
+              <td class="font-weight-bold">تاریخ ایجاد پروژه</td>
+              <td> {{detail.created_date}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-md-6 col-12 ">
+      <div class="row">
+        <div class="col-sm-6 col-12">
+            <div class="card">
+                <div class="card-header d-flex align-items-start pb-0">
+                    <div>
+                        <h2 class="text-bold-700 mb-0">{{k1}} </h2>
+                        <p>هزینه تخریب و گود برداری</p>
+                    </div>
+                    <div class="avatar bg-rgba-info p-50 m-0">
+                        <div class="avatar-content">
+                            <i class="feather icon-activity text-info font-medium-5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-sm-6 col-12">
+            <div class="card">
+                <div class="card-header d-flex align-items-start pb-0">
+                    <div>
+                        <h2 class="text-bold-700 mb-0">{{k2}}</h2>
+                        <p>هزینه شهرداری و نظام مهندسی</p>
+                    </div>
+                    <div class="avatar bg-rgba-info p-50 m-0">
+                        <div class="avatar-content">
+                            <i class="feather icon-activity text-info font-medium-5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-12">
+          <div class="card">
+              <div class="card-header d-flex align-items-start pb-0">
+                  <div>
+                      <h2 class="text-bold-700 mb-0">{{k3}}</h2>
+                      <p> هزینه کل مصالح و دستمزد</p>
+                  </div>
+                  <div class="avatar bg-rgba-info p-50 m-0">
+                      <div class="avatar-content">
+                          <i class="feather icon-activity text-info font-medium-5"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class=" col-sm-6 col-12">
+          <div class="card">
+              <div class="card-header d-flex align-items-start pb-0">
+                  <div>
+                      <h2 class="text-bold-700 mb-0">{{k4}}</h2>
+                      <p>هزینه کل تاسیسات </p>
+                  </div>
+                  <div class="avatar bg-rgba-info p-50 m-0">
+                      <div class="avatar-content">
+                          <i class="feather icon-activity text-info font-medium-5"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-12">
+          <div class="card">
+              <div class="card-header d-flex align-items-start pb-0">
+                  <div>
+                      <h2 class="text-bold-700 mb-0">{{k5}}</h2>
+                      <p>هزینه آرماتور بند و بتون</p>
+                  </div>
+                  <div class="avatar bg-rgba-info p-50 m-0">
+                      <div class="avatar-content">
+                          <i class="feather icon-activity text-info font-medium-5"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class=" col-sm-6 col-12">
+          <div class="card">
+              <div class="card-header d-flex align-items-start pb-0">
+                  <div>
+                      <h2 class="text-bold-700 mb-0">{{k6}}</h2>
+                      <p>هزینه آهن آلات </p>
+                  </div>
+                  <div class="avatar bg-rgba-info p-50 m-0">
+                      <div class="avatar-content">
+                          <i class="feather icon-activity text-info font-medium-5"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-12">
+          <div class="card">
+              <div class="card-header d-flex align-items-start pb-0">
+                  <div>
+                      <h2 class="text-bold-700 mb-0">{{k7}}</h2>
+                      <p>هزینه آب برق گاز</p>
+                  </div>
+                  <div class="avatar bg-rgba-info p-50 m-0">
+                      <div class="avatar-content">
+                          <i class="feather icon-activity text-info font-medium-5"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class=" col-sm-6 col-12">
+          <div class="card">
+              <div class="card-header d-flex align-items-start pb-0">
+                  <div>
+                      <h2 class="text-bold-700 mb-0">{{k8}}</h2>
+                      <p>هزینه های متفرقه </p>
+                  </div>
+                  <div class="avatar bg-rgba-info p-50 m-0">
+                      <div class="avatar-content">
+                          <i class="feather icon-activity text-info font-medium-5"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-12">
+      <div class="card">
+          <div class="card-header d-flex align-items-start pb-0">
+              <div>
+                  <h2 class="text-bold-700 mb-0">{{total_expences}} </h2>
+                  <p>مجموع هزینه ها در این پروژه</p>
+              </div>
+              <div class="avatar bg-rgba-success p-50 m-0 mb-1">
+                  <div class="avatar-content">
+                      <i class="feather icon-activity text-success font-medium-5"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-sm-6 col-12">
+    <div class="card">
+        <div class="card-header d-flex align-items-start pb-0">
+            <div>
+                <h2 class="text-bold-700 mb-0">{{total_incomes}} </h2>
+                <p>مجموع درآمد ها در این پروژه</p>
+            </div>
+            <div class="avatar bg-rgba-success p-50 m-0 mb-1">
+                <div class="avatar-content">
+                    <i class="feather icon-activity text-success font-medium-5"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  </div>
+  <!-- hazine kard kol -->
+  <div class="row">
+    <div class="col-sm-6 col-12">
+      <div class="card">
+          <div class="card-header d-flex align-items-start pb-0">
+              <div>
+                  <h2 class="text-bold-700 mb-0">{{total_expences_user}} </h2>
+                  <p>مجموع هزینه شده توسط  {{user.first_name}}</p>
+              </div>
+              <div class="avatar bg-rgba-success p-50 m-0 mb-1">
+                  <div class="avatar-content">
+                      <i class="feather icon-activity text-success font-medium-5"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="col-sm-6 col-12">
+    <div class="card">
+        <div class="card-header d-flex align-items-start pb-0">
+            <div>
+                <h2 class="text-bold-700 mb-0">{{total_income_user}} </h2>
+                <p>مجموع  درآمد توسط  {{user.first_name}}</p>
+            </div>
+            <div class="avatar bg-rgba-success p-50 m-0 mb-1">
+                <div class="avatar-content">
+                    <i class="feather icon-activity text-success font-medium-5"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <!-- daramad kol -->
+
+  </div>
+
+</section>
+<section id="column-selectors">
+  <div class="row">
+      <div class="col-12">
+          <div class="card">
+              <div class="card-header">
+                    
+                    <div class="col-12">
+                        <h4 class="card-title">جزییات هزینه کرد های من در پروژه </h4>
+                    </div>
+                </div>
+              <div class="card-content">
+                  <div class="card-body card-dashboard">
+                     <div class="table-responsive">
+                          <table class="table table-striped dataex-html5-selectors">
+                              <thead>
+                                  <tr>
+                                      <th>عنوان</th>
+                                      <th>دسته بندی</th>
+                                      <th> پروژه</th>
+                                      <th>میزان هزینه کرد</th>
+                                      <th>توسط</th>
+                                      <th> تاریخ</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                {% for item in total_me_expence %}
+                                <tr>
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.get_category_pay_display}}</td>
+                                    <td>{{item.project.name}}</td>
+                                    <td>{{item.amount}}</td>
+                                    <td>{{item.user.first_name}}</td>
+                                    <td>{{item.jpub_date}}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            
+                            
+                              </tbody>
+                              <tfoot>
+                                <tr>
+                                    <th>عنوان</th>
+                                    <th>دسته بندی</th>
+                                    <th> پروژه</th>
+                                    <th>میزان هزینه کرد</th>
+                                    <th>توسط</th>
+                                    <th> تاریخ</th>
+                                </tr>   
+                              </tfoot>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<section id="column-selectors">
+  <div class="row">
+      <div class="col-12">
+          <div class="card">
+              <div class="card-header">
+                    
+                    <div class="col-12">
+                        <h4 class="card-title">جزییات هزینه کرد های من و شریکان در پروژه </h4>
+                    </div>
+                </div>
+              <div class="card-content">
+                  <div class="card-body card-dashboard">
+                     <div class="table-responsive">
+                          <table class="table table-striped dataex-html5-selectors">
+                              <thead>
+                                  <tr>
+                                      <th>عنوان</th>
+                                      <th>دسته بندی</th>
+                                      <th> پروژه</th>
+                                      <th>میزان هزینه کرد</th>
+                                      <th>توسط</th>
+                                      <th> تاریخ</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                {% for item in total %}
+                                <tr>
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.get_category_pay_display}}</td>
+                                    <td>{{item.project.name}}</td>
+                                    <td>{{item.amount}}</td>
+                                    <td>{{item.user.first_name}}</td>
+                                    <td>{{item.jpub_date}}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            
+                            
+                              </tbody>
+                              <tfoot>
+                                <tr>
+                                    <th>عنوان</th>
+                                    <th>دسته بندی</th>
+                                    <th> پروژه</th>
+                                    <th>میزان هزینه کرد</th>
+                                    <th>توسط</th>
+                                    <th> تاریخ</th>
+                                </tr>   
+                              </tfoot>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Dashboard Analytics end -->
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+
+{% block js%}
+    <!-- BEGIN: Vendor JS-->
+    <script src="/static/vuexy/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="/static/vuexy/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/extensions/tether.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/extensions/shepherd.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="/static/vuexy/app-assets/js/core/app-menu.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/core/app.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/components.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/customizer.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/footer.min.js"></script>
+    <!-- END: Theme JS-->
+    <script src="/static/vuexy/app-assets/js/scripts/cards/card-analytics.min.js"></script>
+    <!-- BEGIN: Page JS-->
+    <script src="/static/vuexy/app-assets/js/scripts/pages/dashboard-analytics.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/datatables/datatable.min.js"></script>
+    <!-- END: Page JS-->
+{% endblock %}
