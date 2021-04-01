@@ -23,6 +23,7 @@ CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-(lrvnj^=095wufxbj631^xxg5xqr9aijr@a3nc#x4^oj+fw01'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -89,8 +90,13 @@ WSGI_APPLICATION = 'alfax.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':'postgres',
+        'USER':'postgres',
+        'PASSWORD':'Ali4840145059',
+        'HOST':'localhost',
+        'PORT':'5432',
     }
 }
 
@@ -132,7 +138,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 #email
