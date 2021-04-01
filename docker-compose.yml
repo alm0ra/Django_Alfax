@@ -1,6 +1,23 @@
 version: "3"
 
 services:
+  alfax:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/alfax
+      - alfax_static_volume:/static
+      - alfax_media_volume:/media
+    restart: always
+    ports:
+      - "8000:8000"
+    networks: 
+      - alfax_network
+      - nginx_network
+    depends_on:
+      - alfax_postgresql
+
   alfax_postgresql:
     image: postgres:12
     container_name: alfax_postgresql
@@ -16,9 +33,14 @@ services:
 volumes:
   alfax_postgresql:
     external: true
+  alfax_static_volume:
+    external: true
+  alfax_media_volume:
+    external: true
 networks:
   alfax_network:
     external: true
-
+  nginx_network:
+    external: true
 
 

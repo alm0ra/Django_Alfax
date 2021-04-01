@@ -12,6 +12,7 @@ django-adminlte-3==0.1.6
 django-jazzmin==2.4.4
 django-jet==1.0.8
 entrypoints==0.3
+gunicorn==20.1.0
 ipykernel==5.5.3
 ipython==7.22.0
 ipython-genutils==0.2.0
