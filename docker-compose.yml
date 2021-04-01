@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/alfax
-      - alfax_static_volume:/static
-      - alfax_media_volume:/media
+      - alfax_static_volume:/alfax/static
+      - alfax_media_volume:/alfax/media
     restart: always
     ports:
       - "8000:8000"

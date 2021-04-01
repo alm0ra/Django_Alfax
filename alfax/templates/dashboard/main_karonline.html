@@ -1,0 +1,378 @@
+{% extends 'dashboard/base.html' %}
+
+{% block css %}
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/vendors-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/tables/datatable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/tether-theme-arrows.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/tether.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/vendors/css/extensions/shepherd-theme-default.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/components.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/themes/dark-layout.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/themes/semi-dark-layout.min.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/core/menu/menu-types/vertical-menu.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/core/colors/palette-gradient.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/pages/dashboard-analytics.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/pages/card-analytics.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/plugins/tour/tour.min.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/app-assets/css-rtl/custom-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/vuexy/assets/css/style-rtl.css">
+    <!-- END: Custom CSS-->
+{% endblock %}
+
+{% block main%}
+
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body"><!-- Dashboard Analytics Start -->
+<section id="dashboard-analytics">
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+      <p>{{message}}</p>
+    </div>
+    {% endfor %}
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-12 search-content">
+      <div class="card">
+
+        <div class="card-body text-center">
+          <a href="{% url 'karfarmaonline:project' %}">
+            <img src="/static/vuexy/app-assets/images/pages/graphic-2.png" class="mx-auto mb-2" width="180"
+              alt="knowledge-base-image">
+            <h4>ایجاد یک پروژه</h4>
+            <small class="text-dark">با ایجاد یک پروژه پروژه های خود را به صورت جداگانه مدیریت کنید</small>
+          </a>
+        </div>
+        <div class="card-body text-center">
+        <a href="{% url 'karfarmaonline:project' %}">
+        <button  class="btn btn-primary mr-1 mb-1"  >  ایجاد پروژه جدید در سیستم</button>
+        </a>
+        </div>  
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-12 search-content">
+      <div class="card">
+        <div class="card-body text-center">
+
+            <img src="/static/vuexy/app-assets/images/pages/graphic-3.png" class="mx-auto mb-2" width="180"
+              alt="knowledge-base-image">
+            <h4>ثبت هزینه کرد</h4>
+            <small class="text-dark">هزینه های روزانه پروژه های خود را در این  قسمت ثبت کنید</small>
+
+        </div>
+        <div class="card-body text-center">
+            {%if enable %}
+            <div class="modal-danger mr-1 mb-1 d-inline-block">
+                {% endif %}
+                <!-- Button trigger modal -->
+                
+                {%if not enable %}<a href="{% url 'karfarmaonline:expence' %}" > {% endif %} 
+                    <button type="button" class="btn btn-primary mr-1 mb-1 float-center {%if enable %} disabled {% endif %} " data-toggle="modal" data-target="#danger" >ثبت  هزینه کرد در سیستم</button>
+                    {%if not enable %} </a>{% endif %} 
+                <!-- Modal -->
+                {%if enable %}
+                <div class="modal fade text-left" id="danger" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel120" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header bg-danger white">
+                        <h5 class="modal-title" id="myModalLabel120">خطا در سیستم</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body"> برای ادامه باید پروژه ای ایجاد کنید</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> باشه</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            {%if enable %}
+            </div>
+            {% endif %}
+        
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-12 search-content">
+      <div class="card">
+        <div class="card-body text-center" >
+
+            <img src="/static/vuexy/app-assets/images/pages/graphic-4.png" class="mx-auto mb-2" width="180"
+              alt="knowledge-base-image" >
+            <h4>ثبت درآمد در سیستم</h4>
+            <small class="text-dark">در آمد های روزانه پروژه های خود را در این قسمت ثبت کنید</small>
+
+        </div>
+        <div class="card-body text-center">
+            {%if enable %}
+            <div class="modal-danger mr-1 mb-1 d-inline-block">
+                {% endif %} 
+                <!-- Button trigger modal -->
+                
+                {%if not enable %}<a href="{% url 'karfarmaonline:income' %}" > {% endif %} 
+                    <button type="button" class="btn btn-primary mr-1 mb-1 float-center {%if enable %} disabled {% endif %} " data-toggle="modal" data-target="#danger" >ثبت  درآمد در سیستم</button>
+                    {%if not enable %} </a>{% endif %} 
+                <!-- Modal -->
+                {%if enable %}
+                <div class="modal fade text-left" id="danger" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel120" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header bg-danger white">
+                        <h5 class="modal-title" id="myModalLabel120">خطا در سیستم</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">برای ادامه باید پروژه ای ایجاد کنید</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"> باشه</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            {%if enable %}
+            </div>
+            {% endif %}
+        
+          {% endif %}
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header d-flex align-items-start pb-0">
+                <div>
+                    <h2 class="text-bold-700 mb-0">{% if enable %} ۰ {% endif %}{{my_expence}} تومان</h2>
+                    <p>هزینه شده ها توسط من</p>
+                </div>
+                <div class="avatar bg-rgba-primary p-50 m-0">
+                    <div class="avatar-content">
+                        <i class="feather icon-activity text-primary font-medium-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header d-flex align-items-start pb-0">
+                <div>
+                    <h2 class="text-bold-700 mb-0">{% if enable %} ۰ {% endif %}{{my_income}} تومان</h2>
+                    <p>درآمد های ایجاد شده توسط من</p>
+                </div>
+                <div class="avatar bg-rgba-success p-50 m-0">
+                    <div class="avatar-content">
+                        <i class="feather icon-activity text-success font-medium-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header d-flex align-items-start pb-0">
+                <div>
+                    <h2 class="text-bold-700 mb-0">{% if enable %} ۰ {% endif %}{{expence_7day}} تومان</h2>
+                    <p>هزینه کردهای ۷روز گذشته  </p>
+                </div>
+                <div class="avatar bg-rgba-danger p-50 m-0">
+                    <div class="avatar-content">
+                        <i class="feather icon-activity text-danger font-medium-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 col-12">
+        <div class="card">
+            <div class="card-header d-flex align-items-start pb-0">
+                <div>
+                    <h2 class="text-bold-700 mb-0">{% if enable %} ۰ {% endif %}{{proj_count}}</h2>
+                    <p>تعداد پروژه های من</p>
+                </div>
+                <div class="avatar bg-rgba-warning p-50 m-0">
+                    <div class="avatar-content">
+                        <i class="feather icon-activity text-warning font-medium-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  {% if not enable%}
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">جزییات پروژه های من</h4>
+          </div>
+          <div class="card-content">
+            <div class="card-body">
+              <p>برای دیدن جزییات هر پروژه و هزینه کرد ها میتوانید روی هر پروژه کلیک کنید</p>
+              <ul class="list-group">
+                {% for project in proj_m%}
+                <a href="/dashboard/karfarmaonline/?detail=true&project_id={{project.id}}">
+                <li class="list-group-item" >{{project.name}}
+                    
+                    <div class="chip chip-warning float-right">
+                        <div class="chip-body">
+                          <div class="chip-text">مدیر پروژه هستید</div>
+                        </div>
+                      </div>
+
+                      <a class="nav-link float-right" href="/dashboard/karfarmaonline/?remove=true&project_id={{project.id}}" data-toggle="tooltip" data-placement="top" title="حذف پروژه"><i class="ficon feather icon-trash "></i></i></a>
+                </li>
+                </a>
+                {% endfor %}
+                
+                {%for project in proj%}
+                <a href="/dashboard/karfarmaonline/?detail=true&project_id={{project.id}}">
+                <li class="list-group-item" >{{project.name}}
+                    <div class="chip chip-success float-right">
+                        <div class="chip-body">
+                          <div class="chip-text">عضو پروژه هستید</div>
+                        </div>
+                      </div>    
+                </li>
+                </a>
+                {% endfor %}
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  {% endif %}
+</section>
+{% if not enable%}
+<section id="column-selectors">
+  <div class="row">
+      <div class="col-12">
+          <div class="card">
+              <div class="card-header">
+                    
+                    <div class="col-12">
+                        <h4 class="card-title">جزییات هزینه کرد های من </h4>
+                    </div>
+                </div>
+              <div class="card-content">
+                  <div class="card-body card-dashboard">
+                     <div class="table-responsive">
+                          <table class="table table-striped dataex-html5-selectors">
+                              <thead>
+                                  <tr>
+                                      <th>عنوان</th>
+                                      <th>دسته بندی</th>
+                                      <th> پروژه</th>
+                                      <th>میزان هزینه کرد</th>
+                                      <th>توسط</th>
+                                      <th> تاریخ</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                {% for item in all_expence %}
+                                <tr>
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.get_category_pay_display}}</td>
+                                    <td>{{item.project.name}}</td>
+                                    <td>{{item.amount}}</td>
+                                    <td>{{item.user.first_name}}</td>
+                                    <td>{{item.jpub_date}}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            
+                            
+                              </tbody>
+                              <tfoot>
+                                <tr>
+                                    <th>عنوان</th>
+                                    <th>دسته بندی</th>
+                                    <th> پروژه</th>
+                                    <th>میزان هزینه کرد</th>
+                                    <th>توسط</th>
+                                    <th> تاریخ</th>
+                                </tr>   
+                              </tfoot>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+{% endif %}
+
+{% if enable %}
+<div class="alert alert-warning" role="alert">
+    ابتدا بایستی یک پروژه ایجاد کنید از<a href= "{% url 'karfarmaonline:project' %}"> اینجا </a> شروع کنید
+  </div>
+{% endif %}
+<!-- Dashboard Analytics end -->
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+
+{% block js%}
+    <!-- BEGIN: Vendor JS-->
+    <script src="/static/vuexy/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="/static/vuexy/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/extensions/tether.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/extensions/shepherd.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+    <script src="/static/vuexy/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="/static/vuexy/app-assets/js/core/app-menu.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/core/app.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/components.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/customizer.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/footer.min.js"></script>
+    <!-- END: Theme JS-->
+    <script src="/static/vuexy/app-assets/js/scripts/cards/card-analytics.min.js"></script>
+    <!-- BEGIN: Page JS-->
+    <script src="/static/vuexy/app-assets/js/scripts/pages/dashboard-analytics.min.js"></script>
+    <script src="/static/vuexy/app-assets/js/scripts/datatables/datatable.min.js"></script>
+    <!-- END: Page JS-->
+{% endblock %}

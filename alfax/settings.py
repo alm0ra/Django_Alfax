@@ -62,7 +62,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'alfax.urls'
 
 
-TEMPLATE_DIR = os.path.join(CORE_DIR, "dashboard/templates")  # ROOT dir for templates
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")  # ROOT dir for templates
 
 
 TEMPLATES = [
@@ -88,18 +88,30 @@ WSGI_APPLICATION = 'alfax.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'postgres',
-        'USER':'postgres',
-        'PASSWORD':'Ali4840145059',
-        'HOST':'alfax_postgresql',
-        'PORT':'5432',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME':'postgres',
+            'USER':'postgres',
+            'PASSWORD':'Ali4840145059',
+            'HOST':'localhost',
+            'PORT':'5432',
+        }
     }
-}
-
+else:
+    DATABASES = {
+        'default': {
+            
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME':'postgres',
+            'USER':'postgres',
+            'PASSWORD':'Ali4840145059',
+            'HOST':'alfax_postgresql',
+            'PORT':'5432',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -139,6 +151,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
+# STATICFILES_DIRS =(
+#     os.path.join(BASE_DIR, 'static'),
+# )
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 #email

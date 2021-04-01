@@ -1,0 +1,310 @@
+{% extends 'blog/base.html' %}
+
+
+
+{% block css %}
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="/static/porto/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/animate/animate.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/simple-line-icons/css/simple-line-icons.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/owl.carousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/owl.carousel/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/magnific-popup/magnific-popup.min.css">
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="/static/porto/css/theme.css">
+<link rel="stylesheet" href="/static/porto/css/theme-elements.css">
+<link rel="stylesheet" href="/static/porto/css/theme-blog.css">
+<link rel="stylesheet" href="/static/porto/css/theme-shop.css">
+
+<!-- Current Page CSS -->
+<link rel="stylesheet" href="/static/porto/vendor/rs-plugin/css/settings.css">
+<link rel="stylesheet" href="/static/porto/vendor/rs-plugin/css/layers.css">
+<link rel="stylesheet" href="/static/porto/vendor/rs-plugin/css/navigation.css">
+
+<!-- Demo CSS -->
+
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="/static/porto/css/skins/default.css"> 
+
+<!-- Theme Custom CSS -->
+<link rel="stylesheet" href="/static/porto/css/custom.css">
+
+<!-- Head Libs -->
+<script src="/static/porto/vendor/modernizr/modernizr.min.js"></script>
+
+
+{% endblock %}
+
+{% block main%}
+<div role="main" class="main">
+
+	<div class="slider-container bg-color-light-scale-1 rev_slider_wrapper m-0" style="height: 600px;">
+		<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': [1110,930,690,500], 'gridheight': 600, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,768], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': true }, 'bullets': {'enable': false, 'style': 'bullets-style-2 bullets-color-primary', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
+			<ul>
+
+				<li class="slide-overlay slide-overlay-level-5" data-transition="fade" data-link="blog-post.html">
+					<img 
+						src="/static/porto/img/blog/large/blog-48.jpg" 
+						alt="The post image" 
+						data-bgposition="center center" 
+						data-bgfit="cover" 
+						data-bgrepeat="no-repeat" 
+						class="rev-slidebg">
+
+					<div 
+						class="tp-caption ws-normal px-3 px-sm-0" 
+						data-x="0" 
+						data-hoffset="['0','0','0','20']" 
+						data-y="bottom" 
+						data-voffset="['50','50','50','50']" 
+						data-start="1000" 
+						data-width="['1110','930','690','500']" 
+						data-transform_in="y:[-50%];opacity:0;s:500;" 
+						style="z-index: 5;">
+							<span class="badge badge-dark bg-color-primary badge-sm mb-1">مسافرت</span>
+							<h2 class="text-light text-9 font-weight-bold mb-2 primary-font line-height-7 py-1">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</h2>
+							<p class="text-light opacity-6 text-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها</p>
+					</div>
+				</li>
+
+				<li class="slide-overlay slide-overlay-level-5" data-transition="fade" data-link="blog-post.html">
+					<img 
+						src="/static/porto/img/blog/large/blog-49.jpg" 
+						alt="The post image" 
+						data-bgposition="center center" 
+						data-bgfit="cover" 
+						data-bgrepeat="no-repeat" 
+						class="rev-slidebg">
+
+					<div 
+						class="tp-caption ws-normal px-3 px-sm-0" 
+						data-x="0" 
+						data-hoffset="['0','0','0','20']" 
+						data-y="bottom" 
+						data-voffset="['50','50','50','50']" 
+						data-start="1000" 
+						data-width="['1110','930','690','500']" 
+						data-transform_in="y:[-50%];opacity:0;s:500;" 
+						style="z-index: 5;">
+							<span class="badge badge-dark bg-color-primary badge-sm mb-1">سبک زندگی</span>
+							<h2 class="text-light text-9 font-weight-bold mb-2 primary-font line-height-7 py-1">لورم ایپسوم متن ساختگی</h2>
+							<p class="text-light opacity-6 text-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها</p>
+					</div>
+				</li>
+
+				<li class="slide-overlay slide-overlay-level-5" data-transition="fade" data-link="blog-post.html">
+					<img 
+						src="/static/porto/img/blog/large/blog-50.jpg" 
+						alt="The post image" 
+						data-bgposition="center center" 
+						data-bgfit="cover" 
+						data-bgrepeat="no-repeat" 
+						class="rev-slidebg">
+
+					<div 
+						class="tp-caption ws-normal px-3 px-sm-0" 
+						data-x="0" 
+						data-hoffset="['0','0','0','20']" 
+						data-y="bottom" 
+						data-voffset="['50','50','50','50']" 
+						data-start="1000" 
+						data-width="['1110','930','690','500']" 
+						data-transform_in="y:[-50%];opacity:0;s:500;" 
+						style="z-index: 5;">
+							<span class="badge badge-dark bg-color-primary badge-sm mb-1">مسافرت</span>
+							<h2 class="text-light text-9 font-weight-bold mb-2 primary-font line-height-7 py-1">لورم ایپسوم متن ساختگی با تولید</h2>
+							<p class="text-light opacity-6 text-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها</p>
+					</div>
+				</li>
+
+				<li class="slide-overlay slide-overlay-level-5" data-transition="fade" data-link="blog-post.html">
+					<img 
+						src="/static/porto/img/blog/large/blog-51.jpg" 
+						alt="The post image" 
+						data-bgposition="center center" 
+						data-bgfit="cover" 
+						data-bgrepeat="no-repeat" 
+						class="rev-slidebg">
+
+					<div 
+						class="tp-caption ws-normal px-3 px-sm-0" 
+						data-x="0" 
+						data-hoffset="['0','0','0','20']" 
+						data-y="bottom" 
+						data-voffset="['50','50','50','50']" 
+						data-start="1000" 
+						data-width="['1110','930','690','500']" 
+						data-transform_in="y:[-50%];opacity:0;s:500;" 
+						style="z-index: 5;">
+							<span class="badge badge-dark bg-color-primary badge-sm mb-1">دستور پخت</span>
+							<h2 class="text-light text-9 font-weight-bold mb-2 primary-font line-height-7 py-1">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</h2>
+							<p class="text-light opacity-6 text-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها</p>
+					</div>
+				</li>
+
+				<li class="slide-overlay slide-overlay-level-5" data-transition="fade" data-link="blog-post.html">
+					<img 
+						src="/static/porto/img/blog/large/blog-52.jpg" 
+						alt="The post image" 
+						data-bgposition="center center" 
+						data-bgfit="cover" 
+						data-bgrepeat="no-repeat" 
+						class="rev-slidebg">
+
+					<div 
+						class="tp-caption ws-normal px-3 px-sm-0" 
+						data-x="0" 
+						data-hoffset="['0','0','0','20']" 
+						data-y="bottom" 
+						data-voffset="['50','50','50','50']" 
+						data-start="1000" 
+						data-width="['1110','930','690','500']" 
+						data-transform_in="y:[-50%];opacity:0;s:500;" 
+						style="z-index: 5;">
+							<span class="badge badge-dark bg-color-primary badge-sm mb-1">دستور پخت</span>
+							<h2 class="text-light text-9 font-weight-bold mb-2 primary-font line-height-7 py-1">لورم ایپسوم متن</h2>
+							<p class="text-light opacity-6 text-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<section class="section border-0 mt-0 mb-4">
+		<div class="container">
+			<div class="row">
+				<div class="col pt-2 text-center text-lg-left text-center">
+					<h3 class="text-3 text-dark m-0 font-weight-bold d-inline-block pr-4 mb-3">مشاهده همه دسته ها:</h3>
+					<div class="d-inline-block">
+						{% for item in categories %}
+							<a href="#" class="btn py-3 px-4 text-1 text-dark btn-light bg-transparent text-uppercase font-weight-bold mr-2 mb-2">{{item.title}}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="container py-4">
+
+
+		<div class="row">
+			<div class="col">
+
+				<div class="blog-posts">
+					
+					<div class="masonry-loader masonry-loader-showing">
+						
+						<div class="masonry row" data-plugin-masonry data-plugin-options="{'itemSelector': '.masonry-item'}">
+							{% for item , category in articles.items %}
+								<div class="masonry-item no-default-style col-md-4">
+									<article class="post post-medium border-0 pb-0 mb-5">
+										<div class="post-image">
+											<a href="{% url 'bloga:detail' item.slug %}">
+												<img src="{{item.thumbnail.url}}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="Top Camper Trailer Towing Tips">
+											</a>
+										</div>
+
+										<div class="post-content">
+
+											<h2 class="font-weight-semibold text-5 line-height-7 mt-3 mb-2 pt-1"><a href="{% url 'bloga:detail' item.slug %}">{{item.title}}</a></h2>
+											<p>{{item.short_des}}</p>
+
+											<div class="post-meta">
+												<span><i class="far fa-user"></i> توسط  <a href="#">{{item.author.first_name}}</a> </span>
+												<span><i class="far fa-folder"></i> {%for cat in category%}<a href="#">{{cat.title}}</a>,{% endfor %} <a href="/blog/">بلاگ</a> </span>
+												<span class="d-block mt-2 pt-1"><a href="{% url 'bloga:detail' item.slug %}" class="btn btn-xs btn-light text-1 text-uppercase">بیشتر بخوانید</a></span>
+											</div>
+
+										</div>
+									</article>
+								</div>
+								<br>
+							{% endfor %}
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col">
+							<ul class="pagination float-right mt-4">
+								<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+								<li class="page-item active"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col text-center pt-5">
+				<a href="#" target="_blank">
+					<img alt="Porto" class="img-fluid" src="/static/porto/img/blog/blog-ad-3.jpg">
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+{% endblock %}
+
+
+{% block js%}
+
+<script src="/static/porto/vendor/jquery/jquery.min.js"></script>
+<script src="/static/porto/vendor/jquery.appear/jquery.appear.min.js"></script>
+<script src="/static/porto/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="/static/porto/vendor/jquery.cookie/jquery.cookie.min.js"></script>
+<script src="/static/porto/vendor/popper/umd/popper.min.js"></script>
+<script src="/static/porto/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/porto/vendor/common/common.min.js"></script>
+<script src="/static/porto/vendor/jquery.validation/jquery.validate.min.js"></script>
+<script src="/static/porto/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="/static/porto/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+<script src="/static/porto/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+<script src="/static/porto/vendor/isotope/jquery.isotope.min.js"></script>
+<script src="/static/porto/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="/static/porto/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/static/porto/vendor/vide/jquery.vide.min.js"></script>
+<script src="/static/porto/vendor/vivus/vivus.min.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="/static/porto/js/theme.js"></script>
+
+<!-- Current Page Vendor and Views -->
+<script src="/static/porto/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script src="/static/porto/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="/static/porto/js/views/view.home.js"></script>
+
+<!-- Theme Custom -->
+<script src="/static/porto/js/custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="/static/porto/js/theme.init.js"></script>
+
+<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-12345678-1', 'auto');
+	ga('send', 'pageview');
+</script>
+	-->
+{% endblock %}
