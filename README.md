@@ -23,7 +23,45 @@ $ python manage.py migrate
 # Finally Run Project.
 
 $ python manage.py runserver <port>
+
 ```
+## Installation  With  Docker
+
+Run Project on Docker
+
+#### 1. install Docker And Docker-compose on your system 
+
+For Ubunto
+```bash
+$ sudo apt install docker.io
+$ sudo apt install docker-compose
+```
+#### 2. Create Volumes And Networks on your System
+
+Create volumes
+```bash
+$ sudo docker volume create alfax_static_volume
+$ sudo docker volume create alfax_media_volume
+$ sudo docker volume create alfax_postgresql
+
+```
+Create Networks
+```bash
+$ sudo docker network create alfax_network
+$ sudo docker network create nginx_network
+```
+Run docker-composers 
+
+```bash
+$ git clone git@gitlab.com:jupidev-code/alfax.ir.git
+$ cd Alfax/ 
+$ sudo docker-compose up -d
+$ cd config/nginx
+$ sudo docker-compose up -d
+
+```
+
+Enjoy it :)
 
 ## Features
 
