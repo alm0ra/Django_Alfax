@@ -61,6 +61,28 @@ $ sudo docker-compose up -d
 
 ```
 
+
+Make Migrations
+
+```bash
+$ cd Alfax/  ## if you are in /alfax/config/nginx ==> $ cd ../../
+$ sudo docker exec -it alfax_alfax_1 sh
+# python manage.py makemigrations
+# python manage.py makemigrations blog
+# python manage.py makemigrations land
+# python manage.py makemigrations projects
+# python manage.py makemigrations dashboard
+# python manage.py makemigrations authentication
+# python manage.py migrate
+
+#### Creating Superuser
+
+# python manage.py createsuperuser
+
+# exit
+
+```
+
 Enjoy it :)
 
 ## Features
