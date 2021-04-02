@@ -102,6 +102,7 @@ I love contributions, so please feel free to fix bugs, improve things, provide d
     [✔] set up Jalali Calender for Project
     [✔] Look up for Blog and Landing Page Template and Add To Project
     [✔] change Admin page Front End
+    [✔] Dockerize Project
     [ ] Add item 'Add Contact' to Contact 
     [ ] mail verifacation
     [ ] sms verifecation
