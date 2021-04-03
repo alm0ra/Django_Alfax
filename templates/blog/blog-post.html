@@ -1,0 +1,252 @@
+{% extends 'blog/base.html' %}
+
+
+
+{% block css %}
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="/static/porto/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/animate/animate.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/simple-line-icons/css/simple-line-icons.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/owl.carousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/owl.carousel/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/magnific-popup/magnific-popup.min.css">
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="/static/porto/css/theme.css">
+<link rel="stylesheet" href="/static/porto/css/theme-elements.css">
+<link rel="stylesheet" href="/static/porto/css/theme-blog.css">
+<link rel="stylesheet" href="/static/porto/css/theme-shop.css">
+
+<!-- Demo CSS -->
+
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="/static/porto/css/skins/default.css"> 
+
+<!-- Theme Custom CSS -->
+<link rel="stylesheet" href="/static/porto/css/custom.css">
+
+<!-- Head Libs -->
+<script src="/static/porto/vendor/modernizr/modernizr.min.js"></script>
+{% endblock %}
+
+{% block main%}
+
+<div role="main" class="main">
+
+	<section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 align-self-center p-static order-2 text-center">
+					{% for item in article %}
+					<h1 class="text-dark font-weight-bold text-8">{{item.title}}</h1>
+					{% endfor %}
+					<span class="sub-title text-dark">آخرین اخبار ما را مطالعه کنید</span>
+				</div>
+
+				<div class="col-md-12 align-self-center order-1">
+
+					<ul class="breadcrumb d-block text-center">
+						<li><a href="#">خانه</a></li>
+						<li class="active">بلاگ</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="container py-4">
+
+		<div class="row">
+			<div class="col">
+				<div class="blog-posts single-post">
+					
+					<article class="post post-large blog-single-post border-0 m-0 p-0">
+						{% for item in article %}
+						<div class="post-image ml-0">
+							<a href="blog-post.html">
+								<img src="{{item.thumbnail.url}}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+							</a>
+						</div>
+				
+						<div class="post-date ml-0">
+							<span class="day">{{item.jday}}</span>
+							<span class="month">{{item.jmonth}}</span>
+						</div>
+						{% endfor %}
+						<div class="post-content ml-0">
+
+						{% for item in article %}
+						
+							<h2 class="font-weight-bold mt-n3 mb-2 pb-1 pt-1 line-height-7 text-7"><a href="blog-post.html">{{item.title}}</a></h2>
+				
+							<div class="post-meta">
+								<span><i class="far fa-user"></i> توسط  <a href="#">{{item.author}}</a> </span>
+								<span><i class="far fa-folder"></i> {% for item in post_category %}<a href="#">{{item.title}}</a> , {% endfor %}<a href="/blog/">بلاگ</a> </span>
+								<span><i class="far fa-comments"></i> <a href="#">{{Comments_count}} دیدگاه</a></span>
+							</div>
+							{{item.description}}
+							<div class="post-block mt-5 post-share">
+								<h4 class="mb-3 secondary-font">به اشتراک گذاری این مطلب</h4>
+				
+								<!-- AddThis Button BEGIN -->
+								<div class="addthis_toolbox addthis_default_style ">
+									<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+									<a class="addthis_button_tweet"></a>
+									<a class="addthis_button_pinterest_pinit"></a>
+									<a class="addthis_counter addthis_pill_style"></a>
+								</div>
+								<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+								<!-- AddThis Button END -->
+				
+							</div>
+				
+							<div class="post-block mt-4 pt-2 post-author">
+								<h4 class="mb-3 secondary-font pb-1">نویسنده</h4>
+								<div class="img-thumbnail img-thumbnail-no-borders d-block pb-3">
+									<a href="blog-post.html">
+										<img src="/static/porto/img/avatars/avatar.jpg" alt="">
+									</a>
+								</div>
+								<p><strong class="name"><a href="#" class="text-4 pb-1 d-block">{{item.author.first_name}}</a></strong></p>
+								<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، </p>
+							</div>
+
+						{% endfor %}
+
+							<div id="comments" class="post-block mt-5 post-comments">
+								<h4 class="mb-3 secondary-font">دیدگاه ها ({{Comments_count}})</h4>
+								
+								
+								{% for cm, reply in Comments.items %}
+								<ul class="comments">
+									<li>
+										<div class="comment">
+											<div class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
+												<img class="avatar" alt="" src="/static/porto/img/avatars/avatar-2.jpg">
+											</div>
+											<div class="comment-block">
+												<div class="comment-arrow"></div>
+												<span class="comment-by">
+													<strong>{{cm.name}}</strong>
+												</span>
+												<p>{{cm.text}}</p>
+												<span class="date float-right">{{cm.jpublish}}</span>
+											</div>
+										</div>
+										{% for item in reply %}
+										<ul class="comments reply">
+											<li>
+												<div class="comment">
+													<div class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
+														<img class="avatar" alt="" src="/static/porto/img/avatars/avatar-3.jpg">
+													</div>
+													<div class="comment-block">
+														<div class="comment-arrow"></div>
+														<span class="comment-by">
+															<strong>{{item.name}}</strong>
+														</span>
+														<p>{{item.text}}</p>
+														<span class="date float-right">{{item.jpublish}}</span>
+													</div>
+												</div>
+											</li>
+										</ul>
+										{% endfor %}
+									</li>
+								</ul>
+								{% endfor %}
+							</div>
+				
+							<div class="post-block mt-5 post-leave-comment">
+								<h4 class="mb-3 secondary-font pb-1">دیدگاه خود را بیان کنید</h4>
+				
+								<form class="contact-form p-4 rounded bg-color-grey"  method="POST">			
+									{% csrf_token %}
+									<div class="p-2">
+										<div class="form-row">
+											<div class="form-group col-lg-6">
+												<label class="required font-weight-bold text-dark text-1-05em">نام کامل</label>
+												{{form.name}}
+											</div>
+											<div class="form-group col-lg-6">
+												<label class="required font-weight-bold text-dark text-1-05em">آدرس ایمیل</label>
+												{{form.email}}
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group col">
+												<label class="required font-weight-bold text-dark text-1-05em">دیدگاه</label>
+												{{form.text}}
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group col mb-0">
+												<input type="submit" value="ارسال دیدگاه" class="btn btn-primary btn-modern" data-loading-text="در حال بارگذاری ...">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+				
+						</div>
+					</article>
+					
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+{% endblock %}
+
+
+{% block js%}
+
+<!-- Vendor -->
+<script src="/static/porto/vendor/jquery/jquery.min.js"></script>
+<script src="/static/porto/vendor/jquery.appear/jquery.appear.min.js"></script>
+<script src="/static/porto/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="/static/porto/vendor/jquery.cookie/jquery.cookie.min.js"></script>
+<script src="/static/porto/vendor/popper/umd/popper.min.js"></script>
+<script src="/static/porto/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/porto/vendor/common/common.min.js"></script>
+<script src="/static/porto/vendor/jquery.validation/jquery.validate.min.js"></script>
+<script src="/static/porto/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="/static/porto/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+<script src="/static/porto/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+<script src="/static/porto/vendor/isotope/jquery.isotope.min.js"></script>
+<script src="/static/porto/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="/static/porto/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/static/porto/vendor/vide/jquery.vide.min.js"></script>
+<script src="/static/porto/vendor/vivus/vivus.min.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="/static/porto/js/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="/static/porto/js/custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="/static/porto/js/theme.init.js"></script>
+
+<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-12345678-1', 'auto');
+	ga('send', 'pageview');
+</script>
+	-->
+
+{% endblock %}

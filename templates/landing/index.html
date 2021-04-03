@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html dir="rtl">
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+		{% for item in landing %}
+		<title>{{item.fisrt_section.webtitle}}</title>	
+		{% endfor %}
+		<meta name="keywords" content="HTML5 Template">
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="/static/porto/img/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" href="/static/porto/img/apple-touch-icon.png">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+
+		<link rel="stylesheet" href="/static/porto/vendor/circle-flip-slideshow/css/component.css">		
+		<!-- Theme Custom CSS -->
+
+		<link rel="stylesheet" href="/static/porto/css/demos/demo-business-consulting.css">	
+		<link rel="stylesheet" href="/static/porto/css/skins/skin-corporate-14.css"> 
+		<link rel="stylesheet" href="/static/porto/css/skins/skin-business-consulting.css"> 
+
+
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="/static/porto/vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/fontawesome-free/css/all.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/animate/animate.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/simple-line-icons/css/simple-line-icons.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="/static/porto/vendor/magnific-popup/magnific-popup.min.css">
+		<!-- Revolution Slider Addon - Typewriter -->
+		
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="/static/porto/css/theme.css">
+		<link rel="stylesheet" href="/static/porto/css/theme-elements.css">
+		<link rel="stylesheet" href="/static/porto/css/theme-blog.css">
+		<link rel="stylesheet" href="/static/porto/css/theme-shop.css">
+
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="/static/porto/vendor/rs-plugin/css/settings.css">
+		<link rel="stylesheet" href="/static/porto/vendor/rs-plugin/css/layers.css">
+		<link rel="stylesheet" href="/static/porto/vendor/rs-plugin/css/navigation.css">
+		<link rel="stylesheet" type="text/css" href="/static/porto/vendor/rs-plugin/revolution-addons/typewriter/css/typewriter.css">
+
+
+
+
+
+
+
+
+		<link rel="stylesheet" href="/static/porto/css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="/static/porto/vendor/modernizr/modernizr.min.js"></script>
+
+	</head>
+	<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+		<div class="loading-overlay">
+			<div class="bounce-loader">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
+
+		<div class="body">
+			<header id="header" class="header-transparent header-semi-transparent header-semi-transparent-dark" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 53, 'stickySetTop': '-53px'}">
+				<div class="header-body border-top-0 bg-dark box-shadow-none">
+					<div class="header-top header-top-borders header-top-light-2-borders">
+						<div class="container container-lg h-100">
+							<div class="header-row h-100">
+
+								<div class="header-column justify-content-end">
+									<div class="header-row">
+										<nav class="header-nav-top">
+											<ul class="nav nav-pills">
+												<li class="nav-item nav-item-borders py-2 d-none d-lg-inline-flex">
+													<a href="/blog">بلاگ</a>
+												</li>
+												<li class="nav-item nav-item-borders py-2 pr-0 dropdown">
+													<a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<img src="/static/porto/img/blank.gif" class="flag flag-ir" alt="Farsi"> فارسی
+														<i class="fas fa-angle-down p-relative top-1"></i>
+													</a>
+													<div class="dropdown-menu" aria-labelledby="dropdownLanguage">
+														<a class="dropdown-item" href="#"><img src="/static/porto/img/blank.gif" class="flag flag-us" alt="English"> انگلیسی</a>
+													</div>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="header-container header-container-height-sm container container-lg">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-logo">
+										<a href="index.html">
+											{% for item in landing %}
+											<img alt="Porto" width="82" height="40" src="{{item.fisrt_section.logoheader.url}}">
+											{% endfor %}
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="header-column justify-content-end">
+								<div class="header-row">
+									<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
+										<div class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
+											<nav class="collapse">
+												<ul class="nav nav-pills" id="mainNav">
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="/">
+															خانه
+														</a>
+													</li>
+													<li class="dropdown dropdown-mega">
+														<a class="dropdown-item dropdown-toggle" href="/dashboard/karfarmaonline/">
+															سیستم مدیریت
+														</a>
+													</li>
+													<li class="dropdown dropdown-mega">
+														<a class="dropdown-item dropdown-toggle" href="#">
+															آموزش ها
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="/">
+															پروژه ها
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="/blog">
+															بلاگ
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="/login">
+															ورود/ثبت نام
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="/resume">
+															رزومه
+														</a>
+													</li>
+													
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="#">
+															تماس با ما
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="#">
+															فروشگاه
+														</a>
+														
+													</li>
+												</ul>
+											</nav>
+										</div>
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+											<i class="fas fa-bars"></i>
+										</button>
+									</div>
+									<div class="header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+										<div class="header-nav-feature header-nav-features-search d-inline-flex">
+											<a href="#" class="header-nav-features-toggle" data-focus="headerSearch"><i class="fas fa-search header-nav-top-icon"></i></a>
+											<div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed" id="headerTopSearchDropdown">
+												<form role="search" action="page-search-results.html" method="get">
+													<div class="simple-search input-group">
+														<input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="جستجو ...">
+														<span class="input-group-append">
+															<button class="btn" type="submit">
+																<i class="fa fa-search header-nav-top-icon"></i>
+															</button>
+														</span>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="header-nav-feature header-nav-features-cart d-inline-flex ml-2">
+											<a href="#" class="header-nav-features-toggle">
+												<img src="/static/porto/img/icons/icon-cart-light.svg" width="14" alt="" class="header-nav-top-icon-img">
+												<span class="cart-info">
+													<span class="cart-qty">1</span>
+												</span>
+											</a>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div role="main" class="main">
+				{% for item in landing %}
+				<!-- First Section -->
+				<div class="slider-container rev_slider_wrapper" style="height: 100vh;">
+					<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'addOnTypewriter': { 'enable': true }, 'sliderLayout': 'fullscreen', 'delay': 9000, 'gridwidth': [1410,1110,930,690], 'gridheight': 700, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1422,1182,974], 'navigation' : {'arrows': { 'enable': true, 'style': 'arrows-style-1 arrows-primary' }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
+						<ul>
+							<li class="slide-overlay slide-overlay-level-8" data-transition="fade">
+								<img 
+									src="/static/porto/img/slides/slide-corporate-14-1.jpg" 
+									alt="" 
+									data-bgposition="center center" 
+									data-bgfit="cover" 
+									data-bgrepeat="no-repeat" 
+									class="rev-slidebg">
+
+								<h1 
+									class="tp-caption font-weight-extra-bold text-color-light" 
+									data-frames='[{"delay":1000,"speed":500,"frame":"0","from":"opacity:0;x:50%;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' 
+									data-x="['right','right','right','center']" 
+									data-y="center" 
+									data-voffset="['-95','-95','-95','-95']" 
+									data-fontsize="['48','48','48','48']" 
+									data-lineheight="['55','55','55','55']">{{item.fisrt_section.text11}}</h1>
+
+								<div 
+									class="tp-caption font-weight-extra-bold text-color-light" 
+									data-frames='[{"delay":500,"speed":2500,"from":"y:50px;sX:1;sY:1;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' 
+									data-type="text" 
+									data-typewriter='{"lines":"{{item.fisrt_section.text12}}.,{{item.fisrt_section.text13}},{{item.fisrt_section.text12}}.","enabled":"on","speed":"60","delays":"1%7C100","looped":"on","cursorType":"one","blinking":"on","word_delay":"off","sequenced":"on","hide_cursor":"off","start_delay":"1500","newline_delay":"1000","deletion_speed":"20","deletion_delay":"1000","blinking_speed":"500","linebreak_delay":"60","cursor_type":"two","background":"off"}' 
+									data-x="['right','right','right','center']" 
+									data-y="center" 
+									data-voffset="['-13','-13','-13','-3']" 
+									data-responsive_offset="on" 
+									data-width="['750','750','750','750']" 
+									data-fontsize="['48','48','48','48']" 
+									data-lineheight="['92','92','92','92']" 
+									data-textalign="['right','right','right','center']">{{item.fisrt_section.text13}}.</div>
+
+								<div 
+									class="tp-caption font-weight-light text-color-light ws-normal" 
+									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2300,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' 
+									data-x="['right','right','right','center']" 
+									data-y="center" 
+									data-voffset="['65','65','65','85']" 
+									data-width="['900','900','900','900']" 
+									data-fontsize="['18','18','18','22']" 
+									data-lineheight="['26','26','26','26']" 
+									data-textalign="['right','right','right','center']">{{item.fisrt_section.text14}}.</div>
+
+								<a 
+									class="tp-caption btn btn-primary font-weight-bold rounded" 
+									href="{{item.fisrt_section.link15}}" 
+									data-frames='[{"delay":2300,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' 
+									data-x="['right','right','right','center']" 
+									data-y="center" 
+									data-voffset="['145','145','145','190']" 
+									data-paddingtop="['16','16','16','24']" 
+									data-paddingbottom="['16','16','16','24']" 
+									data-paddingleft="['40','40','40','45']" 
+									data-paddingright="['40','40','40','45']" 
+									data-fontsize="['14','14','14','18']" 
+									data-lineheight="['20','20','20','22']">{{item.fisrt_section.text15}} <i class="fas fa-arrow-left ml-1"></i></a>
+
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Second Section -->
+				<div class="home-intro bg-primary" id="home-intro">
+					<div class="container">
+				
+						<div class="row align-items-center">
+							<div class="col-lg-8">
+								<p>
+									{{item.section_section.text21}}
+									<span class="sub-text">{{item.section_section.text22}}</span>
+								</p>
+							</div>
+							<div class="col-lg-4">
+								<div class="get-started text-left text-lg-right">
+									<a href="{{item.section_section.link23}}" class="btn btn-dark btn-lg text-3 font-weight-semibold px-4 py-3">{{item.section_section.text23}}</a>
+									<div class="learn-more">یا <a href="index.html">آشنایی بیشتر.</a></div>
+								</div>
+							</div>
+						</div>
+				
+					</div>
+				</div>
+				<!-- third section -->
+				<div class="container container-lg py-5 my-5">
+					<div class="row justify-content-center">
+						<div class="col-xl-9 text-center">
+							<h2 class="font-weight-bold text-9 text-sm-10 text-md-11 appear-animation line-height-7" data-appear-animation="fadeInUpShorter">{{item.third_section.text31}}</h2>
+							<p class="line-height-9 text-4 opacity-9 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">{{item.third_section.titr31}}</p>
+						</div>
+					</div>
+					<div class="row featured-boxes featured-boxes-style-4">
+						<div class="col-sm-6 col-lg-3 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="400">
+							<div class="featured-box mb-lg-0">
+								<div class="box-content px-lg-1 px-xl-5">
+									<i class="icon-featured icons icon-bubbles text-color-primary text-11"></i>
+									<h4 class="font-weight-bold text-5 mb-3">{{item.third_section.text32}}</h4>
+									<p>{{item.third_section.titr32}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-3 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+							<div class="featured-box mb-lg-0">
+								<div class="box-content px-lg-1 px-xl-5">
+									<i class="icon-featured icons icon-organization text-color-primary text-11"></i>
+									<h4 class="font-weight-bold text-5 mb-3">{{item.third_section.text33}}</h4>
+									<p>{{item.third_section.titr33}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-3 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+							<div class="featured-box mb-sm-0">
+								<div class="box-content px-lg-1 px-xl-5">
+									<i class="icon-featured icons icon-cup text-color-primary text-11"></i>
+									<h4 class="font-weight-bold text-5 mb-3">{{item.third_section.text34}}</h4>
+									<p>{{item.third_section.titr34}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-3 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400">
+							<div class="featured-box mb-0">
+								<div class="box-content px-lg-1 px-xl-5">
+									<i class="icon-featured icons icon-heart text-color-primary text-11"></i>
+									<h4 class="font-weight-bold text-5 mb-3">{{item.third_section.text35}}</h4>
+									<p>{{item.third_section.titr35}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				<section class="section-secondary custom-section-padding-2">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<h2 class="font-weight-bold text-color-dark mb-4">- پروژه های ما</h2>
+							</div>
+						</div>
+					</div>
+					<div class="owl-carousel show-nav-title custom-both-sides-shadow custom-dots-position-2 custom-dots-style-1 custom-xs-arrows-style-2 mb-0" data-plugin-options="{'items': 6, 'loop': false, 'dots': true, 'nav': false}">
+						{% for item in projects%}
+						<div>
+							<a href="{% url 'project:detail' item.project_slug %}" class="text-decoration-none">
+								<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
+									<span class="thumb-info-wrapper m-0">
+										<img src="{{item.project_thumbnail.url}}" class="img-fluid" alt="">
+									</span>
+									<span class="thumb-info-caption bg-color-secondary p-4 pt-5 pb-5">
+										<span class="custom-thumb-info-title">
+											<span class="custom-thumb-info-name font-weight-semibold text-color-dark text-4 mb-1 mt-n1 line-height-8">{{item.project_title}}</span>
+											<span class="custom-thumb-info-desc font-weight-light d-block line-height-double">{{item.project_customer}}</span>
+										</span>
+										<span class="custom-arrow"></span>
+									</span>
+								</span>
+							</a>
+						</div>
+						{% endfor %}
+					</div>
+				</section>
+
+				<section class="custom-section-padding">
+
+					<div class="container">
+					
+						<div class="row text-center pt-3">
+							<div class="col-md-10 mx-md-auto">
+								<h1 class="word-rotator slide font-weight-bold text-7 text-sm-8 mb-3 appear-animation primary-font" data-appear-animation="fadeInUpShorter">
+									<span>آلفکس </span>
+									<span class="word-rotator-words bg-dark">
+										<b class="is-visible">بطور باور نکردنی</b>
+										<b>بسیار</b>
+										<b>به شدت</b>
+									</span>
+									<span> زیبا و کاملا واکنش گراست.</span>
+								</h1>
+								<p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">
+									لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط
+								</p>
+							</div>
+						</div>
+					
+					</div>
+					
+					<div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+						<div class="home-concept mt-5">
+							<div class="container">
+					
+								<div class="row text-center">
+									<span class="sun"></span>
+									<span class="cloud"></span>
+									<div class="col-lg-2 ml-lg-auto">
+										<div class="process-image">
+											<img src="/static/porto/img/home/home-concept-item-1.png" alt="">
+											<strong>استراتژی</strong>
+										</div>
+									</div>
+									<div class="col-lg-2 mt-4 mt-lg-0">
+										<div class="process-image process-image-on-middle">
+											<img src="/static/porto/img/home/home-concept-item-2.png" alt="">
+											<strong>برنامه‌ریزی</strong>
+										</div>
+									</div>
+									<div class="col-lg-2 mt-4 mt-lg-0">
+										<div class="process-image">
+											<img src="/static/porto/img/home/home-concept-item-3.png" alt="">
+											<strong>ساختن</strong>
+										</div>
+									</div>
+									<div class="col-lg-4 ml-lg-auto mt-1 mt-lg-0">
+										<div class="project-image">
+											<div id="fcSlideshow" class="fc-slideshow">
+												<ul class="fc-slides">
+													<li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="/static/porto/img/projects/project-home-1.jpg" alt=""></a></li>
+													<li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="/static/porto/img/projects/project-home-2.jpg" alt=""></a></li>
+													<li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="/static/porto/img/projects/project-home-3.jpg" alt=""></a></li>
+												</ul>
+											</div>
+											<strong class="our-work">کارهای ما</strong>
+										</div>
+									</div>
+								</div>
+					
+							</div>
+						</div>
+					</div>
+					
+					<div class="container mb-5 pb-4">
+					
+						<div class="row">
+							<div class="col mb-4">
+								<hr class="my-5">
+							</div>
+						</div>
+					
+						<div class="row pb-3">
+							<div class="col-lg-8">
+								<h2 class="font-weight-normal text-7"><strong class="font-weight-extra-bold">ویژگی های</strong> ما</h2>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-support text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">پشتیبانی مشتری</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-doc text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">HTML5 / CSS3 / JS</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-social-google text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">16 فونت فارسی</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-pencil text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">رنگ ها</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-layers text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">اسلایدر ها</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-user text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">آیکن‌ها</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-menu text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">دکمه ها</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+										<div class="feature-box feature-box-style-2">
+											<div class="feature-box-icon">
+												<i class="icons icon-screen-desktop text-color-primary"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4 class="font-weight-bold text-4 mb-0">لایت باکس</h4>
+												<p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<h2 class="font-weight-normal text-6">و بیشتر ...</h2>
+					
+								<div class="accordion accordion-modern" id="accordion">
+									<div class="card card-default">
+										<div class="card-header">
+											<h4 class="card-title m-0">
+												<a class="accordion-toggle text-color-dark font-weight-bold" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+													<i class="icons icon-diamond text-color-primary"></i>
+													وب‌سایت های خلاقانه
+												</a>
+											</h4>
+										</div>
+										<div id="collapseOne" class="collapse show">
+											<div class="card-body text-2">
+												<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون</p>
+												<p class="mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم <a href="#" class="d-block text-color-dark font-weight-semibold pt-4">بیشتر بخوانید <i class="fas fa-angle-left position-relative align-middle ml-1"></i></a></p>
+											</div>
+										</div>
+									</div>
+									<div class="card card-default">
+										<div class="card-header">
+											<h4 class="card-title m-0">
+												<a class="accordion-toggle text-color-dark font-weight-bold" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+													<i class="icons icon-bubble text-color-primary"></i>
+													فرم های تماس
+												</a>
+											</h4>
+										</div>
+										<div id="collapseTwo" class="collapse">
+											<div class="card-body text-2">
+												<p class="mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+									</div>
+									<div class="card card-default">
+										<div class="card-header">
+											<h4 class="card-title m-0">
+												<a class="accordion-toggle text-color-dark font-weight-bold" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+													<i class="icons icon-grid text-color-primary"></i>
+													صفحات نمونه کار ها
+												</a>
+											</h4>
+										</div>
+										<div id="collapseThree" class="collapse">
+											<div class="card-body text-2">
+												<p class="mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				</section>
+				
+				<section class="section-secondary custom-section-padding-2	">
+					
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<h2 class="font-weight-bold text-color-dark mb-4">- بلاگ ما</h2>
+							</div>
+						</div>
+						{% for item in articles %}
+						<div class="row mb-3">
+							
+							<article class="blog-post col">
+								<div class="row">
+									<div class="col-lg-5">
+										<div class="blog-post-image-wrapper">
+											<a href="{% url 'bloga:detail' item.slug %}" title="بیشتر بخوانید">
+												<img src="{{item.thumbnail.url}}" alt class="img-fluid mb-4 w-100">
+											</a>
+											<span class="blog-post-date bg-color-primary text-color-light font-weight-bold mt-n2 mt-sm-3 mt-md-5 mt-lg-n5 mt-xl-0">
+												{{item.jday}}
+												<span class="month-year font-weight-light">
+													{{item.jmonth}}
+												</span>
+											</span>
+										</div>
+									</div>
+									<div class="col-lg-7">
+										<h2 class="primary-font mt-n1 mt-lg-n2"> {{item.title}}</h2>
+										<p>{{item.short_des}}</p>
+										<hr class="solid">
+										<div class="post-infos d-flex">
+											<span class="info posted-by">
+												توسط:
+												<span class="post-author font-weight-semibold text-color-dark">
+													{{item.author.first_name}}
+												</span>
+											</span>
+											<span class="info comments ml-5">
+												 تاریخ انتشار:
+												<span class="comments-number text-color-primary font-weight-semibold">
+													{{item.jpublish}}
+												</span>
+											</span>
+										</div>
+										<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase mt-5" href="{% url 'bloga:detail' item.slug %}" title="بیشتر بخوانید">بیشتر بخوانید</a>
+									</div>
+								</div>
+								<br>
+								<br>		
+							</article>
+							
+							{% endfor %}
+						</div>
+					</div>
+					
+				</section>
+				
+			</div>
+			{% for item in landing %}
+			<footer id="footer" class="mt-0">
+				<div class="container container-lg my-4">
+					<div class="row py-5">
+						<div class="col-lg-4 mb-5 mb-lg-0 text-center text-lg-left pt-3">
+							<h5 class="text-5 font-weight-semibold text-color-light mb-4">{{item.footer_section.titr1}}</h5>
+							<p class="text-4 mb-3">{{item.footer_section.text1}}</p>
+							<a href="{{item.footer_section.link00}}" target="_blank" class="d-inline-flex align-items-center btn btn-primary font-weight-semibold px-5 btn-py-3 text-3 rounded mt-2">{{item.footer_section.text00}}</a>
+						</div>
+						<div class="col-lg-2 mb-4 mb-md-0 text-center text-lg-left pt-3">
+							<h5 class="text-5 font-weight-semibold text-color-light mb-4">صفحات</h5>
+							<ul class="list list-icons list-icons-sm d-inline-flex flex-column">
+								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="{{item.footer_section.link11}}"  class="link-hover-style-1 ml-1"> {{item.footer_section.text11}}</a></li>
+								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="{{item.footer_section.link22}}" class="link-hover-style-1 ml-1">{{item.footer_section.text22}}</a></li>
+								<li class="text-4 mb-2"><i class="fas fa-angle-left"></i><a href="{{item.footer_section.link33}}"  class="link-hover-style-1 ml-1"> {{item.footer_section.text33}}</a></li>
+							</ul>
+						</div>
+						
+						<div class="col-lg-3 mb-4 mb-lg-0 text-center text-lg-left pt-3">
+							<h5 class="text-5 font-weight-semibold text-color-light mb-4">تماس با ما</h5>
+							<p class="text-4 mb-2"><span class="text-color-light">آدرس:</span> {{item.footer_section.address}}</p>
+							<p class="text-4 mb-2"><span class="text-color-light">تلفن:</span> <span class="ltr-text"> {{item.footer_section.phone}}</span></p>
+							<p class="text-4 mb-2"><span class="text-color-light">ایمیل:</span> <a href="mailto:mail@example.com"> {{item.footer_section.mail}}</a></p>
+						</div>
+						
+						<div class="col-lg-3 text-center text-lg-left pt-3">
+							<h5 class="text-5 font-weight-semibold text-color-light mb-4">ما را دنبال کنید</h5>
+							<ul class="footer-social-icons social-icons social-icons-clean social-icons-big social-icons-opacity-light social-icons-icon-light mt-0 mt-lg-3">
+								<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+								<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="container container-lg">
+					<div class="footer-copyright footer-copyright-style-2">
+						<div class="py-2">
+							<div class="row py-4">
+								<div class="col d-flex align-items-center justify-content-center">
+									<p>طراحی شده در آلفکس AlFax</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			{% endfor %}
+		</div>
+
+
+
+		<script type="text/javascript" src="/static/porto/vendor/rs-plugin/revolution-addons/typewriter/js/revolution.addon.typewriter.min.js"></script>
+		
+		<!-- Current Page Vendor and Views -->
+		<script src="/static/porto/js/views/view.contact.js"></script>
+		
+		<!-- Demo -->
+		<script src="/static/porto/js/demos/demo-business-consulting.js"></script>
+		<script src="/static/porto/vendor/circle-flip-slideshow/js/jquery.flipshow.min.js"></script>
+		<!-- Theme Custom -->
+		<script src="/static/porto/js/views/view.home.js"></script>
+		
+		<!-- Vendor -->
+		<script src="/static/porto/vendor/jquery/jquery.min.js"></script>
+		<script src="/static/porto/vendor/jquery.appear/jquery.appear.min.js"></script>
+		<script src="/static/porto/vendor/jquery.easing/jquery.easing.min.js"></script>
+		<script src="/static/porto/vendor/jquery.cookie/jquery.cookie.min.js"></script>
+		<script src="/static/porto/vendor/popper/umd/popper.min.js"></script>
+		<script src="/static/porto/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/static/porto/vendor/common/common.min.js"></script>
+		<script src="/static/porto/vendor/jquery.validation/jquery.validate.min.js"></script>
+		<script src="/static/porto/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+		<script src="/static/porto/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+		<script src="/static/porto/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+		<script src="/static/porto/vendor/isotope/jquery.isotope.min.js"></script>
+		<script src="/static/porto/vendor/owl.carousel/owl.carousel.min.js"></script>
+		<script src="/static/porto/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="/static/porto/vendor/vide/jquery.vide.min.js"></script>
+		<script src="/static/porto/vendor/vivus/vivus.min.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="/static/porto/js/theme.js"></script>
+		
+		<!-- Current Page Vendor and Views -->
+		<script src="/static/porto/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="/static/porto/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+		<!-- Revolution Slider Addon - Typewriter -->
+
+		<!-- Theme Initialization Files -->
+		
+
+		<script src="/static/porto/js/custom.js"></script>
+		<script src="/static/porto/js/theme.init.js"></script>
+
+
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		 -->
+
+	</body>
+</html>

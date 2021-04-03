@@ -292,7 +292,44 @@
     </div>
 </div>
 
+
+
   </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-12">
+      <div class="card">
+          <div class="card-header d-flex align-items-start pb-0">
+              <div>
+                  <h2 class="text-bold-700 mb-0">{{ekhtelaf_me}} </h2>
+                  <p>ما به تفاوت هزینه و درآمد توسط  {{user.first_name}}</p>
+              </div>
+              <div class="avatar bg-rgba-success p-50 m-0 mb-1">
+                  <div class="avatar-content">
+                      <i class="feather icon-activity text-success font-medium-5"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="col-sm-6 col-12">
+    <div class="card">
+        <div class="card-header d-flex align-items-start pb-0">
+            <div>
+                <h2 class="text-bold-700 mb-0">{{ekhtelaf_kol}} </h2>
+                <p>ما به تفاوت هزینه و درآمد کل</p>
+            </div>
+            <div class="avatar bg-rgba-success p-50 m-0 mb-1">
+                <div class="avatar-content">
+                    <i class="feather icon-activity text-success font-medium-5"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
   <!-- daramad kol -->
 
   </div>
@@ -314,7 +351,9 @@
                           <table class="table table-striped dataex-html5-selectors">
                               <thead>
                                   <tr>
-                                      <th>عنوان</th>
+                                      <th>
+                                          عنوان
+                                      </th>
                                       <th>دسته بندی</th>
                                       <th> پروژه</th>
                                       <th>میزان هزینه کرد</th>
@@ -325,7 +364,10 @@
                               <tbody>
                                 {% for item in total_me_expence %}
                                 <tr>
-                                    <td>{{item.title}}</td>
+                                    <td>
+                                        {{item.title}}
+                                        <a class="nav-link float-right" href="/dashboard/karfarmaonline/?remove=trued&expence_id={{item.id}}&project_id={{item.project.id}}" data-toggle="tooltip" data-placement="top" title="حذف هزینه کرد"><i class="ficon feather icon-trash "></i></i></a>
+                                    </td>
                                     <td>{{item.get_category_pay_display}}</td>
                                     <td>{{item.project.name}}</td>
                                     <td>{{item.amount}}</td>
@@ -382,7 +424,11 @@
                                 <tbody>
                                   {% for item in total_me_income %}
                                   <tr>
-                                      <td>{{item.title}}</td>
+                                      <td>
+                                        {{item.title}}
+                                        <a class="nav-link float-right" href="/dashboard/karfarmaonline/?remove=trued&income_id={{item.id}}&project_id={{item.project.id}}" data-toggle="tooltip" data-placement="top" title="حذف هزینه کرد"><i class="ficon feather icon-trash "></i></i></a>
+                                        
+                                        </td>
                                       <td>{{item.get_category_pay_display}}</td>
                                       <td>{{item.project.name}}</td>
                                       <td>{{item.amount}}</td>

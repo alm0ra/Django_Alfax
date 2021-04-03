@@ -1,0 +1,188 @@
+{% extends 'projects/base.html' %}
+
+
+
+{% block css %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="/static/porto/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/animate/animate.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/simple-line-icons/css/simple-line-icons.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/owl.carousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/owl.carousel/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="/static/porto/vendor/magnific-popup/magnific-popup.min.css">
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="/static/porto/css/theme.css">
+<link rel="stylesheet" href="/static/porto/css/theme-elements.css">
+<link rel="stylesheet" href="/static/porto/css/theme-blog.css">
+<link rel="stylesheet" href="/static/porto/css/theme-shop.css">
+
+<!-- Demo CSS -->
+
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="/static/porto/css/skins/default.css"> 
+
+<!-- Theme Custom CSS -->
+<link rel="stylesheet" href="/static/porto/css/custom.css">
+
+<!-- Head Libs -->
+<script src="/static/porto/vendor/modernizr/modernizr.min.js"></script>
+
+{% endblock %}
+
+{% block main%}
+
+<div role="main" class="main">
+	{% for item in project %}
+	<section class="page-header page-header-modern bg-color-light-scale-1 page-header-md ">
+		<div class="container-fluid">
+			<div class="row align-items-center">
+
+				<div class="col">
+				</div>
+				<div class="col">
+					<div class="row">
+						<div class="col-md-12 align-self-center p-static order-2 text-center">
+							<div class="overflow-hidden pb-1 mb-n1">
+								<h1 class="text-dark font-weight-bold text-9 appear-animation mt-1 mb-n2" data-appear-animation="maskUp" data-appear-animation-delay="100">{{item.project_title}}</h1>
+							</div>
+						</div>
+						<div class="col-md-12 align-self-center order-1">
+							<ul class="breadcrumb d-block text-center appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+								<li><a href="/">خانه</a></li>
+								<li><a href="/projects">پروژه ها</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="container py-4">
+
+		<div class="row">
+			<div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">
+
+				<div class="owl-carousel owl-theme nav-inside nav-inside-edge nav-squared nav-with-transparency nav-dark nav-lg d-block overflow-hidden" data-plugin-options="{'items': 1, 'margin': 10, 'loop': false, 'nav': true, 'dots': false, 'autoHeight': true}" style="height: 510px;">
+					<div>
+						<div class="img-thumbnail border-0 border-radius-0 p-0 d-block">
+							<img src="{{item.project_thumbnail.url}}" class="img-fluid border-radius-0" alt="">
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="row pt-4 mt-2 mb-5">
+			<div class="col-md-7">
+
+				<h2 class="text-color-dark font-weight-normal text-5 mb-3"><strong class="font-weight-extra-bold">توضیحات</strong> پروژه</h2>
+
+				<p>{{item.project_description}}</p>
+
+				<hr class="solid my-5">
+
+				<strong class="text-uppercase text-1 mr-3 text-dark float-left position-relative top-2">اشتراک گذاری</strong>
+				<ul class="social-icons">
+					<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+					<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+					<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+				</ul>
+
+			</div>
+			<div class="col-md-5 mt-5 mt-md-0">
+				<h2 class="text-color-dark font-weight-normal text-5 mb-3"><strong class="font-weight-extra-bold">جزئیات</strong> پروژه</h2>
+				<ul class="list list-icons list-primary list-borders text-2">
+					<li><i class="fas fa-caret-left left-10"></i> <strong class="text-color-primary">مشتری:</strong> {{item.project_customer}}</li>
+					<li><i class="fas fa-caret-left left-10"></i> <strong class="text-color-primary">تاریخ:</strong> {{item.jmonth}} {{item.jyear}}</li>
+					<li><i class="fas fa-caret-left left-10"></i> <strong class="text-color-primary">مهارت ها:</strong> {% for cat in project_category %}<a href="#" class="badge badge-dark badge-sm badge-pill px-2 py-1 ml-1">{{cat.title}}</a>{% endfor %}</li>
+					<li><i class="fas fa-caret-left left-10"></i> <strong class="text-color-primary">آدرس پروژه:</strong> <a href="{{item.project_address}}" target="_blank" class="text-dark">{{item.project_address}}</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+	{% endfor %}
+</div>
+
+<section class="section section-height-3 bg-color-grey m-0 border-0">
+	<div class="container py-4">
+		<h4 class="mb-4 text-4"><strong class="font-weight-extra-bold">پروژه های</strong> اخیر</h4>
+		<div class="row">
+		{% for item in last4 %}
+			<div class="col-12 col-sm-6 col-lg-3 mb-4">
+				<div class="portfolio-item">
+					<a href="{% url 'project:detail' item.project_slug  %}">
+						<span class="thumb-info thumb-info-lighten thumb-info-no-borders border-radius-0">
+							<span class="thumb-info-wrapper border-radius-0">
+								<img src="{{item.project_thumbnail.url}}" class="img-fluid border-radius-0" alt="">
+								<span class="thumb-info-title">
+									<span class="thumb-info-inner">{{item.project_title}}</span>
+									<span class="thumb-info-type">{{item.project_subject}}</span>
+								</span>
+								<span class="thumb-info-action">
+									<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
+								</span>
+							</span>
+						</span>
+					</a>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+
+{% block js%}
+<!-- Vendor -->
+<script src="/static/porto/vendor/jquery/jquery.min.js"></script>
+<script src="/static/porto/vendor/jquery.appear/jquery.appear.min.js"></script>
+<script src="/static/porto/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="/static/porto/vendor/jquery.cookie/jquery.cookie.min.js"></script>
+<script src="/static/porto/vendor/popper/umd/popper.min.js"></script>
+<script src="/static/porto/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/porto/vendor/common/common.min.js"></script>
+<script src="/static/porto/vendor/jquery.validation/jquery.validate.min.js"></script>
+<script src="/static/porto/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="/static/porto/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+<script src="/static/porto/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+<script src="/static/porto/vendor/isotope/jquery.isotope.min.js"></script>
+<script src="/static/porto/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="/static/porto/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/static/porto/vendor/vide/jquery.vide.min.js"></script>
+<script src="/static/porto/vendor/vivus/vivus.min.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="/static/porto/js/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="/static/porto/js/custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="/static/porto/js/theme.init.js"></script>
+
+<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-12345678-1', 'auto');
+	ga('send', 'pageview');
+</script>
+	-->
+
+{% endblock %}

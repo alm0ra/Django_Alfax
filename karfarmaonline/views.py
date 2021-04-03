@@ -22,6 +22,18 @@ def index(request):
         if ProjectModel.objects.is_manager_project(user=request.user, id =project_id):
             ProjectModel.objects.filter(id=project_id).delete()
             messages.info(request, "با موفقیت حذف شد * ")
+    if request.GET.get('remove', False)  == 'trued' :
+        project_id = request.GET.get('project_id', False)
+        income_id = request.GET.get('income_id', False)
+        expence_id = request.GET.get('expence_id', False)
+
+        if ProjectModel.objects.is_member_of_project(user=request.user, id =project_id) or ProjectModel.objects.is_manager_project(user=request.user, id =project_id):
+            if expence_id :
+                expence.objects.filter(id=expence_id).delete()
+            if income_id :
+                income.objects.filter(id=income_id).delete()
+
+            messages.info(request, "با موفقیت حذف شد * ")
     if request.GET.get('detail', False)  == 'true' :
         project_id = request.GET.get('project_id', False)
         if ProjectModel.objects.is_manager_project(user=request.user, id =project_id) or ProjectModel.objects.is_member_of_project(user=request.user, id =project_id):
@@ -31,6 +43,7 @@ def index(request):
             total_incomes = income.objects.total(project=proj)
             total = expence.objects.total_project(project=proj)
             total_me_expence = expence.objects.total_project_user(user=request.user, project=proj)
+            total_me_income = income.objects.filter(user=request.user, project=proj)
             total_income_user = income.objects.total_per_user_project(user=request.user, project=proj)
             total_expences_user = expence.objects.total_per_user_project(user=request.user, project=proj)
 
@@ -44,8 +57,11 @@ def index(request):
                 "total_incomes":  place_value(total_incomes),
                 "total":  total,
                 "total_me_expence": total_me_expence ,
+                "total_me_income": total_me_income,
                 "total_income_user": place_value(total_income_user) ,
                 "total_expences_user": place_value(total_expences_user) ,
+                "ekhtelaf_me": place_value(total_income_user - total_expences_user),
+                "ekhtelaf_kol": place_value(total_incomes-total_expences ),
                 "k1": place_value(k1),
                 "k2": place_value(k2),
                 "k3": place_value(k3),
