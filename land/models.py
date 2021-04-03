@@ -12,10 +12,10 @@ from extensions.utils import jalali_converter, jalali_converter_2
 class section1(models.Model):
     webtitle = models.CharField(max_length=50,verbose_name="تیتر وبسایت")
     logoheader = models.ImageField(upload_to="user_avatar",verbose_name="لوگو هدر ۸۰*۴۰")
-    text11 = models.CharField(max_length=50,verbose_name="متن ثابت قسمت ۱")
-    text12 = models.CharField(max_length=50,verbose_name="متن انیمیشن ۱")
-    text13 = models.CharField(max_length=50,verbose_name="متن انیمیشن ۲")
-    text14 = models.CharField(max_length=50,verbose_name="متن ثابت")
+    text11 = models.TextField(max_length=50,verbose_name="متن ثابت قسمت ۱")
+    text12 = models.TextField(max_length=50,verbose_name="متن انیمیشن ۱")
+    text13 = models.TextField(max_length=50,verbose_name="متن انیمیشن ۲")
+    text14 = models.TextField(max_length=50,verbose_name="متن ثابت")
     text15 = models.CharField(max_length=50,verbose_name="متن دکمه ")
     link15 = models.CharField(max_length=200,verbose_name="لینک دکمه")
     class Meta:
@@ -23,36 +23,36 @@ class section1(models.Model):
         verbose_name_plural = "--DONT TOUCH--"
 
 class section2(models.Model):
-    text21 = models.CharField(max_length=50,verbose_name=" متن ثابت قسمت ۲")
-    text22 = models.CharField(max_length=50,verbose_name="متن ثابت")
-    text23 = models.CharField(max_length=50,verbose_name="متن دکمه ")
+    text21 = models.TextField(max_length=50,verbose_name=" متن ثابت قسمت ۲")
+    text22 = models.TextField(max_length=50,verbose_name="متن ثابت")
+    text23 = models.TextField(max_length=50,verbose_name="متن دکمه ")
     link23 = models.CharField(max_length=200,verbose_name="لینک دکمه")
     class Meta:
         verbose_name= "تنظیم  قسمت ۲"
         verbose_name_plural = "--DONT TOUCH--"
 
 class section3(models.Model):
-    text31 = models.CharField(max_length=50,verbose_name=" تیتر قسمت ۳")
-    titr31 = models.CharField(max_length=50,verbose_name="متن قسمت ۳")
+    text31 = models.TextField(max_length=50,verbose_name=" تیتر قسمت ۳")
+    titr31 = models.TextField(max_length=50,verbose_name="متن قسمت ۳")
 
-    text32 = models.CharField(max_length=50,verbose_name=" تیتر آیکون ۱")
-    titr32 = models.CharField(max_length=50,verbose_name="متن آیکون ۱")
+    text32 = models.TextField(max_length=50,verbose_name=" تیتر آیکون ۱")
+    titr32 = models.TextField(max_length=50,verbose_name="متن آیکون ۱")
 
-    text33 = models.CharField(max_length=50,verbose_name=" تیتر آیکون 2")
-    titr33 = models.CharField(max_length=50,verbose_name="متن آیکون 2")
+    text33 = models.TextField(max_length=50,verbose_name=" تیتر آیکون 2")
+    titr33 = models.TextField(max_length=50,verbose_name="متن آیکون 2")
 
-    text34 = models.CharField(max_length=50,verbose_name=" تیتر آیکون 3")
-    titr34 = models.CharField(max_length=50,verbose_name="متن آیکون 3")
+    text34 = models.TextField(max_length=50,verbose_name=" تیتر آیکون 3")
+    titr34 = models.TextField(max_length=50,verbose_name="متن آیکون 3")
 
-    text35 = models.CharField(max_length=50,verbose_name=" تیتر آیکون 4")
-    titr35 = models.CharField(max_length=50,verbose_name="متن آیکون 4")
+    text35 = models.TextField(max_length=50,verbose_name=" تیتر آیکون 4")
+    titr35 = models.TextField(max_length=50,verbose_name="متن آیکون 4")
     class Meta:
         verbose_name= "تنظیم  قسمت ۳"
         verbose_name_plural = "--DONT TOUCH--"
 
 class footer(models.Model):
-    titr1 =models.CharField(max_length=50,verbose_name=" تیتر فوتر ")
-    text1 = models.CharField(max_length=50,verbose_name=" تیتر زیر تیتر ")
+    titr1 =models.TextField(max_length=50,verbose_name=" تیتر فوتر ")
+    text1 = models.TextField(max_length=50,verbose_name=" تیتر زیر تیتر ")
 
     text00 =models.CharField(max_length=50,verbose_name="متن دکمه")
     link00 = models.CharField(max_length=200,verbose_name="لینک دکمه")
@@ -66,9 +66,9 @@ class footer(models.Model):
     text33 = models.CharField(max_length=50,verbose_name="متن لینک ۳")
     link33 = models.CharField(max_length=50,verbose_name=" لینک ۳")
 
-    address =  models.CharField(max_length=50,verbose_name="آدرس در فوتر")
-    phone =  models.CharField(max_length=50,verbose_name="تلفن در فوتر")
-    mail=  models.CharField(max_length=50,verbose_name="ایمیل در فوتر")
+    address =  models.TextField(max_length=50,verbose_name="آدرس در فوتر")
+    phone =  models.TextField(max_length=50,verbose_name="تلفن در فوتر")
+    mail=  models.TextField(max_length=50,verbose_name="ایمیل در فوتر")
     class Meta:
         verbose_name= "تنظیم  فوتر"
         verbose_name_plural = "--DONT TOUCH--"

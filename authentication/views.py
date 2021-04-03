@@ -20,7 +20,7 @@ def verify_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect("/")
+    return redirect("/login")
     
 def login_view(request):
     form = LoginForm(request.POST or None)
