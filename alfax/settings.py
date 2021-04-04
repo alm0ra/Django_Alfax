@@ -20,7 +20,7 @@ CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-(lrvnj^=095wufxbj631^xxg5xqr9aijr@a3nc#x4^oj+fw01'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -95,7 +95,7 @@ if DEBUG:
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME':'postgres',
             'USER':'postgres',
-            'PASSWORD':'Ali4840145059',
+            'PASSWORD':'',
             'HOST':'localhost',
             'PORT':'5432',
         }
@@ -107,7 +107,7 @@ else:
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME':'postgres',
             'USER':'postgres',
-            'PASSWORD':'Ali4840145059',
+            'PASSWORD':'',
             'HOST':'alfax_postgresql',
             'PORT':'5432',
         }
