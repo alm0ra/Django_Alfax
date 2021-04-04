@@ -61,7 +61,7 @@ def register_user(request):
             user = authenticate(username=username, password=raw_password)
             success = True
             
-            return redirect("verify/")
+            return redirect("/dashboard/karfarmaonline/")
         else:
             return render(request, "accounts/auth-register.html", context)
 
