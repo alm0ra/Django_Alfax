@@ -3,7 +3,10 @@
 this is the first Version of Alfax made by Love in Django.
 
 
-## Getting Started
+KarfarmaOnline is Out :)
+http://Alfax.ir/dashboard/karfarmaonline/
+
+## Getting Started For Development
 
 Setup project environment with [virtualenv](https://virtualenv.pypa.io) and [pip](https://pip.pypa.io).
 
@@ -90,7 +93,6 @@ Enjoy it :)
 * Manage and Modify your Company Contact.
 * Manage and Modify your Company Accounting.
 * Manage and Modify Construction Company Accounting.
-* Split settings in two files. `settings_custom.py` for specific environment settings (localhost, production, etc). `projectname/settings.py` for core settings.
 * Simple logging setup ready for production envs.
 
 ## Contributing
